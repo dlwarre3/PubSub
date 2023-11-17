@@ -5,3 +5,5 @@ My publishers and subscribers successfully register with the service and enter t
 
 
 For milestone 2, subscribers are now able to subscribe on any and all publishers based on topic under direct dissemination. When provided multiple publishers, subscribers will consume topics for all publishers. When both publishers and subscribers register to the discovery service, their registrant info is held in a dictionary by the discovery service (this was from milestone 1). Using this, subscribers send a lookup pub by topic request to the discovery service, and the discovery service responds in a lookup pub by topic response with address and port information of all publishers that are disseminating topics of interest to a subscriber. The subscriber then uses setsockopt on its pub socket, connects to the addresses and ports provided and consumes data over these connections. 
+
+For milestone 3, the system can use either direct or broker dissemination. Works over different hosts and topologies.
