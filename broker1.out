@@ -1,0 +1,188 @@
+2023-02-11 23:38:59,793 - root - DEBUG - Main - acquire a child logger and then log messages in the child
+2023-02-11 23:38:59,793 - PublisherAppln - DEBUG - Main: parse command line arguments
+2023-02-11 23:38:59,798 - PublisherAppln - DEBUG - Main: resetting log level to 10
+2023-02-11 23:38:59,799 - PublisherAppln - DEBUG - Main: effective log level is 10
+2023-02-11 23:38:59,799 - PublisherAppln - DEBUG - Main: obtain the publisher appln object
+2023-02-11 23:38:59,799 - PublisherAppln - DEBUG - Main: configure the publisher appln object
+2023-02-11 23:38:59,799 - PublisherAppln - DEBUG - PublisherAppln::configure
+2023-02-11 23:38:59,799 - PublisherAppln - DEBUG - PublisherAppln::configure - parsing config.ini
+2023-02-11 23:38:59,804 - PublisherAppln - DEBUG - PublisherAppln::configure - selecting our topic list
+2023-02-11 23:38:59,804 - PublisherAppln - DEBUG - PublisherAppln::configure - initialize the middleware object
+2023-02-11 23:38:59,804 - PublisherAppln - DEBUG - PublisherMW::configure
+2023-02-11 23:38:59,804 - PublisherAppln - DEBUG - PublisherMW::configure - obtain ZMQ context
+2023-02-11 23:38:59,805 - PublisherAppln - DEBUG - PublisherMW::configure - obtain the poller
+2023-02-11 23:38:59,805 - PublisherAppln - DEBUG - PublisherMW::configure - obtain REQ and PUB sockets
+2023-02-11 23:38:59,811 - PublisherAppln - DEBUG - PublisherMW::configure - register the REQ socket for incoming replies
+2023-02-11 23:38:59,811 - PublisherAppln - DEBUG - PublisherMW::configure - connect to Discovery service
+2023-02-11 23:38:59,811 - PublisherAppln - DEBUG - PublisherMW::configure - bind to the pub socket
+2023-02-11 23:38:59,811 - PublisherAppln - DEBUG - PublisherMW::configure completed
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG - PublisherAppln::configure - configuration complete
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG - Main: invoke the publisher appln driver
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG - PublisherAppln::driver
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG - **********************************
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG - PublisherAppln::dump
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG - ------------------------------
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG -      Name: broker1
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG -      Lookup: Centralized
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG -      Dissemination: Direct
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG -      Num Topics: 1
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG -      TopicList: ['weather']
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG -      Iterations: 1000
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG -      Frequency: 1
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG - **********************************
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG - PublisherAppln::driver - upcall handle
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG - PublisherMW::event_loop - run the event loop
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation - register with the discovery service
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG - PublisherMW::register
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG - PublisherMW::register - populate the Registrant Info
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG - PublisherMW::register - done populating the Registrant Info
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG - PublisherMW::register - populate the nested register req
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG - PublisherMW::register - done populating nested RegisterReq
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG - PublisherMW::register - build the outer DiscoveryReq message
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG - PublisherMW::register - done building the outer message
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG - Stringified serialized buf = b'\x08\x01\x12#\x08\x01\x12\x16\n\x07broker1\x12\x0810.0.0.2\x18\xc9+\x1a\x07weather'
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG - PublisherMW::register - send stringified buffer to Discovery service
+2023-02-11 23:38:59,812 - PublisherAppln - DEBUG - PublisherMW::register - sent register message and now now wait for reply
+2023-02-11 23:38:59,981 - PublisherAppln - DEBUG - PublisherMW::handle_reply
+2023-02-11 23:38:59,981 - PublisherAppln - DEBUG - PublisherAppln::register_response
+2023-02-11 23:38:59,981 - PublisherAppln - DEBUG - PublisherAppln::register_response - registration is a success
+2023-02-11 23:38:59,981 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation
+2023-02-11 23:38:59,981 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation - check if are ready to go
+2023-02-11 23:38:59,981 - PublisherAppln - DEBUG - PublisherMW::is_ready
+2023-02-11 23:38:59,981 - PublisherAppln - DEBUG - PublisherMW::is_ready - populate the nested IsReady msg
+2023-02-11 23:38:59,982 - PublisherAppln - DEBUG - PublisherMW::is_ready - done populating nested IsReady msg
+2023-02-11 23:38:59,982 - PublisherAppln - DEBUG - PublisherMW::is_ready - build the outer DiscoveryReq message
+2023-02-11 23:38:59,982 - PublisherAppln - DEBUG - PublisherMW::is_ready - done building the outer message
+2023-02-11 23:38:59,982 - PublisherAppln - DEBUG - Stringified serialized buf = b'\x08\x02\x1a\x00'
+2023-02-11 23:38:59,982 - PublisherAppln - DEBUG - PublisherMW::is_ready - send stringified buffer to Discovery service
+2023-02-11 23:38:59,982 - PublisherAppln - DEBUG - PublisherMW::is_ready - request sent and now wait for reply
+2023-02-11 23:38:59,990 - PublisherAppln - DEBUG - PublisherMW::handle_reply
+2023-02-11 23:38:59,990 - PublisherAppln - DEBUG - PublisherAppln::isready_responsestatus: true
+
+2023-02-11 23:38:59,990 - PublisherAppln - DEBUG - PublisherAppln::driver - Status success. Ready to disseminate.
+2023-02-11 23:38:59,990 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation
+2023-02-11 23:38:59,990 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation - start Disseminating
+2023-02-11 23:38:59,990 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:38:59,990 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:38:59,990 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:00,990 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:00,991 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:39:00,991 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:01,992 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:01,992 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:39:01,992 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:02,993 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:02,993 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:39:02,993 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:03,994 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:03,994 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:39:03,994 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:04,996 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:04,996 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:39:04,996 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:05,997 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:05,997 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:39:05,997 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:06,998 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:06,999 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:39:06,999 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:08,000 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:08,000 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:39:08,000 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:09,002 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:09,002 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:39:09,002 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:10,002 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:10,002 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:39:10,003 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:11,004 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:11,004 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:39:11,004 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:12,005 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:12,005 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:39:12,005 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:13,006 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:13,006 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:39:13,007 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:14,008 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:14,008 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:39:14,008 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:15,009 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:15,009 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:39:15,010 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:16,010 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:16,011 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:39:16,011 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:17,012 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:17,012 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:39:17,012 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:18,013 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:18,013 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:39:18,014 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:19,014 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:19,015 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:39:19,015 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:20,016 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:20,016 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:39:20,016 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:21,018 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:21,018 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:39:21,018 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:22,018 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:22,018 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:39:22,019 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:23,020 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:23,020 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:39:23,020 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:24,021 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:24,021 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:39:24,021 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:25,022 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:25,022 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:39:25,023 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:26,024 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:26,024 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:39:26,024 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:27,025 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:27,025 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:39:27,025 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:28,026 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:28,026 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:39:28,027 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:29,028 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:29,028 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:39:29,028 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:30,029 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:30,029 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:39:30,029 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:31,031 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:31,031 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:39:31,031 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:32,032 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:32,032 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:39:32,033 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:33,034 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:33,034 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:39:33,034 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:34,035 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:34,035 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:39:34,035 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:35,037 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:35,037 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:39:35,037 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:36,038 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:36,038 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:39:36,038 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:37,040 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:37,040 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:39:37,040 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:38,041 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:38,041 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:39:38,041 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:39,042 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:39,042 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:39:39,042 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:39:40,043 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:39:40,043 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:39:40,043 - PublisherAppln - DEBUG - PublisherMW::disseminate complete

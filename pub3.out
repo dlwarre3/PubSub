@@ -1,0 +1,2328 @@
+2023-02-11 23:40:21,796 - root - DEBUG - Main - acquire a child logger and then log messages in the child
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG - Main: parse command line arguments
+2023-02-11 23:40:21,806 - PublisherAppln - DEBUG - Main: resetting log level to 10
+2023-02-11 23:40:21,806 - PublisherAppln - DEBUG - Main: effective log level is 10
+2023-02-11 23:40:21,806 - PublisherAppln - DEBUG - Main: obtain the publisher appln object
+2023-02-11 23:40:21,806 - PublisherAppln - DEBUG - Main: configure the publisher appln object
+2023-02-11 23:40:21,806 - PublisherAppln - DEBUG - PublisherAppln::configure
+2023-02-11 23:40:21,806 - PublisherAppln - DEBUG - PublisherAppln::configure - parsing config.ini
+2023-02-11 23:40:21,810 - PublisherAppln - DEBUG - PublisherAppln::configure - selecting our topic list
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG - PublisherAppln::configure - initialize the middleware object
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG - PublisherMW::configure
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG - PublisherMW::configure - obtain ZMQ context
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG - PublisherMW::configure - obtain the poller
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG - PublisherMW::configure - obtain REQ and PUB sockets
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG - PublisherMW::configure - register the REQ socket for incoming replies
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG - PublisherMW::configure - connect to Discovery service
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG - PublisherMW::configure - bind to the pub socket
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG - PublisherMW::configure completed
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG - PublisherAppln::configure - configuration complete
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG - Main: invoke the publisher appln driver
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG - PublisherAppln::driver
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG - **********************************
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG - PublisherAppln::dump
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG - ------------------------------
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG -      Name: pub3
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG -      Lookup: Centralized
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG -      Dissemination: Direct
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG -      Num Topics: 5
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG -      TopicList: ['weather', 'light', 'temperature', 'humidity', 'altitude']
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG -      Iterations: 1000
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG -      Frequency: 1
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG - **********************************
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG - PublisherAppln::driver - upcall handle
+2023-02-11 23:40:21,811 - PublisherAppln - DEBUG - PublisherMW::event_loop - run the event loop
+2023-02-11 23:40:21,812 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation
+2023-02-11 23:40:21,812 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation - register with the discovery service
+2023-02-11 23:40:21,812 - PublisherAppln - DEBUG - PublisherMW::register
+2023-02-11 23:40:21,812 - PublisherAppln - DEBUG - PublisherMW::register - populate the Registrant Info
+2023-02-11 23:40:21,812 - PublisherAppln - DEBUG - PublisherMW::register - done populating the Registrant Info
+2023-02-11 23:40:21,812 - PublisherAppln - DEBUG - PublisherMW::register - populate the nested register req
+2023-02-11 23:40:21,812 - PublisherAppln - DEBUG - PublisherMW::register - done populating nested RegisterReq
+2023-02-11 23:40:21,812 - PublisherAppln - DEBUG - PublisherMW::register - build the outer DiscoveryReq message
+2023-02-11 23:40:21,812 - PublisherAppln - DEBUG - PublisherMW::register - done building the outer message
+2023-02-11 23:40:21,812 - PublisherAppln - DEBUG - Stringified serialized buf = b'\x08\x01\x12H\x08\x01\x12\x13\n\x04pub3\x12\x0810.0.0.4\x18\xc9+\x1a\x07weather\x1a\x05light\x1a\x0btemperature\x1a\x08humidity\x1a\x08altitude'
+2023-02-11 23:40:21,812 - PublisherAppln - DEBUG - PublisherMW::register - send stringified buffer to Discovery service
+2023-02-11 23:40:21,812 - PublisherAppln - DEBUG - PublisherMW::register - sent register message and now now wait for reply
+2023-02-11 23:40:21,865 - PublisherAppln - DEBUG - PublisherMW::handle_reply
+2023-02-11 23:40:21,865 - PublisherAppln - DEBUG - PublisherAppln::register_response
+2023-02-11 23:40:21,865 - PublisherAppln - DEBUG - PublisherAppln::register_response - registration is a success
+2023-02-11 23:40:21,865 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation
+2023-02-11 23:40:21,865 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation - check if are ready to go
+2023-02-11 23:40:21,865 - PublisherAppln - DEBUG - PublisherMW::is_ready
+2023-02-11 23:40:21,865 - PublisherAppln - DEBUG - PublisherMW::is_ready - populate the nested IsReady msg
+2023-02-11 23:40:21,865 - PublisherAppln - DEBUG - PublisherMW::is_ready - done populating nested IsReady msg
+2023-02-11 23:40:21,865 - PublisherAppln - DEBUG - PublisherMW::is_ready - build the outer DiscoveryReq message
+2023-02-11 23:40:21,865 - PublisherAppln - DEBUG - PublisherMW::is_ready - done building the outer message
+2023-02-11 23:40:21,865 - PublisherAppln - DEBUG - Stringified serialized buf = b'\x08\x02\x1a\x00'
+2023-02-11 23:40:21,865 - PublisherAppln - DEBUG - PublisherMW::is_ready - send stringified buffer to Discovery service
+2023-02-11 23:40:21,865 - PublisherAppln - DEBUG - PublisherMW::is_ready - request sent and now wait for reply
+2023-02-11 23:40:21,868 - PublisherAppln - DEBUG - PublisherMW::handle_reply
+2023-02-11 23:40:21,868 - PublisherAppln - DEBUG - PublisherAppln::isready_response
+2023-02-11 23:40:21,868 - PublisherAppln - DEBUG - PublisherAppln::driver - Not ready yet; check again
+2023-02-11 23:40:31,878 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation
+2023-02-11 23:40:31,878 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation - check if are ready to go
+2023-02-11 23:40:31,878 - PublisherAppln - DEBUG - PublisherMW::is_ready
+2023-02-11 23:40:31,878 - PublisherAppln - DEBUG - PublisherMW::is_ready - populate the nested IsReady msg
+2023-02-11 23:40:31,878 - PublisherAppln - DEBUG - PublisherMW::is_ready - done populating nested IsReady msg
+2023-02-11 23:40:31,878 - PublisherAppln - DEBUG - PublisherMW::is_ready - build the outer DiscoveryReq message
+2023-02-11 23:40:31,878 - PublisherAppln - DEBUG - PublisherMW::is_ready - done building the outer message
+2023-02-11 23:40:31,878 - PublisherAppln - DEBUG - Stringified serialized buf = b'\x08\x02\x1a\x00'
+2023-02-11 23:40:31,878 - PublisherAppln - DEBUG - PublisherMW::is_ready - send stringified buffer to Discovery service
+2023-02-11 23:40:31,878 - PublisherAppln - DEBUG - PublisherMW::is_ready - request sent and now wait for reply
+2023-02-11 23:40:31,879 - PublisherAppln - DEBUG - PublisherMW::handle_reply
+2023-02-11 23:40:31,879 - PublisherAppln - DEBUG - PublisherAppln::isready_responsestatus: true
+
+2023-02-11 23:40:31,879 - PublisherAppln - DEBUG - PublisherAppln::driver - Status success. Ready to disseminate.
+2023-02-11 23:40:31,879 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation
+2023-02-11 23:40:31,879 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation - start Disseminating
+2023-02-11 23:40:31,879 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:31,879 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:40:31,879 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:31,879 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:31,879 - PublisherAppln - INFO - light,800
+2023-02-11 23:40:31,879 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:31,879 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:31,879 - PublisherAppln - INFO - temperature,-4
+2023-02-11 23:40:31,880 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:31,880 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:31,880 - PublisherAppln - INFO - humidity,45.38131542108041
+2023-02-11 23:40:31,880 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:31,880 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:31,880 - PublisherAppln - INFO - altitude,1742
+2023-02-11 23:40:31,880 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:32,881 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:32,881 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:40:32,881 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:32,881 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:32,881 - PublisherAppln - INFO - light,1100
+2023-02-11 23:40:32,881 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:32,881 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:32,881 - PublisherAppln - INFO - temperature,-70
+2023-02-11 23:40:32,881 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:32,881 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:32,881 - PublisherAppln - INFO - humidity,93.39702653329321
+2023-02-11 23:40:32,881 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:32,881 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:32,881 - PublisherAppln - INFO - altitude,20724
+2023-02-11 23:40:32,881 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:33,882 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:33,882 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:40:33,882 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:33,882 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:33,882 - PublisherAppln - INFO - light,1600
+2023-02-11 23:40:33,882 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:33,883 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:33,883 - PublisherAppln - INFO - temperature,-73
+2023-02-11 23:40:33,883 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:33,883 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:33,883 - PublisherAppln - INFO - humidity,90.50141391053728
+2023-02-11 23:40:33,883 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:33,883 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:33,883 - PublisherAppln - INFO - altitude,16493
+2023-02-11 23:40:33,883 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:34,884 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:34,884 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:40:34,884 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:34,884 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:34,884 - PublisherAppln - INFO - light,800
+2023-02-11 23:40:34,884 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:34,884 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:34,884 - PublisherAppln - INFO - temperature,-55
+2023-02-11 23:40:34,884 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:34,884 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:34,884 - PublisherAppln - INFO - humidity,58.11546709132963
+2023-02-11 23:40:34,884 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:34,884 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:34,884 - PublisherAppln - INFO - altitude,29894
+2023-02-11 23:40:34,884 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:35,886 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:35,886 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:40:35,886 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:35,886 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:35,886 - PublisherAppln - INFO - light,450
+2023-02-11 23:40:35,886 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:35,886 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:35,886 - PublisherAppln - INFO - temperature,-83
+2023-02-11 23:40:35,886 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:35,886 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:35,886 - PublisherAppln - INFO - humidity,10.496184460505862
+2023-02-11 23:40:35,886 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:35,886 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:35,886 - PublisherAppln - INFO - altitude,14939
+2023-02-11 23:40:35,886 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:36,888 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:36,888 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:40:36,888 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:36,888 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:36,888 - PublisherAppln - INFO - light,1600
+2023-02-11 23:40:36,888 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:36,888 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:36,888 - PublisherAppln - INFO - temperature,1
+2023-02-11 23:40:36,888 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:36,888 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:36,888 - PublisherAppln - INFO - humidity,39.633064190735944
+2023-02-11 23:40:36,888 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:36,888 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:36,888 - PublisherAppln - INFO - altitude,32148
+2023-02-11 23:40:36,888 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:37,890 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:37,890 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:40:37,890 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:37,890 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:37,890 - PublisherAppln - INFO - light,1600
+2023-02-11 23:40:37,890 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:37,890 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:37,890 - PublisherAppln - INFO - temperature,-36
+2023-02-11 23:40:37,890 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:37,890 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:37,890 - PublisherAppln - INFO - humidity,11.003939271983628
+2023-02-11 23:40:37,890 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:37,890 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:37,890 - PublisherAppln - INFO - altitude,33808
+2023-02-11 23:40:37,890 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:38,892 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:38,892 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:40:38,892 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:38,892 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:38,892 - PublisherAppln - INFO - light,450
+2023-02-11 23:40:38,892 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:38,892 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:38,892 - PublisherAppln - INFO - temperature,-47
+2023-02-11 23:40:38,892 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:38,892 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:38,892 - PublisherAppln - INFO - humidity,62.20118832527483
+2023-02-11 23:40:38,892 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:38,892 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:38,892 - PublisherAppln - INFO - altitude,24346
+2023-02-11 23:40:38,892 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:39,894 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:39,894 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:40:39,894 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:39,894 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:39,894 - PublisherAppln - INFO - light,450
+2023-02-11 23:40:39,894 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:39,894 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:39,894 - PublisherAppln - INFO - temperature,11
+2023-02-11 23:40:39,894 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:39,894 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:39,894 - PublisherAppln - INFO - humidity,58.27205525257656
+2023-02-11 23:40:39,894 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:39,894 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:39,894 - PublisherAppln - INFO - altitude,11708
+2023-02-11 23:40:39,894 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:40,896 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:40,896 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:40:40,896 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:40,896 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:40,896 - PublisherAppln - INFO - light,1600
+2023-02-11 23:40:40,896 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:40,896 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:40,896 - PublisherAppln - INFO - temperature,98
+2023-02-11 23:40:40,896 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:40,896 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:40,896 - PublisherAppln - INFO - humidity,90.00118900945935
+2023-02-11 23:40:40,896 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:40,896 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:40,896 - PublisherAppln - INFO - altitude,34755
+2023-02-11 23:40:40,896 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:41,898 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:41,898 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:40:41,898 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:41,898 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:41,898 - PublisherAppln - INFO - light,450
+2023-02-11 23:40:41,898 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:41,898 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:41,898 - PublisherAppln - INFO - temperature,69
+2023-02-11 23:40:41,898 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:41,898 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:41,898 - PublisherAppln - INFO - humidity,32.302311832383964
+2023-02-11 23:40:41,898 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:41,898 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:41,898 - PublisherAppln - INFO - altitude,11606
+2023-02-11 23:40:41,899 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:42,899 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:42,899 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:40:42,899 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:42,899 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:42,899 - PublisherAppln - INFO - light,800
+2023-02-11 23:40:42,900 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:42,900 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:42,900 - PublisherAppln - INFO - temperature,8
+2023-02-11 23:40:42,900 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:42,900 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:42,900 - PublisherAppln - INFO - humidity,81.82093647673581
+2023-02-11 23:40:42,900 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:42,900 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:42,900 - PublisherAppln - INFO - altitude,13089
+2023-02-11 23:40:42,900 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:43,900 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:43,900 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:40:43,901 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:43,901 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:43,901 - PublisherAppln - INFO - light,1100
+2023-02-11 23:40:43,901 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:43,901 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:43,901 - PublisherAppln - INFO - temperature,-19
+2023-02-11 23:40:43,901 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:43,901 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:43,901 - PublisherAppln - INFO - humidity,61.76962350206582
+2023-02-11 23:40:43,901 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:43,901 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:43,901 - PublisherAppln - INFO - altitude,4717
+2023-02-11 23:40:43,901 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:44,902 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:44,902 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:40:44,902 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:44,902 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:44,902 - PublisherAppln - INFO - light,450
+2023-02-11 23:40:44,902 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:44,902 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:44,902 - PublisherAppln - INFO - temperature,17
+2023-02-11 23:40:44,903 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:44,903 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:44,903 - PublisherAppln - INFO - humidity,48.678260272199296
+2023-02-11 23:40:44,903 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:44,903 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:44,903 - PublisherAppln - INFO - altitude,20484
+2023-02-11 23:40:44,903 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:45,904 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:45,904 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:40:45,904 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:45,904 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:45,904 - PublisherAppln - INFO - light,800
+2023-02-11 23:40:45,905 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:45,905 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:45,905 - PublisherAppln - INFO - temperature,50
+2023-02-11 23:40:45,905 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:45,905 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:45,905 - PublisherAppln - INFO - humidity,22.066825034433144
+2023-02-11 23:40:45,905 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:45,905 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:45,905 - PublisherAppln - INFO - altitude,37293
+2023-02-11 23:40:45,905 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:46,906 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:46,906 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:40:46,906 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:46,906 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:46,906 - PublisherAppln - INFO - light,800
+2023-02-11 23:40:46,906 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:46,906 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:46,906 - PublisherAppln - INFO - temperature,82
+2023-02-11 23:40:46,907 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:46,907 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:46,907 - PublisherAppln - INFO - humidity,52.551815019908254
+2023-02-11 23:40:46,907 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:46,907 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:46,907 - PublisherAppln - INFO - altitude,29646
+2023-02-11 23:40:46,907 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:47,908 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:47,908 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:40:47,908 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:47,908 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:47,908 - PublisherAppln - INFO - light,800
+2023-02-11 23:40:47,908 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:47,908 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:47,908 - PublisherAppln - INFO - temperature,32
+2023-02-11 23:40:47,908 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:47,908 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:47,908 - PublisherAppln - INFO - humidity,59.21569277010368
+2023-02-11 23:40:47,908 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:47,908 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:47,908 - PublisherAppln - INFO - altitude,32221
+2023-02-11 23:40:47,908 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:48,909 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:48,910 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:40:48,910 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:48,910 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:48,910 - PublisherAppln - INFO - light,800
+2023-02-11 23:40:48,910 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:48,910 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:48,910 - PublisherAppln - INFO - temperature,38
+2023-02-11 23:40:48,910 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:48,910 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:48,910 - PublisherAppln - INFO - humidity,90.96002846270278
+2023-02-11 23:40:48,910 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:48,910 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:48,910 - PublisherAppln - INFO - altitude,19829
+2023-02-11 23:40:48,910 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:49,911 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:49,911 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:40:49,912 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:49,912 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:49,912 - PublisherAppln - INFO - light,1100
+2023-02-11 23:40:49,912 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:49,912 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:49,912 - PublisherAppln - INFO - temperature,-27
+2023-02-11 23:40:49,912 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:49,912 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:49,912 - PublisherAppln - INFO - humidity,91.56887236161874
+2023-02-11 23:40:49,912 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:49,912 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:49,912 - PublisherAppln - INFO - altitude,23620
+2023-02-11 23:40:49,912 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:50,913 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:50,913 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:40:50,913 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:50,913 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:50,913 - PublisherAppln - INFO - light,1600
+2023-02-11 23:40:50,913 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:50,913 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:50,913 - PublisherAppln - INFO - temperature,-79
+2023-02-11 23:40:50,913 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:50,913 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:50,913 - PublisherAppln - INFO - humidity,24.060651129376588
+2023-02-11 23:40:50,913 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:50,913 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:50,914 - PublisherAppln - INFO - altitude,6200
+2023-02-11 23:40:50,914 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:51,914 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:51,914 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:40:51,914 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:51,914 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:51,914 - PublisherAppln - INFO - light,1600
+2023-02-11 23:40:51,915 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:51,915 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:51,915 - PublisherAppln - INFO - temperature,-57
+2023-02-11 23:40:51,915 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:51,915 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:51,915 - PublisherAppln - INFO - humidity,87.7073774051191
+2023-02-11 23:40:51,915 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:51,915 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:51,915 - PublisherAppln - INFO - altitude,39803
+2023-02-11 23:40:51,915 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:52,916 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:52,916 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:40:52,916 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:52,916 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:52,916 - PublisherAppln - INFO - light,800
+2023-02-11 23:40:52,916 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:52,916 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:52,916 - PublisherAppln - INFO - temperature,-47
+2023-02-11 23:40:52,917 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:52,917 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:52,917 - PublisherAppln - INFO - humidity,36.328645296109734
+2023-02-11 23:40:52,917 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:52,917 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:52,917 - PublisherAppln - INFO - altitude,9251
+2023-02-11 23:40:52,917 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:53,918 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:53,918 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:40:53,918 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:53,918 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:53,918 - PublisherAppln - INFO - light,1600
+2023-02-11 23:40:53,918 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:53,918 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:53,918 - PublisherAppln - INFO - temperature,-88
+2023-02-11 23:40:53,918 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:53,918 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:53,918 - PublisherAppln - INFO - humidity,74.15123759466731
+2023-02-11 23:40:53,918 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:53,918 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:53,918 - PublisherAppln - INFO - altitude,3124
+2023-02-11 23:40:53,918 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:54,920 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:54,920 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:40:54,920 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:54,920 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:54,920 - PublisherAppln - INFO - light,800
+2023-02-11 23:40:54,920 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:54,920 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:54,920 - PublisherAppln - INFO - temperature,8
+2023-02-11 23:40:54,920 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:54,920 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:54,920 - PublisherAppln - INFO - humidity,14.037795892207887
+2023-02-11 23:40:54,920 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:54,920 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:54,920 - PublisherAppln - INFO - altitude,5294
+2023-02-11 23:40:54,920 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:55,922 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:55,922 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:40:55,922 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:55,922 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:55,922 - PublisherAppln - INFO - light,800
+2023-02-11 23:40:55,922 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:55,922 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:55,922 - PublisherAppln - INFO - temperature,-92
+2023-02-11 23:40:55,922 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:55,922 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:55,922 - PublisherAppln - INFO - humidity,20.005019674150077
+2023-02-11 23:40:55,922 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:55,922 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:55,922 - PublisherAppln - INFO - altitude,32249
+2023-02-11 23:40:55,923 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:56,924 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:56,924 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:40:56,924 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:56,924 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:56,924 - PublisherAppln - INFO - light,1600
+2023-02-11 23:40:56,924 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:56,924 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:56,924 - PublisherAppln - INFO - temperature,85
+2023-02-11 23:40:56,924 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:56,924 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:56,924 - PublisherAppln - INFO - humidity,37.81814200318327
+2023-02-11 23:40:56,924 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:56,924 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:56,924 - PublisherAppln - INFO - altitude,37268
+2023-02-11 23:40:56,924 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:57,925 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:57,925 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:40:57,925 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:57,925 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:57,925 - PublisherAppln - INFO - light,450
+2023-02-11 23:40:57,925 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:57,925 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:57,925 - PublisherAppln - INFO - temperature,70
+2023-02-11 23:40:57,925 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:57,925 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:57,925 - PublisherAppln - INFO - humidity,41.83403496682428
+2023-02-11 23:40:57,925 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:57,926 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:57,926 - PublisherAppln - INFO - altitude,16864
+2023-02-11 23:40:57,926 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:58,926 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:58,926 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:40:58,927 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:58,927 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:58,927 - PublisherAppln - INFO - light,1100
+2023-02-11 23:40:58,927 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:58,927 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:58,927 - PublisherAppln - INFO - temperature,34
+2023-02-11 23:40:58,927 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:58,927 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:58,927 - PublisherAppln - INFO - humidity,59.05230906839678
+2023-02-11 23:40:58,927 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:58,927 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:58,927 - PublisherAppln - INFO - altitude,19413
+2023-02-11 23:40:58,927 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:59,928 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:59,929 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:40:59,929 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:59,929 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:59,929 - PublisherAppln - INFO - light,1600
+2023-02-11 23:40:59,929 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:59,929 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:59,929 - PublisherAppln - INFO - temperature,-24
+2023-02-11 23:40:59,929 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:59,929 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:59,929 - PublisherAppln - INFO - humidity,20.483493626637326
+2023-02-11 23:40:59,929 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:59,929 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:59,929 - PublisherAppln - INFO - altitude,5626
+2023-02-11 23:40:59,929 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:00,930 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:00,930 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:41:00,930 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:00,930 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:00,930 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:00,930 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:00,930 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:00,930 - PublisherAppln - INFO - temperature,-46
+2023-02-11 23:41:00,931 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:00,931 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:00,931 - PublisherAppln - INFO - humidity,96.75250990574958
+2023-02-11 23:41:00,931 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:00,931 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:00,931 - PublisherAppln - INFO - altitude,39324
+2023-02-11 23:41:00,931 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:01,931 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:01,931 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:41:01,932 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:01,932 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:01,932 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:01,932 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:01,932 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:01,932 - PublisherAppln - INFO - temperature,-68
+2023-02-11 23:41:01,932 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:01,932 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:01,932 - PublisherAppln - INFO - humidity,43.0423824997236
+2023-02-11 23:41:01,932 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:01,932 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:01,932 - PublisherAppln - INFO - altitude,36930
+2023-02-11 23:41:01,932 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:02,933 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:02,933 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:41:02,934 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:02,934 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:02,934 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:02,934 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:02,934 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:02,934 - PublisherAppln - INFO - temperature,-57
+2023-02-11 23:41:02,934 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:02,934 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:02,934 - PublisherAppln - INFO - humidity,33.228092997780465
+2023-02-11 23:41:02,934 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:02,934 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:02,934 - PublisherAppln - INFO - altitude,16753
+2023-02-11 23:41:02,934 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:03,934 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:03,934 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:41:03,934 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:03,934 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:03,934 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:03,934 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:03,934 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:03,935 - PublisherAppln - INFO - temperature,-57
+2023-02-11 23:41:03,935 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:03,935 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:03,935 - PublisherAppln - INFO - humidity,78.06998416056284
+2023-02-11 23:41:03,935 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:03,935 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:03,935 - PublisherAppln - INFO - altitude,32909
+2023-02-11 23:41:03,935 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:04,936 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:04,936 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:41:04,936 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:04,936 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:04,936 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:04,936 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:04,936 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:04,936 - PublisherAppln - INFO - temperature,18
+2023-02-11 23:41:04,936 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:04,936 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:04,936 - PublisherAppln - INFO - humidity,47.41274793896851
+2023-02-11 23:41:04,936 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:04,936 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:04,936 - PublisherAppln - INFO - altitude,24845
+2023-02-11 23:41:04,936 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:05,938 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:05,938 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:41:05,938 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:05,938 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:05,938 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:05,938 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:05,938 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:05,938 - PublisherAppln - INFO - temperature,-1
+2023-02-11 23:41:05,938 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:05,938 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:05,938 - PublisherAppln - INFO - humidity,97.39543760218012
+2023-02-11 23:41:05,939 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:05,939 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:05,939 - PublisherAppln - INFO - altitude,35012
+2023-02-11 23:41:05,939 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:06,940 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:06,940 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:41:06,940 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:06,940 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:06,940 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:06,940 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:06,940 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:06,940 - PublisherAppln - INFO - temperature,62
+2023-02-11 23:41:06,940 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:06,940 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:06,940 - PublisherAppln - INFO - humidity,13.684136900928678
+2023-02-11 23:41:06,940 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:06,940 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:06,940 - PublisherAppln - INFO - altitude,20020
+2023-02-11 23:41:06,940 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:07,942 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:07,942 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:41:07,942 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:07,942 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:07,942 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:07,942 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:07,942 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:07,942 - PublisherAppln - INFO - temperature,34
+2023-02-11 23:41:07,942 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:07,942 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:07,942 - PublisherAppln - INFO - humidity,32.74217833605356
+2023-02-11 23:41:07,942 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:07,942 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:07,942 - PublisherAppln - INFO - altitude,28730
+2023-02-11 23:41:07,942 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:08,944 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:08,944 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:41:08,944 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:08,944 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:08,944 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:08,944 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:08,944 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:08,944 - PublisherAppln - INFO - temperature,87
+2023-02-11 23:41:08,944 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:08,944 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:08,944 - PublisherAppln - INFO - humidity,36.696267327807945
+2023-02-11 23:41:08,944 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:08,944 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:08,944 - PublisherAppln - INFO - altitude,35358
+2023-02-11 23:41:08,944 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:09,945 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:09,946 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:41:09,946 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:09,946 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:09,946 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:09,946 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:09,946 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:09,946 - PublisherAppln - INFO - temperature,23
+2023-02-11 23:41:09,946 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:09,946 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:09,946 - PublisherAppln - INFO - humidity,65.56681741912402
+2023-02-11 23:41:09,946 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:09,946 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:09,946 - PublisherAppln - INFO - altitude,32756
+2023-02-11 23:41:09,946 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:10,947 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:10,947 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:41:10,947 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:10,947 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:10,948 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:10,948 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:10,948 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:10,948 - PublisherAppln - INFO - temperature,-5
+2023-02-11 23:41:10,948 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:10,948 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:10,948 - PublisherAppln - INFO - humidity,72.0979920049272
+2023-02-11 23:41:10,948 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:10,948 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:10,948 - PublisherAppln - INFO - altitude,16150
+2023-02-11 23:41:10,948 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:11,949 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:11,949 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:41:11,949 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:11,949 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:11,949 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:11,949 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:11,949 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:11,949 - PublisherAppln - INFO - temperature,66
+2023-02-11 23:41:11,949 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:11,950 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:11,950 - PublisherAppln - INFO - humidity,88.73425265492898
+2023-02-11 23:41:11,950 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:11,950 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:11,950 - PublisherAppln - INFO - altitude,2675
+2023-02-11 23:41:11,950 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:12,950 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:12,950 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:41:12,950 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:12,950 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:12,950 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:12,951 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:12,951 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:12,951 - PublisherAppln - INFO - temperature,-24
+2023-02-11 23:41:12,951 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:12,951 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:12,951 - PublisherAppln - INFO - humidity,88.1447724887596
+2023-02-11 23:41:12,951 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:12,951 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:12,951 - PublisherAppln - INFO - altitude,5961
+2023-02-11 23:41:12,951 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:13,952 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:13,952 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:41:13,953 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:13,953 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:13,953 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:13,953 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:13,953 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:13,953 - PublisherAppln - INFO - temperature,77
+2023-02-11 23:41:13,956 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:13,956 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:13,956 - PublisherAppln - INFO - humidity,79.84730875338782
+2023-02-11 23:41:13,956 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:13,956 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:13,956 - PublisherAppln - INFO - altitude,30067
+2023-02-11 23:41:13,956 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:14,957 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:14,957 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:41:14,957 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:14,957 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:14,957 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:14,957 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:14,957 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:14,957 - PublisherAppln - INFO - temperature,65
+2023-02-11 23:41:14,958 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:14,958 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:14,958 - PublisherAppln - INFO - humidity,57.06070142045614
+2023-02-11 23:41:14,958 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:14,958 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:14,958 - PublisherAppln - INFO - altitude,27333
+2023-02-11 23:41:14,958 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:15,961 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:15,961 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:41:15,961 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:15,961 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:15,961 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:15,961 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:15,961 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:15,961 - PublisherAppln - INFO - temperature,-35
+2023-02-11 23:41:15,961 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:15,961 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:15,961 - PublisherAppln - INFO - humidity,17.479264862501978
+2023-02-11 23:41:15,961 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:15,961 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:15,961 - PublisherAppln - INFO - altitude,26829
+2023-02-11 23:41:15,961 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:16,963 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:16,963 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:41:16,963 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:16,963 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:16,963 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:16,963 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:16,963 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:16,963 - PublisherAppln - INFO - temperature,7
+2023-02-11 23:41:16,963 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:16,963 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:16,963 - PublisherAppln - INFO - humidity,56.353781543883464
+2023-02-11 23:41:16,963 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:16,963 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:16,963 - PublisherAppln - INFO - altitude,37701
+2023-02-11 23:41:16,963 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:17,965 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:17,965 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:41:17,965 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:17,965 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:17,965 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:17,965 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:17,965 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:17,965 - PublisherAppln - INFO - temperature,16
+2023-02-11 23:41:17,965 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:17,965 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:17,965 - PublisherAppln - INFO - humidity,56.69965328805695
+2023-02-11 23:41:17,965 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:17,965 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:17,965 - PublisherAppln - INFO - altitude,18016
+2023-02-11 23:41:17,965 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:18,967 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:18,967 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:41:18,967 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:18,967 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:18,967 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:18,967 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:18,967 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:18,967 - PublisherAppln - INFO - temperature,75
+2023-02-11 23:41:18,967 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:18,967 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:18,967 - PublisherAppln - INFO - humidity,76.35681863776765
+2023-02-11 23:41:18,967 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:18,967 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:18,967 - PublisherAppln - INFO - altitude,22144
+2023-02-11 23:41:18,967 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:19,969 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:19,969 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:41:19,969 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:19,969 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:19,969 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:19,969 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:19,969 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:19,969 - PublisherAppln - INFO - temperature,-100
+2023-02-11 23:41:19,969 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:19,969 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:19,969 - PublisherAppln - INFO - humidity,25.4228977595641
+2023-02-11 23:41:19,969 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:19,969 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:19,969 - PublisherAppln - INFO - altitude,15012
+2023-02-11 23:41:19,969 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:20,971 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:20,971 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:41:20,971 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:20,971 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:20,971 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:20,971 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:20,971 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:20,971 - PublisherAppln - INFO - temperature,-12
+2023-02-11 23:41:20,971 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:20,971 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:20,971 - PublisherAppln - INFO - humidity,70.54409112282966
+2023-02-11 23:41:20,971 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:20,971 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:20,971 - PublisherAppln - INFO - altitude,21050
+2023-02-11 23:41:20,971 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:21,973 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:21,973 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:41:21,973 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:21,973 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:21,973 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:21,973 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:21,973 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:21,973 - PublisherAppln - INFO - temperature,100
+2023-02-11 23:41:21,973 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:21,973 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:21,973 - PublisherAppln - INFO - humidity,81.91520064772384
+2023-02-11 23:41:21,973 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:21,973 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:21,973 - PublisherAppln - INFO - altitude,12801
+2023-02-11 23:41:21,973 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:22,974 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:22,974 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:41:22,974 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:22,974 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:22,974 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:22,974 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:22,974 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:22,974 - PublisherAppln - INFO - temperature,42
+2023-02-11 23:41:22,974 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:22,974 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:22,974 - PublisherAppln - INFO - humidity,79.27080156597683
+2023-02-11 23:41:22,974 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:22,975 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:22,975 - PublisherAppln - INFO - altitude,31924
+2023-02-11 23:41:22,975 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:23,976 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:23,976 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:41:23,976 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:23,976 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:23,976 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:23,976 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:23,976 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:23,976 - PublisherAppln - INFO - temperature,51
+2023-02-11 23:41:23,976 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:23,976 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:23,976 - PublisherAppln - INFO - humidity,45.61398114784922
+2023-02-11 23:41:23,976 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:23,976 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:23,976 - PublisherAppln - INFO - altitude,33455
+2023-02-11 23:41:23,976 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:24,977 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:24,977 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:41:24,977 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:24,977 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:24,977 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:24,977 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:24,977 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:24,977 - PublisherAppln - INFO - temperature,78
+2023-02-11 23:41:24,977 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:24,977 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:24,977 - PublisherAppln - INFO - humidity,36.2436086358399
+2023-02-11 23:41:24,977 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:24,978 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:24,978 - PublisherAppln - INFO - altitude,14467
+2023-02-11 23:41:24,978 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:25,978 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:25,978 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:41:25,979 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:25,979 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:25,979 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:25,979 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:25,979 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:25,979 - PublisherAppln - INFO - temperature,-69
+2023-02-11 23:41:25,979 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:25,979 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:25,979 - PublisherAppln - INFO - humidity,43.34557556247404
+2023-02-11 23:41:25,979 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:25,979 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:25,979 - PublisherAppln - INFO - altitude,14373
+2023-02-11 23:41:25,979 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:26,980 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:26,980 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:41:26,980 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:26,980 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:26,980 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:26,980 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:26,980 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:26,980 - PublisherAppln - INFO - temperature,-77
+2023-02-11 23:41:26,980 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:26,981 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:26,981 - PublisherAppln - INFO - humidity,10.444274350123461
+2023-02-11 23:41:26,981 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:26,981 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:26,981 - PublisherAppln - INFO - altitude,15163
+2023-02-11 23:41:26,981 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:27,982 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:27,982 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:41:27,982 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:27,982 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:27,982 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:27,982 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:27,982 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:27,982 - PublisherAppln - INFO - temperature,89
+2023-02-11 23:41:27,982 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:27,982 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:27,982 - PublisherAppln - INFO - humidity,95.91514298818882
+2023-02-11 23:41:27,982 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:27,982 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:27,982 - PublisherAppln - INFO - altitude,25532
+2023-02-11 23:41:27,982 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:28,984 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:28,984 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:41:28,984 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:28,984 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:28,984 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:28,984 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:28,984 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:28,984 - PublisherAppln - INFO - temperature,62
+2023-02-11 23:41:28,984 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:28,984 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:28,984 - PublisherAppln - INFO - humidity,92.19220309384396
+2023-02-11 23:41:28,984 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:28,984 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:28,984 - PublisherAppln - INFO - altitude,5774
+2023-02-11 23:41:28,984 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:29,986 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:29,986 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:41:29,986 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:29,986 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:29,986 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:29,986 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:29,986 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:29,986 - PublisherAppln - INFO - temperature,-10
+2023-02-11 23:41:29,986 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:29,986 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:29,986 - PublisherAppln - INFO - humidity,87.88461948554618
+2023-02-11 23:41:29,986 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:29,986 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:29,986 - PublisherAppln - INFO - altitude,10578
+2023-02-11 23:41:29,986 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:30,987 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:30,988 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:41:30,988 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:30,988 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:30,988 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:30,988 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:30,988 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:30,988 - PublisherAppln - INFO - temperature,11
+2023-02-11 23:41:30,988 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:30,988 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:30,988 - PublisherAppln - INFO - humidity,48.019190368326704
+2023-02-11 23:41:30,988 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:30,988 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:30,988 - PublisherAppln - INFO - altitude,32103
+2023-02-11 23:41:30,988 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:31,989 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:31,990 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:41:31,990 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:31,990 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:31,990 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:31,990 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:31,990 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:31,990 - PublisherAppln - INFO - temperature,35
+2023-02-11 23:41:31,990 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:31,990 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:31,990 - PublisherAppln - INFO - humidity,12.914105836697622
+2023-02-11 23:41:31,990 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:31,990 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:31,990 - PublisherAppln - INFO - altitude,38926
+2023-02-11 23:41:31,990 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:32,991 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:32,991 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:41:32,991 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:32,991 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:32,991 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:32,992 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:32,992 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:32,992 - PublisherAppln - INFO - temperature,29
+2023-02-11 23:41:32,992 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:32,992 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:32,992 - PublisherAppln - INFO - humidity,51.87782719438033
+2023-02-11 23:41:32,992 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:32,992 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:32,992 - PublisherAppln - INFO - altitude,18338
+2023-02-11 23:41:32,992 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:33,993 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:33,993 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:41:33,993 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:33,993 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:33,993 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:33,993 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:33,993 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:33,993 - PublisherAppln - INFO - temperature,19
+2023-02-11 23:41:33,993 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:33,993 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:33,993 - PublisherAppln - INFO - humidity,89.35621496789827
+2023-02-11 23:41:33,993 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:33,993 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:33,993 - PublisherAppln - INFO - altitude,30164
+2023-02-11 23:41:33,993 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:34,994 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:34,994 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:41:34,994 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:34,994 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:34,994 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:34,994 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:34,994 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:34,994 - PublisherAppln - INFO - temperature,-50
+2023-02-11 23:41:34,994 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:34,994 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:34,994 - PublisherAppln - INFO - humidity,66.41973631239713
+2023-02-11 23:41:34,995 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:34,995 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:34,995 - PublisherAppln - INFO - altitude,12734
+2023-02-11 23:41:34,995 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:35,996 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:35,996 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:41:35,996 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:35,996 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:35,996 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:35,996 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:35,996 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:35,996 - PublisherAppln - INFO - temperature,-91
+2023-02-11 23:41:35,996 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:35,996 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:35,996 - PublisherAppln - INFO - humidity,35.353259078456546
+2023-02-11 23:41:35,996 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:35,996 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:35,996 - PublisherAppln - INFO - altitude,21492
+2023-02-11 23:41:35,997 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:36,998 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:36,998 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:41:36,998 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:36,998 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:36,998 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:36,998 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:36,998 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:36,998 - PublisherAppln - INFO - temperature,-89
+2023-02-11 23:41:36,998 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:36,998 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:36,998 - PublisherAppln - INFO - humidity,32.36540918436333
+2023-02-11 23:41:36,998 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:36,998 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:36,998 - PublisherAppln - INFO - altitude,4340
+2023-02-11 23:41:36,998 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:37,999 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:37,999 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:41:37,999 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:38,000 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:38,000 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:38,000 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:38,000 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:38,000 - PublisherAppln - INFO - temperature,-31
+2023-02-11 23:41:38,000 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:38,000 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:38,000 - PublisherAppln - INFO - humidity,51.65969655165388
+2023-02-11 23:41:38,000 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:38,000 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:38,000 - PublisherAppln - INFO - altitude,15001
+2023-02-11 23:41:38,000 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:39,000 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:39,000 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:41:39,001 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:39,001 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:39,001 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:39,001 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:39,001 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:39,001 - PublisherAppln - INFO - temperature,17
+2023-02-11 23:41:39,001 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:39,001 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:39,001 - PublisherAppln - INFO - humidity,45.93548244764646
+2023-02-11 23:41:39,001 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:39,001 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:39,001 - PublisherAppln - INFO - altitude,8886
+2023-02-11 23:41:39,001 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:40,002 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:40,002 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:41:40,002 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:40,002 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:40,002 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:40,002 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:40,003 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:40,003 - PublisherAppln - INFO - temperature,87
+2023-02-11 23:41:40,003 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:40,003 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:40,003 - PublisherAppln - INFO - humidity,66.46456785280085
+2023-02-11 23:41:40,003 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:40,003 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:40,003 - PublisherAppln - INFO - altitude,7236
+2023-02-11 23:41:40,003 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:41,004 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:41,004 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:41:41,004 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:41,004 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:41,004 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:41,004 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:41,004 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:41,004 - PublisherAppln - INFO - temperature,29
+2023-02-11 23:41:41,004 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:41,004 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:41,004 - PublisherAppln - INFO - humidity,95.39628132852951
+2023-02-11 23:41:41,004 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:41,004 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:41,004 - PublisherAppln - INFO - altitude,3808
+2023-02-11 23:41:41,005 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:42,006 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:42,006 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:41:42,006 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:42,006 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:42,006 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:42,006 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:42,006 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:42,006 - PublisherAppln - INFO - temperature,53
+2023-02-11 23:41:42,006 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:42,006 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:42,006 - PublisherAppln - INFO - humidity,80.27682837005507
+2023-02-11 23:41:42,006 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:42,006 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:42,006 - PublisherAppln - INFO - altitude,33819
+2023-02-11 23:41:42,006 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:43,007 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:43,007 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:41:43,008 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:43,008 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:43,008 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:43,008 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:43,008 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:43,008 - PublisherAppln - INFO - temperature,-86
+2023-02-11 23:41:43,008 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:43,008 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:43,008 - PublisherAppln - INFO - humidity,72.64182307070843
+2023-02-11 23:41:43,008 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:43,008 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:43,008 - PublisherAppln - INFO - altitude,43
+2023-02-11 23:41:43,008 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:44,009 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:44,009 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:41:44,009 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:44,009 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:44,009 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:44,009 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:44,009 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:44,009 - PublisherAppln - INFO - temperature,-9
+2023-02-11 23:41:44,009 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:44,009 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:44,009 - PublisherAppln - INFO - humidity,19.416812639626144
+2023-02-11 23:41:44,009 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:44,009 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:44,009 - PublisherAppln - INFO - altitude,5373
+2023-02-11 23:41:44,009 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:45,011 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:45,011 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:41:45,011 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:45,011 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:45,011 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:45,011 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:45,011 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:45,011 - PublisherAppln - INFO - temperature,-78
+2023-02-11 23:41:45,011 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:45,011 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:45,011 - PublisherAppln - INFO - humidity,61.639518557928966
+2023-02-11 23:41:45,011 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:45,011 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:45,011 - PublisherAppln - INFO - altitude,25933
+2023-02-11 23:41:45,011 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:46,012 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:46,012 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:41:46,012 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:46,013 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:46,013 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:46,013 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:46,013 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:46,013 - PublisherAppln - INFO - temperature,-86
+2023-02-11 23:41:46,013 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:46,013 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:46,013 - PublisherAppln - INFO - humidity,15.600446811275486
+2023-02-11 23:41:46,013 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:46,013 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:46,013 - PublisherAppln - INFO - altitude,5473
+2023-02-11 23:41:46,013 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:47,014 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:47,014 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:41:47,015 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:47,015 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:47,015 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:47,015 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:47,015 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:47,015 - PublisherAppln - INFO - temperature,-38
+2023-02-11 23:41:47,015 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:47,015 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:47,015 - PublisherAppln - INFO - humidity,41.863308585857
+2023-02-11 23:41:47,015 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:47,015 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:47,015 - PublisherAppln - INFO - altitude,33914
+2023-02-11 23:41:47,015 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:48,016 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:48,016 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:41:48,016 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:48,016 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:48,016 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:48,016 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:48,016 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:48,016 - PublisherAppln - INFO - temperature,6
+2023-02-11 23:41:48,016 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:48,016 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:48,016 - PublisherAppln - INFO - humidity,54.170606379403026
+2023-02-11 23:41:48,016 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:48,016 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:48,017 - PublisherAppln - INFO - altitude,1569
+2023-02-11 23:41:48,017 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:49,017 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:49,018 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:41:49,018 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:49,018 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:49,018 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:49,018 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:49,018 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:49,018 - PublisherAppln - INFO - temperature,31
+2023-02-11 23:41:49,018 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:49,018 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:49,018 - PublisherAppln - INFO - humidity,10.689375577076847
+2023-02-11 23:41:49,018 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:49,018 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:49,018 - PublisherAppln - INFO - altitude,37732
+2023-02-11 23:41:49,018 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:50,018 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:50,019 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:41:50,019 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:50,019 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:50,019 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:50,019 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:50,019 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:50,019 - PublisherAppln - INFO - temperature,-3
+2023-02-11 23:41:50,019 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:50,019 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:50,019 - PublisherAppln - INFO - humidity,90.59960589152426
+2023-02-11 23:41:50,019 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:50,019 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:50,019 - PublisherAppln - INFO - altitude,38394
+2023-02-11 23:41:50,019 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:51,020 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:51,021 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:41:51,021 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:51,021 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:51,021 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:51,021 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:51,021 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:51,021 - PublisherAppln - INFO - temperature,44
+2023-02-11 23:41:51,021 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:51,021 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:51,021 - PublisherAppln - INFO - humidity,88.687713550842
+2023-02-11 23:41:51,021 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:51,021 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:51,021 - PublisherAppln - INFO - altitude,20630
+2023-02-11 23:41:51,021 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:52,022 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:52,022 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:41:52,022 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:52,022 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:52,022 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:52,022 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:52,022 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:52,022 - PublisherAppln - INFO - temperature,-71
+2023-02-11 23:41:52,022 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:52,022 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:52,023 - PublisherAppln - INFO - humidity,73.86595369848214
+2023-02-11 23:41:52,023 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:52,023 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:52,023 - PublisherAppln - INFO - altitude,30507
+2023-02-11 23:41:52,023 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:53,025 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:53,025 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:41:53,025 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:53,025 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:53,025 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:53,025 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:53,025 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:53,025 - PublisherAppln - INFO - temperature,-33
+2023-02-11 23:41:53,025 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:53,025 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:53,025 - PublisherAppln - INFO - humidity,40.41320853506108
+2023-02-11 23:41:53,025 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:53,025 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:53,025 - PublisherAppln - INFO - altitude,14666
+2023-02-11 23:41:53,025 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:54,027 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:54,027 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:41:54,027 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:54,027 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:54,027 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:54,027 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:54,027 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:54,027 - PublisherAppln - INFO - temperature,48
+2023-02-11 23:41:54,027 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:54,027 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:54,027 - PublisherAppln - INFO - humidity,10.554139173800836
+2023-02-11 23:41:54,027 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:54,027 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:54,027 - PublisherAppln - INFO - altitude,10182
+2023-02-11 23:41:54,027 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:55,029 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:55,029 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:41:55,029 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:55,029 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:55,029 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:55,029 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:55,029 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:55,029 - PublisherAppln - INFO - temperature,-99
+2023-02-11 23:41:55,029 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:55,029 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:55,029 - PublisherAppln - INFO - humidity,64.96321554123298
+2023-02-11 23:41:55,029 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:55,029 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:55,029 - PublisherAppln - INFO - altitude,37056
+2023-02-11 23:41:55,029 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:56,030 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:56,031 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:41:56,031 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:56,031 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:56,031 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:56,031 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:56,031 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:56,031 - PublisherAppln - INFO - temperature,-53
+2023-02-11 23:41:56,031 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:56,031 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:56,031 - PublisherAppln - INFO - humidity,16.699333424489637
+2023-02-11 23:41:56,031 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:56,031 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:56,031 - PublisherAppln - INFO - altitude,27539
+2023-02-11 23:41:56,031 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:57,033 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:57,033 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:41:57,033 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:57,033 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:57,033 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:57,033 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:57,033 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:57,033 - PublisherAppln - INFO - temperature,37
+2023-02-11 23:41:57,033 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:57,033 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:57,033 - PublisherAppln - INFO - humidity,55.5953838482975
+2023-02-11 23:41:57,033 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:57,033 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:57,033 - PublisherAppln - INFO - altitude,822
+2023-02-11 23:41:57,033 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:58,034 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:58,034 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:41:58,035 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:58,035 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:58,035 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:58,035 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:58,035 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:58,035 - PublisherAppln - INFO - temperature,32
+2023-02-11 23:41:58,035 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:58,035 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:58,035 - PublisherAppln - INFO - humidity,55.1635872927839
+2023-02-11 23:41:58,035 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:58,035 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:58,035 - PublisherAppln - INFO - altitude,10556
+2023-02-11 23:41:58,035 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:59,036 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:59,036 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:41:59,037 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:59,037 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:59,037 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:59,037 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:59,037 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:59,037 - PublisherAppln - INFO - temperature,17
+2023-02-11 23:41:59,037 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:59,037 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:59,037 - PublisherAppln - INFO - humidity,13.752097331958893
+2023-02-11 23:41:59,037 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:59,037 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:59,037 - PublisherAppln - INFO - altitude,9298
+2023-02-11 23:41:59,037 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:00,038 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:00,039 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:42:00,039 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:00,039 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:00,039 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:00,039 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:00,039 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:00,039 - PublisherAppln - INFO - temperature,-5
+2023-02-11 23:42:00,039 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:00,039 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:00,039 - PublisherAppln - INFO - humidity,26.78483017678708
+2023-02-11 23:42:00,039 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:00,039 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:00,039 - PublisherAppln - INFO - altitude,11387
+2023-02-11 23:42:00,039 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:01,040 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:01,040 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:42:01,041 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:01,041 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:01,041 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:01,041 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:01,041 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:01,041 - PublisherAppln - INFO - temperature,-28
+2023-02-11 23:42:01,041 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:01,041 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:01,041 - PublisherAppln - INFO - humidity,54.31863999716301
+2023-02-11 23:42:01,041 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:01,041 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:01,041 - PublisherAppln - INFO - altitude,20747
+2023-02-11 23:42:01,041 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:02,042 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:02,042 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:42:02,042 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:02,042 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:02,042 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:02,042 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:02,043 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:02,043 - PublisherAppln - INFO - temperature,60
+2023-02-11 23:42:02,043 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:02,043 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:02,043 - PublisherAppln - INFO - humidity,58.010520444030774
+2023-02-11 23:42:02,043 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:02,043 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:02,043 - PublisherAppln - INFO - altitude,27968
+2023-02-11 23:42:02,043 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:03,044 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:03,044 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:42:03,044 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:03,044 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:03,044 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:03,044 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:03,044 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:03,044 - PublisherAppln - INFO - temperature,99
+2023-02-11 23:42:03,044 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:03,045 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:03,045 - PublisherAppln - INFO - humidity,93.14791341322255
+2023-02-11 23:42:03,045 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:03,045 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:03,045 - PublisherAppln - INFO - altitude,33819
+2023-02-11 23:42:03,045 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:04,046 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:04,046 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:42:04,046 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:04,046 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:04,046 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:04,046 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:04,046 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:04,046 - PublisherAppln - INFO - temperature,89
+2023-02-11 23:42:04,046 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:04,046 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:04,046 - PublisherAppln - INFO - humidity,10.04655173882474
+2023-02-11 23:42:04,046 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:04,046 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:04,046 - PublisherAppln - INFO - altitude,20357
+2023-02-11 23:42:04,047 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:05,047 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:05,047 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:42:05,047 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:05,047 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:05,047 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:05,047 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:05,047 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:05,047 - PublisherAppln - INFO - temperature,-60
+2023-02-11 23:42:05,047 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:05,047 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:05,047 - PublisherAppln - INFO - humidity,79.28518029188506
+2023-02-11 23:42:05,047 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:05,047 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:05,047 - PublisherAppln - INFO - altitude,22663
+2023-02-11 23:42:05,047 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:06,049 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:06,049 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:42:06,049 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:06,049 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:06,049 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:06,049 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:06,049 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:06,049 - PublisherAppln - INFO - temperature,58
+2023-02-11 23:42:06,049 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:06,049 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:06,049 - PublisherAppln - INFO - humidity,53.55930627632966
+2023-02-11 23:42:06,049 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:06,049 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:06,049 - PublisherAppln - INFO - altitude,36852
+2023-02-11 23:42:06,049 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:07,050 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:07,051 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:42:07,051 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:07,051 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:07,051 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:07,051 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:07,051 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:07,051 - PublisherAppln - INFO - temperature,-23
+2023-02-11 23:42:07,051 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:07,051 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:07,051 - PublisherAppln - INFO - humidity,55.38249818969865
+2023-02-11 23:42:07,051 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:07,051 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:07,051 - PublisherAppln - INFO - altitude,34904
+2023-02-11 23:42:07,051 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:08,052 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:08,053 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:42:08,053 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:08,053 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:08,053 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:08,053 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:08,053 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:08,053 - PublisherAppln - INFO - temperature,-34
+2023-02-11 23:42:08,053 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:08,053 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:08,053 - PublisherAppln - INFO - humidity,64.22586446420807
+2023-02-11 23:42:08,053 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:08,053 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:08,053 - PublisherAppln - INFO - altitude,1868
+2023-02-11 23:42:08,053 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:09,054 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:09,054 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:42:09,055 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:09,055 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:09,055 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:09,055 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:09,055 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:09,055 - PublisherAppln - INFO - temperature,44
+2023-02-11 23:42:09,055 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:09,055 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:09,055 - PublisherAppln - INFO - humidity,13.484756156002035
+2023-02-11 23:42:09,055 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:09,055 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:09,055 - PublisherAppln - INFO - altitude,11522
+2023-02-11 23:42:09,055 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:10,056 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:10,056 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:42:10,057 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:10,057 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:10,057 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:10,057 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:10,057 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:10,057 - PublisherAppln - INFO - temperature,-15
+2023-02-11 23:42:10,057 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:10,057 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:10,057 - PublisherAppln - INFO - humidity,60.65894638318712
+2023-02-11 23:42:10,057 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:10,057 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:10,057 - PublisherAppln - INFO - altitude,13706
+2023-02-11 23:42:10,057 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:11,058 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:11,058 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:42:11,059 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:11,059 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:11,059 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:11,059 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:11,059 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:11,059 - PublisherAppln - INFO - temperature,74
+2023-02-11 23:42:11,059 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:11,059 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:11,059 - PublisherAppln - INFO - humidity,96.29588508172169
+2023-02-11 23:42:11,059 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:11,059 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:11,059 - PublisherAppln - INFO - altitude,19040
+2023-02-11 23:42:11,059 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:12,060 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:12,060 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:42:12,060 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:12,060 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:12,060 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:12,061 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:12,061 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:12,061 - PublisherAppln - INFO - temperature,55
+2023-02-11 23:42:12,061 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:12,061 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:12,061 - PublisherAppln - INFO - humidity,62.87495114159464
+2023-02-11 23:42:12,061 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:12,061 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:12,061 - PublisherAppln - INFO - altitude,18395
+2023-02-11 23:42:12,061 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:13,062 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:13,062 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:42:13,062 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:13,062 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:13,062 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:13,062 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:13,062 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:13,062 - PublisherAppln - INFO - temperature,33
+2023-02-11 23:42:13,062 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:13,062 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:13,062 - PublisherAppln - INFO - humidity,13.857490729801762
+2023-02-11 23:42:13,063 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:13,063 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:13,063 - PublisherAppln - INFO - altitude,38117
+2023-02-11 23:42:13,063 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:14,064 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:14,064 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:42:14,064 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:14,064 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:14,064 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:14,064 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:14,064 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:14,064 - PublisherAppln - INFO - temperature,-6
+2023-02-11 23:42:14,064 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:14,064 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:14,064 - PublisherAppln - INFO - humidity,85.83458914687759
+2023-02-11 23:42:14,064 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:14,064 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:14,064 - PublisherAppln - INFO - altitude,33569
+2023-02-11 23:42:14,064 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:15,065 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:15,065 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:42:15,066 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:15,066 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:15,066 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:15,066 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:15,066 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:15,066 - PublisherAppln - INFO - temperature,26
+2023-02-11 23:42:15,066 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:15,066 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:15,066 - PublisherAppln - INFO - humidity,99.29924108907416
+2023-02-11 23:42:15,066 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:15,066 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:15,066 - PublisherAppln - INFO - altitude,14233
+2023-02-11 23:42:15,066 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:16,067 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:16,067 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:42:16,067 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:16,067 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:16,067 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:16,067 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:16,067 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:16,067 - PublisherAppln - INFO - temperature,94
+2023-02-11 23:42:16,067 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:16,067 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:16,067 - PublisherAppln - INFO - humidity,25.59326466892378
+2023-02-11 23:42:16,067 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:16,067 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:16,067 - PublisherAppln - INFO - altitude,19327
+2023-02-11 23:42:16,067 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:17,069 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:17,069 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:42:17,069 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:17,069 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:17,069 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:17,069 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:17,069 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:17,069 - PublisherAppln - INFO - temperature,-53
+2023-02-11 23:42:17,069 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:17,069 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:17,069 - PublisherAppln - INFO - humidity,15.873615958206246
+2023-02-11 23:42:17,069 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:17,070 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:17,070 - PublisherAppln - INFO - altitude,23874
+2023-02-11 23:42:17,070 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:18,070 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:18,070 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:42:18,071 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:18,071 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:18,071 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:18,071 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:18,071 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:18,071 - PublisherAppln - INFO - temperature,70
+2023-02-11 23:42:18,071 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:18,071 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:18,071 - PublisherAppln - INFO - humidity,18.356794682669495
+2023-02-11 23:42:18,071 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:18,071 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:18,071 - PublisherAppln - INFO - altitude,31809
+2023-02-11 23:42:18,071 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:19,072 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:19,073 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:42:19,073 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:19,073 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:19,073 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:19,073 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:19,073 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:19,073 - PublisherAppln - INFO - temperature,-39
+2023-02-11 23:42:19,073 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:19,073 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:19,073 - PublisherAppln - INFO - humidity,27.538580129613404
+2023-02-11 23:42:19,073 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:19,073 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:19,073 - PublisherAppln - INFO - altitude,6888
+2023-02-11 23:42:19,073 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:20,074 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:20,074 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:42:20,074 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:20,074 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:20,074 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:20,074 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:20,074 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:20,074 - PublisherAppln - INFO - temperature,-83
+2023-02-11 23:42:20,075 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:20,075 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:20,075 - PublisherAppln - INFO - humidity,74.8017452957787
+2023-02-11 23:42:20,075 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:20,075 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:20,075 - PublisherAppln - INFO - altitude,28486
+2023-02-11 23:42:20,075 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:21,076 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:21,076 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:42:21,076 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:21,076 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:21,076 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:21,076 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:21,076 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:21,076 - PublisherAppln - INFO - temperature,-41
+2023-02-11 23:42:21,076 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:21,076 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:21,076 - PublisherAppln - INFO - humidity,37.09100437556242
+2023-02-11 23:42:21,076 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:21,076 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:21,076 - PublisherAppln - INFO - altitude,38738
+2023-02-11 23:42:21,076 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:22,077 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:22,078 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:42:22,078 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:22,078 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:22,078 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:22,078 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:22,078 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:22,078 - PublisherAppln - INFO - temperature,12
+2023-02-11 23:42:22,078 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:22,078 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:22,078 - PublisherAppln - INFO - humidity,76.55707188952265
+2023-02-11 23:42:22,078 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:22,078 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:22,078 - PublisherAppln - INFO - altitude,38712
+2023-02-11 23:42:22,078 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:23,079 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:23,080 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:42:23,080 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:23,080 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:23,080 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:23,080 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:23,080 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:23,080 - PublisherAppln - INFO - temperature,-7
+2023-02-11 23:42:23,080 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:23,080 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:23,080 - PublisherAppln - INFO - humidity,60.42845155421567
+2023-02-11 23:42:23,080 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:23,080 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:23,080 - PublisherAppln - INFO - altitude,2333
+2023-02-11 23:42:23,080 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:24,081 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:24,081 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:42:24,081 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:24,081 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:24,081 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:24,082 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:24,082 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:24,082 - PublisherAppln - INFO - temperature,-23
+2023-02-11 23:42:24,082 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:24,082 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:24,082 - PublisherAppln - INFO - humidity,37.27059754707618
+2023-02-11 23:42:24,082 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:24,082 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:24,082 - PublisherAppln - INFO - altitude,6709
+2023-02-11 23:42:24,082 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:25,082 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:25,082 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:42:25,082 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:25,082 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:25,082 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:25,083 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:25,083 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:25,083 - PublisherAppln - INFO - temperature,-94
+2023-02-11 23:42:25,083 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:25,083 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:25,083 - PublisherAppln - INFO - humidity,64.65147477464959
+2023-02-11 23:42:25,083 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:25,083 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:25,083 - PublisherAppln - INFO - altitude,22211
+2023-02-11 23:42:25,083 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:26,087 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:26,087 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:42:26,087 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:26,087 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:26,087 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:26,087 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:26,087 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:26,087 - PublisherAppln - INFO - temperature,-55
+2023-02-11 23:42:26,087 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:26,087 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:26,087 - PublisherAppln - INFO - humidity,10.666983719950045
+2023-02-11 23:42:26,087 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:26,087 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:26,087 - PublisherAppln - INFO - altitude,5503
+2023-02-11 23:42:26,087 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:27,090 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:27,090 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:42:27,090 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:27,090 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:27,091 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:27,091 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:27,091 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:27,091 - PublisherAppln - INFO - temperature,-40
+2023-02-11 23:42:27,091 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:27,091 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:27,091 - PublisherAppln - INFO - humidity,59.56206953736621
+2023-02-11 23:42:27,091 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:27,091 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:27,091 - PublisherAppln - INFO - altitude,13178
+2023-02-11 23:42:27,091 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:28,092 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:28,092 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:42:28,092 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:28,092 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:28,092 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:28,093 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:28,093 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:28,093 - PublisherAppln - INFO - temperature,-25
+2023-02-11 23:42:28,093 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:28,093 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:28,093 - PublisherAppln - INFO - humidity,51.381019084511784
+2023-02-11 23:42:28,093 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:28,093 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:28,093 - PublisherAppln - INFO - altitude,35824
+2023-02-11 23:42:28,093 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:29,094 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:29,094 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:42:29,094 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:29,094 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:29,094 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:29,094 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:29,094 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:29,094 - PublisherAppln - INFO - temperature,-7
+2023-02-11 23:42:29,094 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:29,094 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:29,094 - PublisherAppln - INFO - humidity,86.69144654825199
+2023-02-11 23:42:29,094 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:29,095 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:29,095 - PublisherAppln - INFO - altitude,27299
+2023-02-11 23:42:29,095 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:30,097 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:30,097 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:42:30,097 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:30,097 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:30,097 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:30,097 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:30,097 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:30,097 - PublisherAppln - INFO - temperature,-6
+2023-02-11 23:42:30,097 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:30,097 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:30,097 - PublisherAppln - INFO - humidity,19.5648715053115
+2023-02-11 23:42:30,097 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:30,098 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:30,098 - PublisherAppln - INFO - altitude,24664
+2023-02-11 23:42:30,098 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:31,098 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:31,098 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:42:31,098 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:31,098 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:31,098 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:31,099 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:31,099 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:31,099 - PublisherAppln - INFO - temperature,-49
+2023-02-11 23:42:31,099 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:31,099 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:31,099 - PublisherAppln - INFO - humidity,83.90631560503792
+2023-02-11 23:42:31,099 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:31,099 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:31,099 - PublisherAppln - INFO - altitude,24863
+2023-02-11 23:42:31,099 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:32,100 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:32,100 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:42:32,101 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:32,101 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:32,101 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:32,101 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:32,101 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:32,101 - PublisherAppln - INFO - temperature,-64
+2023-02-11 23:42:32,101 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:32,101 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:32,101 - PublisherAppln - INFO - humidity,56.37988667372092
+2023-02-11 23:42:32,101 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:32,101 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:32,101 - PublisherAppln - INFO - altitude,3224
+2023-02-11 23:42:32,101 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:33,102 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:33,102 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:42:33,102 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:33,102 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:33,102 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:33,103 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:33,103 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:33,103 - PublisherAppln - INFO - temperature,20
+2023-02-11 23:42:33,103 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:33,103 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:33,103 - PublisherAppln - INFO - humidity,11.837186311844397
+2023-02-11 23:42:33,103 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:33,103 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:33,103 - PublisherAppln - INFO - altitude,21165
+2023-02-11 23:42:33,103 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:34,104 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:34,104 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:42:34,104 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:34,104 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:34,104 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:34,104 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:34,104 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:34,104 - PublisherAppln - INFO - temperature,-78
+2023-02-11 23:42:34,104 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:34,104 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:34,104 - PublisherAppln - INFO - humidity,40.6181023803162
+2023-02-11 23:42:34,104 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:34,104 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:34,104 - PublisherAppln - INFO - altitude,4772
+2023-02-11 23:42:34,104 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:35,105 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:35,105 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:42:35,106 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:35,106 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:35,106 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:35,106 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:35,106 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:35,106 - PublisherAppln - INFO - temperature,-61
+2023-02-11 23:42:35,106 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:35,106 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:35,106 - PublisherAppln - INFO - humidity,96.46515662601968
+2023-02-11 23:42:35,106 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:35,106 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:35,106 - PublisherAppln - INFO - altitude,15561
+2023-02-11 23:42:35,106 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:36,107 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:36,107 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:42:36,107 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:36,107 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:36,107 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:36,107 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:36,107 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:36,107 - PublisherAppln - INFO - temperature,-82
+2023-02-11 23:42:36,107 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:36,107 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:36,107 - PublisherAppln - INFO - humidity,27.18501031037157
+2023-02-11 23:42:36,107 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:36,107 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:36,107 - PublisherAppln - INFO - altitude,21828
+2023-02-11 23:42:36,107 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:37,108 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:37,108 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:42:37,109 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:37,109 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:37,109 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:37,109 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:37,109 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:37,109 - PublisherAppln - INFO - temperature,-37
+2023-02-11 23:42:37,109 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:37,109 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:37,109 - PublisherAppln - INFO - humidity,14.428880504298895
+2023-02-11 23:42:37,109 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:37,109 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:37,109 - PublisherAppln - INFO - altitude,31907
+2023-02-11 23:42:37,109 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:38,113 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:38,113 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:42:38,113 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:38,113 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:38,113 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:38,113 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:38,114 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:38,114 - PublisherAppln - INFO - temperature,-71
+2023-02-11 23:42:38,114 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:38,114 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:38,114 - PublisherAppln - INFO - humidity,80.51355692408626
+2023-02-11 23:42:38,114 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:38,114 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:38,114 - PublisherAppln - INFO - altitude,30101
+2023-02-11 23:42:38,114 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:39,115 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:39,115 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:42:39,115 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:39,115 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:39,115 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:39,115 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:39,115 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:39,115 - PublisherAppln - INFO - temperature,97
+2023-02-11 23:42:39,115 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:39,116 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:39,116 - PublisherAppln - INFO - humidity,69.93359411354592
+2023-02-11 23:42:39,116 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:39,116 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:39,116 - PublisherAppln - INFO - altitude,36532
+2023-02-11 23:42:39,116 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:40,117 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:40,117 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:42:40,117 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:40,117 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:40,117 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:40,117 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:40,117 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:40,117 - PublisherAppln - INFO - temperature,89
+2023-02-11 23:42:40,118 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:40,118 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:40,118 - PublisherAppln - INFO - humidity,92.67313690404592
+2023-02-11 23:42:40,118 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:40,118 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:40,118 - PublisherAppln - INFO - altitude,1126
+2023-02-11 23:42:40,118 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:41,119 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:41,119 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:42:41,119 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:41,119 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:41,119 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:41,119 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:41,119 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:41,119 - PublisherAppln - INFO - temperature,-82
+2023-02-11 23:42:41,119 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:41,119 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:41,119 - PublisherAppln - INFO - humidity,65.9372607310795
+2023-02-11 23:42:41,120 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:41,120 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:41,120 - PublisherAppln - INFO - altitude,39490
+2023-02-11 23:42:41,120 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:42,121 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:42,121 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:42:42,122 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:42,122 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:42,122 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:42,122 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:42,122 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:42,122 - PublisherAppln - INFO - temperature,81
+2023-02-11 23:42:42,122 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:42,122 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:42,122 - PublisherAppln - INFO - humidity,14.061738919017099
+2023-02-11 23:42:42,122 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:42,122 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:42,122 - PublisherAppln - INFO - altitude,1548
+2023-02-11 23:42:42,122 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:43,123 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:43,123 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:42:43,123 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:43,123 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:43,123 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:43,123 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:43,124 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:43,124 - PublisherAppln - INFO - temperature,2
+2023-02-11 23:42:43,124 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:43,124 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:43,124 - PublisherAppln - INFO - humidity,30.60204358989097
+2023-02-11 23:42:43,124 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:43,124 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:43,124 - PublisherAppln - INFO - altitude,33429
+2023-02-11 23:42:43,124 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:44,126 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:44,126 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:42:44,126 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:44,126 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:44,126 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:44,126 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:44,127 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:44,127 - PublisherAppln - INFO - temperature,-22
+2023-02-11 23:42:44,127 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:44,127 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:44,127 - PublisherAppln - INFO - humidity,12.270433037979288
+2023-02-11 23:42:44,127 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:44,127 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:44,127 - PublisherAppln - INFO - altitude,4987
+2023-02-11 23:42:44,127 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:45,128 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:45,128 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:42:45,128 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:45,128 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:45,128 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:45,128 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:45,128 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:45,128 - PublisherAppln - INFO - temperature,-51
+2023-02-11 23:42:45,128 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:45,128 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:45,128 - PublisherAppln - INFO - humidity,70.90547161724564
+2023-02-11 23:42:45,128 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:45,128 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:45,128 - PublisherAppln - INFO - altitude,9570
+2023-02-11 23:42:45,128 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:46,130 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:46,130 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:42:46,130 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:46,130 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:46,130 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:46,130 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:46,130 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:46,130 - PublisherAppln - INFO - temperature,-70
+2023-02-11 23:42:46,130 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:46,130 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:46,131 - PublisherAppln - INFO - humidity,41.23181804623498
+2023-02-11 23:42:46,131 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:46,131 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:46,131 - PublisherAppln - INFO - altitude,3862
+2023-02-11 23:42:46,131 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:47,132 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:47,132 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:42:47,132 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:47,132 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:47,132 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:47,132 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:47,132 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:47,132 - PublisherAppln - INFO - temperature,-9
+2023-02-11 23:42:47,132 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:47,132 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:47,132 - PublisherAppln - INFO - humidity,27.197317727469745
+2023-02-11 23:42:47,132 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:47,132 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:47,132 - PublisherAppln - INFO - altitude,36573
+2023-02-11 23:42:47,133 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:48,133 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:48,133 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:42:48,134 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:48,134 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:48,134 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:48,134 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:48,134 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:48,134 - PublisherAppln - INFO - temperature,-34
+2023-02-11 23:42:48,134 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:48,134 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:48,134 - PublisherAppln - INFO - humidity,52.39114065108629
+2023-02-11 23:42:48,134 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:48,134 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:48,134 - PublisherAppln - INFO - altitude,33507
+2023-02-11 23:42:48,134 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:49,135 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:49,135 - PublisherAppln - INFO - weather,sunny
+2023-02-11 23:42:49,135 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:49,135 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:49,135 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:49,135 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:49,135 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:49,135 - PublisherAppln - INFO - temperature,58
+2023-02-11 23:42:49,135 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:49,135 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:49,135 - PublisherAppln - INFO - humidity,72.13833416789282
+2023-02-11 23:42:49,135 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:49,135 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:49,135 - PublisherAppln - INFO - altitude,2731
+2023-02-11 23:42:49,135 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:50,136 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:50,136 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:42:50,137 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:50,137 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:50,137 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:50,137 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:50,137 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:50,137 - PublisherAppln - INFO - temperature,-21
+2023-02-11 23:42:50,137 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:50,137 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:50,137 - PublisherAppln - INFO - humidity,39.422594652686264
+2023-02-11 23:42:50,137 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:50,137 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:50,137 - PublisherAppln - INFO - altitude,34037
+2023-02-11 23:42:50,137 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:51,137 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:51,137 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:42:51,137 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:51,137 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:51,137 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:51,138 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:51,138 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:51,138 - PublisherAppln - INFO - temperature,96
+2023-02-11 23:42:51,138 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:51,138 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:51,138 - PublisherAppln - INFO - humidity,53.36661367374248
+2023-02-11 23:42:51,138 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:51,138 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:51,138 - PublisherAppln - INFO - altitude,38567
+2023-02-11 23:42:51,138 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:52,138 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:52,139 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:42:52,139 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:52,139 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:52,139 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:52,139 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:52,139 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:52,139 - PublisherAppln - INFO - temperature,19
+2023-02-11 23:42:52,139 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:52,139 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:52,139 - PublisherAppln - INFO - humidity,27.050202968196327
+2023-02-11 23:42:52,139 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:52,139 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:52,139 - PublisherAppln - INFO - altitude,34827
+2023-02-11 23:42:52,139 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:53,140 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:53,140 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:42:53,140 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:53,140 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:53,140 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:53,140 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:53,140 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:53,140 - PublisherAppln - INFO - temperature,48
+2023-02-11 23:42:53,141 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:53,141 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:53,141 - PublisherAppln - INFO - humidity,41.26472025578782
+2023-02-11 23:42:53,141 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:53,141 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:53,141 - PublisherAppln - INFO - altitude,20566
+2023-02-11 23:42:53,141 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:54,141 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:54,141 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:42:54,141 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:54,141 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:54,141 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:54,141 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:54,141 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:54,141 - PublisherAppln - INFO - temperature,-35
+2023-02-11 23:42:54,141 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:54,141 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:54,141 - PublisherAppln - INFO - humidity,51.75843429559048
+2023-02-11 23:42:54,141 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:54,141 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:54,141 - PublisherAppln - INFO - altitude,7778
+2023-02-11 23:42:54,141 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:55,142 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:55,142 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:42:55,142 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:55,142 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:55,142 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:55,143 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:55,143 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:55,143 - PublisherAppln - INFO - temperature,99
+2023-02-11 23:42:55,143 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:55,143 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:55,143 - PublisherAppln - INFO - humidity,93.53744855425707
+2023-02-11 23:42:55,143 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:55,143 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:55,143 - PublisherAppln - INFO - altitude,34210
+2023-02-11 23:42:55,143 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:56,144 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:56,144 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:42:56,144 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:56,144 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:56,144 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:56,144 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:56,144 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:56,144 - PublisherAppln - INFO - temperature,-39
+2023-02-11 23:42:56,145 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:56,145 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:56,145 - PublisherAppln - INFO - humidity,82.30665667522486
+2023-02-11 23:42:56,145 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:56,145 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:56,145 - PublisherAppln - INFO - altitude,25330
+2023-02-11 23:42:56,145 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:57,146 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:57,146 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:42:57,146 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:57,146 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:57,146 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:57,146 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:57,146 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:57,146 - PublisherAppln - INFO - temperature,74
+2023-02-11 23:42:57,147 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:57,147 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:57,147 - PublisherAppln - INFO - humidity,94.39022675718252
+2023-02-11 23:42:57,147 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:57,147 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:57,147 - PublisherAppln - INFO - altitude,5893
+2023-02-11 23:42:57,147 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:58,148 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:58,148 - PublisherAppln - INFO - weather,cloudy
+2023-02-11 23:42:58,148 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:58,148 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:58,148 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:58,148 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:58,148 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:58,148 - PublisherAppln - INFO - temperature,89
+2023-02-11 23:42:58,148 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:58,148 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:58,148 - PublisherAppln - INFO - humidity,11.116459529534751
+2023-02-11 23:42:58,148 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:58,148 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:58,148 - PublisherAppln - INFO - altitude,10051
+2023-02-11 23:42:58,148 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:59,150 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:59,150 - PublisherAppln - INFO - weather,rainy
+2023-02-11 23:42:59,150 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:59,150 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:59,150 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:59,150 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:59,150 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:59,150 - PublisherAppln - INFO - temperature,96
+2023-02-11 23:42:59,150 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:59,150 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:59,150 - PublisherAppln - INFO - humidity,84.62255147414292
+2023-02-11 23:42:59,150 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:59,150 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:59,150 - PublisherAppln - INFO - altitude,35249
+2023-02-11 23:42:59,150 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:00,151 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:00,151 - PublisherAppln - INFO - weather,foggy
+2023-02-11 23:43:00,152 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:00,152 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:00,152 - PublisherAppln - INFO - light,1600
+2023-02-11 23:43:00,152 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:00,152 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:00,152 - PublisherAppln - INFO - temperature,-79
+2023-02-11 23:43:00,152 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:00,152 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:00,152 - PublisherAppln - INFO - humidity,85.07659475687497
+2023-02-11 23:43:00,152 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:00,152 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:00,152 - PublisherAppln - INFO - altitude,21607
+2023-02-11 23:43:00,152 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:01,153 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:01,153 - PublisherAppln - INFO - weather,icy
+2023-02-11 23:43:01,153 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:01,153 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:01,153 - PublisherAppln - INFO - light,1600
+2023-02-11 23:43:01,153 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:01,153 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:01,153 - PublisherAppln - INFO - temperature,28
+2023-02-11 23:43:01,153 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:01,154 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:01,154 - PublisherAppln - INFO - humidity,71.48751296276112
+2023-02-11 23:43:01,154 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:01,154 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:01,154 - PublisherAppln - INFO - altitude,18178
+2023-02-11 23:43:01,154 - PublisherAppln - DEBUG - PublisherMW::disseminate complete

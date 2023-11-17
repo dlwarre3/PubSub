@@ -1,0 +1,2328 @@
+2023-02-11 23:40:21,803 - root - DEBUG - Main - acquire a child logger and then log messages in the child
+2023-02-11 23:40:21,803 - PublisherAppln - DEBUG - Main: parse command line arguments
+2023-02-11 23:40:21,803 - PublisherAppln - DEBUG - Main: resetting log level to 10
+2023-02-11 23:40:21,803 - PublisherAppln - DEBUG - Main: effective log level is 10
+2023-02-11 23:40:21,804 - PublisherAppln - DEBUG - Main: obtain the publisher appln object
+2023-02-11 23:40:21,804 - PublisherAppln - DEBUG - Main: configure the publisher appln object
+2023-02-11 23:40:21,804 - PublisherAppln - DEBUG - PublisherAppln::configure
+2023-02-11 23:40:21,804 - PublisherAppln - DEBUG - PublisherAppln::configure - parsing config.ini
+2023-02-11 23:40:21,804 - PublisherAppln - DEBUG - PublisherAppln::configure - selecting our topic list
+2023-02-11 23:40:21,804 - PublisherAppln - DEBUG - PublisherAppln::configure - initialize the middleware object
+2023-02-11 23:40:21,804 - PublisherAppln - DEBUG - PublisherMW::configure
+2023-02-11 23:40:21,804 - PublisherAppln - DEBUG - PublisherMW::configure - obtain ZMQ context
+2023-02-11 23:40:21,804 - PublisherAppln - DEBUG - PublisherMW::configure - obtain the poller
+2023-02-11 23:40:21,804 - PublisherAppln - DEBUG - PublisherMW::configure - obtain REQ and PUB sockets
+2023-02-11 23:40:21,804 - PublisherAppln - DEBUG - PublisherMW::configure - register the REQ socket for incoming replies
+2023-02-11 23:40:21,804 - PublisherAppln - DEBUG - PublisherMW::configure - connect to Discovery service
+2023-02-11 23:40:21,804 - PublisherAppln - DEBUG - PublisherMW::configure - bind to the pub socket
+2023-02-11 23:40:21,804 - PublisherAppln - DEBUG - PublisherMW::configure completed
+2023-02-11 23:40:21,804 - PublisherAppln - DEBUG - PublisherAppln::configure - configuration complete
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG - Main: invoke the publisher appln driver
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG - PublisherAppln::driver
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG - **********************************
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG - PublisherAppln::dump
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG - ------------------------------
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG -      Name: pub2
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG -      Lookup: Centralized
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG -      Dissemination: Direct
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG -      Num Topics: 5
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG -      TopicList: ['sound', 'humidity', 'airquality', 'light', 'location']
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG -      Iterations: 1000
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG -      Frequency: 1
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG - **********************************
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG - PublisherAppln::driver - upcall handle
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG - PublisherMW::event_loop - run the event loop
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation - register with the discovery service
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG - PublisherMW::register
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG - PublisherMW::register - populate the Registrant Info
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG - PublisherMW::register - done populating the Registrant Info
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG - PublisherMW::register - populate the nested register req
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG - PublisherMW::register - done populating nested RegisterReq
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG - PublisherMW::register - build the outer DiscoveryReq message
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG - PublisherMW::register - done building the outer message
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG - Stringified serialized buf = b'\x08\x01\x12E\x08\x01\x12\x13\n\x04pub2\x12\x0810.0.0.3\x18\xc9+\x1a\x05sound\x1a\x08humidity\x1a\nairquality\x1a\x05light\x1a\x08location'
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG - PublisherMW::register - send stringified buffer to Discovery service
+2023-02-11 23:40:21,805 - PublisherAppln - DEBUG - PublisherMW::register - sent register message and now now wait for reply
+2023-02-11 23:40:21,871 - PublisherAppln - DEBUG - PublisherMW::handle_reply
+2023-02-11 23:40:21,871 - PublisherAppln - DEBUG - PublisherAppln::register_response
+2023-02-11 23:40:21,871 - PublisherAppln - DEBUG - PublisherAppln::register_response - registration is a success
+2023-02-11 23:40:21,871 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation
+2023-02-11 23:40:21,871 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation - check if are ready to go
+2023-02-11 23:40:21,871 - PublisherAppln - DEBUG - PublisherMW::is_ready
+2023-02-11 23:40:21,871 - PublisherAppln - DEBUG - PublisherMW::is_ready - populate the nested IsReady msg
+2023-02-11 23:40:21,871 - PublisherAppln - DEBUG - PublisherMW::is_ready - done populating nested IsReady msg
+2023-02-11 23:40:21,871 - PublisherAppln - DEBUG - PublisherMW::is_ready - build the outer DiscoveryReq message
+2023-02-11 23:40:21,871 - PublisherAppln - DEBUG - PublisherMW::is_ready - done building the outer message
+2023-02-11 23:40:21,871 - PublisherAppln - DEBUG - Stringified serialized buf = b'\x08\x02\x1a\x00'
+2023-02-11 23:40:21,871 - PublisherAppln - DEBUG - PublisherMW::is_ready - send stringified buffer to Discovery service
+2023-02-11 23:40:21,871 - PublisherAppln - DEBUG - PublisherMW::is_ready - request sent and now wait for reply
+2023-02-11 23:40:21,872 - PublisherAppln - DEBUG - PublisherMW::handle_reply
+2023-02-11 23:40:21,872 - PublisherAppln - DEBUG - PublisherAppln::isready_response
+2023-02-11 23:40:21,872 - PublisherAppln - DEBUG - PublisherAppln::driver - Not ready yet; check again
+2023-02-11 23:40:31,882 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation
+2023-02-11 23:40:31,882 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation - check if are ready to go
+2023-02-11 23:40:31,882 - PublisherAppln - DEBUG - PublisherMW::is_ready
+2023-02-11 23:40:31,882 - PublisherAppln - DEBUG - PublisherMW::is_ready - populate the nested IsReady msg
+2023-02-11 23:40:31,882 - PublisherAppln - DEBUG - PublisherMW::is_ready - done populating nested IsReady msg
+2023-02-11 23:40:31,882 - PublisherAppln - DEBUG - PublisherMW::is_ready - build the outer DiscoveryReq message
+2023-02-11 23:40:31,882 - PublisherAppln - DEBUG - PublisherMW::is_ready - done building the outer message
+2023-02-11 23:40:31,882 - PublisherAppln - DEBUG - Stringified serialized buf = b'\x08\x02\x1a\x00'
+2023-02-11 23:40:31,882 - PublisherAppln - DEBUG - PublisherMW::is_ready - send stringified buffer to Discovery service
+2023-02-11 23:40:31,882 - PublisherAppln - DEBUG - PublisherMW::is_ready - request sent and now wait for reply
+2023-02-11 23:40:31,884 - PublisherAppln - DEBUG - PublisherMW::handle_reply
+2023-02-11 23:40:31,884 - PublisherAppln - DEBUG - PublisherAppln::isready_responsestatus: true
+
+2023-02-11 23:40:31,884 - PublisherAppln - DEBUG - PublisherAppln::driver - Status success. Ready to disseminate.
+2023-02-11 23:40:31,884 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation
+2023-02-11 23:40:31,884 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation - start Disseminating
+2023-02-11 23:40:31,884 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:31,884 - PublisherAppln - INFO - sound,90
+2023-02-11 23:40:31,884 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:31,884 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:31,884 - PublisherAppln - INFO - humidity,17.008822011417983
+2023-02-11 23:40:31,884 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:31,884 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:31,884 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:40:31,884 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:31,884 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:31,884 - PublisherAppln - INFO - light,1600
+2023-02-11 23:40:31,884 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:31,884 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:31,884 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:40:31,884 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:32,885 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:32,885 - PublisherAppln - INFO - sound,69
+2023-02-11 23:40:32,885 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:32,885 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:32,885 - PublisherAppln - INFO - humidity,45.50361360540901
+2023-02-11 23:40:32,885 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:32,885 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:32,885 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:32,885 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:32,885 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:32,885 - PublisherAppln - INFO - light,1600
+2023-02-11 23:40:32,885 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:32,885 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:32,885 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:40:32,885 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:33,886 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:33,887 - PublisherAppln - INFO - sound,46
+2023-02-11 23:40:33,887 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:33,887 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:33,887 - PublisherAppln - INFO - humidity,49.75512018431713
+2023-02-11 23:40:33,887 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:33,887 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:33,887 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:33,887 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:33,887 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:33,887 - PublisherAppln - INFO - light,1600
+2023-02-11 23:40:33,887 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:33,887 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:33,887 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:40:33,888 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:34,889 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:34,889 - PublisherAppln - INFO - sound,90
+2023-02-11 23:40:34,889 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:34,889 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:34,889 - PublisherAppln - INFO - humidity,72.65850526765041
+2023-02-11 23:40:34,889 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:34,889 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:34,889 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:40:34,889 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:34,889 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:34,889 - PublisherAppln - INFO - light,1600
+2023-02-11 23:40:34,889 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:34,889 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:34,889 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:40:34,889 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:35,890 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:35,890 - PublisherAppln - INFO - sound,37
+2023-02-11 23:40:35,890 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:35,891 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:35,891 - PublisherAppln - INFO - humidity,51.320506211121184
+2023-02-11 23:40:35,891 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:35,891 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:35,891 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:40:35,891 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:35,891 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:35,891 - PublisherAppln - INFO - light,450
+2023-02-11 23:40:35,891 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:35,891 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:35,891 - PublisherAppln - INFO - location,America
+2023-02-11 23:40:35,891 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:36,892 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:36,892 - PublisherAppln - INFO - sound,57
+2023-02-11 23:40:36,892 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:36,892 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:36,892 - PublisherAppln - INFO - humidity,94.71716251435737
+2023-02-11 23:40:36,892 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:36,892 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:36,892 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:40:36,892 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:36,892 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:36,892 - PublisherAppln - INFO - light,1600
+2023-02-11 23:40:36,892 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:36,892 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:36,892 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:40:36,892 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:37,894 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:37,894 - PublisherAppln - INFO - sound,36
+2023-02-11 23:40:37,894 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:37,894 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:37,894 - PublisherAppln - INFO - humidity,66.80440806110866
+2023-02-11 23:40:37,894 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:37,894 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:37,894 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:37,894 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:37,894 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:37,894 - PublisherAppln - INFO - light,800
+2023-02-11 23:40:37,894 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:37,894 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:37,894 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:40:37,894 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:38,895 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:38,895 - PublisherAppln - INFO - sound,81
+2023-02-11 23:40:38,896 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:38,896 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:38,896 - PublisherAppln - INFO - humidity,71.25900117765042
+2023-02-11 23:40:38,896 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:38,896 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:38,896 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:40:38,896 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:38,896 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:38,896 - PublisherAppln - INFO - light,450
+2023-02-11 23:40:38,896 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:38,896 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:38,896 - PublisherAppln - INFO - location,America
+2023-02-11 23:40:38,896 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:39,897 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:39,897 - PublisherAppln - INFO - sound,70
+2023-02-11 23:40:39,897 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:39,897 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:39,897 - PublisherAppln - INFO - humidity,24.03424487938665
+2023-02-11 23:40:39,897 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:39,897 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:39,897 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:40:39,897 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:39,897 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:39,897 - PublisherAppln - INFO - light,450
+2023-02-11 23:40:39,897 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:39,897 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:39,897 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:40:39,897 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:40,898 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:40,899 - PublisherAppln - INFO - sound,39
+2023-02-11 23:40:40,899 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:40,899 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:40,899 - PublisherAppln - INFO - humidity,43.4828268139098
+2023-02-11 23:40:40,899 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:40,899 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:40,899 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:40:40,899 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:40,899 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:40,899 - PublisherAppln - INFO - light,450
+2023-02-11 23:40:40,899 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:40,899 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:40,899 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:40:40,899 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:41,900 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:41,900 - PublisherAppln - INFO - sound,81
+2023-02-11 23:40:41,901 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:41,901 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:41,901 - PublisherAppln - INFO - humidity,12.385031434594774
+2023-02-11 23:40:41,901 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:41,901 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:41,901 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:40:41,901 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:41,901 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:41,901 - PublisherAppln - INFO - light,1600
+2023-02-11 23:40:41,901 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:41,901 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:41,901 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:40:41,901 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:42,902 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:42,902 - PublisherAppln - INFO - sound,56
+2023-02-11 23:40:42,903 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:42,903 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:42,903 - PublisherAppln - INFO - humidity,18.34789131141553
+2023-02-11 23:40:42,903 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:42,903 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:42,903 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:42,903 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:42,903 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:42,903 - PublisherAppln - INFO - light,1600
+2023-02-11 23:40:42,903 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:42,903 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:42,903 - PublisherAppln - INFO - location,America
+2023-02-11 23:40:42,903 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:43,904 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:43,904 - PublisherAppln - INFO - sound,71
+2023-02-11 23:40:43,904 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:43,904 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:43,904 - PublisherAppln - INFO - humidity,61.61943137289975
+2023-02-11 23:40:43,904 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:43,904 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:43,905 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:43,905 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:43,905 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:43,905 - PublisherAppln - INFO - light,1600
+2023-02-11 23:40:43,905 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:43,905 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:43,905 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:40:43,905 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:44,906 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:44,906 - PublisherAppln - INFO - sound,92
+2023-02-11 23:40:44,906 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:44,906 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:44,906 - PublisherAppln - INFO - humidity,94.1697821283308
+2023-02-11 23:40:44,906 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:44,906 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:44,906 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:40:44,906 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:44,906 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:44,906 - PublisherAppln - INFO - light,800
+2023-02-11 23:40:44,906 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:44,906 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:44,906 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:40:44,906 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:45,907 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:45,907 - PublisherAppln - INFO - sound,76
+2023-02-11 23:40:45,907 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:45,907 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:45,907 - PublisherAppln - INFO - humidity,97.9517644230288
+2023-02-11 23:40:45,907 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:45,907 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:45,907 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:40:45,908 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:45,908 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:45,908 - PublisherAppln - INFO - light,1100
+2023-02-11 23:40:45,908 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:45,908 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:45,908 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:40:45,908 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:46,909 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:46,909 - PublisherAppln - INFO - sound,80
+2023-02-11 23:40:46,909 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:46,909 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:46,909 - PublisherAppln - INFO - humidity,33.142922214552286
+2023-02-11 23:40:46,909 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:46,909 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:46,909 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:46,909 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:46,909 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:46,909 - PublisherAppln - INFO - light,1100
+2023-02-11 23:40:46,909 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:46,909 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:46,909 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:40:46,909 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:47,910 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:47,910 - PublisherAppln - INFO - sound,33
+2023-02-11 23:40:47,910 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:47,910 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:47,910 - PublisherAppln - INFO - humidity,56.64148138249356
+2023-02-11 23:40:47,910 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:47,910 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:47,910 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:47,911 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:47,911 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:47,911 - PublisherAppln - INFO - light,1100
+2023-02-11 23:40:47,911 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:47,911 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:47,911 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:40:47,911 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:48,912 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:48,912 - PublisherAppln - INFO - sound,42
+2023-02-11 23:40:48,912 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:48,912 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:48,912 - PublisherAppln - INFO - humidity,93.8213741944025
+2023-02-11 23:40:48,912 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:48,912 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:48,912 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:40:48,912 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:48,912 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:48,912 - PublisherAppln - INFO - light,450
+2023-02-11 23:40:48,912 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:48,912 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:48,912 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:40:48,912 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:49,914 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:49,914 - PublisherAppln - INFO - sound,63
+2023-02-11 23:40:49,914 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:49,914 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:49,914 - PublisherAppln - INFO - humidity,61.44300514655032
+2023-02-11 23:40:49,914 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:49,914 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:49,914 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:49,914 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:49,914 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:49,914 - PublisherAppln - INFO - light,1100
+2023-02-11 23:40:49,914 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:49,914 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:49,914 - PublisherAppln - INFO - location,America
+2023-02-11 23:40:49,914 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:50,915 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:50,915 - PublisherAppln - INFO - sound,63
+2023-02-11 23:40:50,915 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:50,915 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:50,915 - PublisherAppln - INFO - humidity,99.60160555423745
+2023-02-11 23:40:50,916 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:50,916 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:50,916 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:40:50,916 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:50,916 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:50,916 - PublisherAppln - INFO - light,1100
+2023-02-11 23:40:50,916 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:50,916 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:50,916 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:40:50,916 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:51,916 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:51,916 - PublisherAppln - INFO - sound,56
+2023-02-11 23:40:51,917 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:51,917 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:51,917 - PublisherAppln - INFO - humidity,17.63152416355812
+2023-02-11 23:40:51,917 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:51,917 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:51,917 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:51,917 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:51,917 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:51,917 - PublisherAppln - INFO - light,1100
+2023-02-11 23:40:51,917 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:51,917 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:51,917 - PublisherAppln - INFO - location,America
+2023-02-11 23:40:51,917 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:52,918 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:52,918 - PublisherAppln - INFO - sound,36
+2023-02-11 23:40:52,918 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:52,918 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:52,918 - PublisherAppln - INFO - humidity,39.52800843207794
+2023-02-11 23:40:52,918 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:52,918 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:52,918 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:52,918 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:52,918 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:52,918 - PublisherAppln - INFO - light,1100
+2023-02-11 23:40:52,919 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:52,919 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:52,919 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:40:52,919 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:53,920 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:53,920 - PublisherAppln - INFO - sound,47
+2023-02-11 23:40:53,920 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:53,920 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:53,920 - PublisherAppln - INFO - humidity,67.96517830694681
+2023-02-11 23:40:53,920 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:53,920 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:53,920 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:53,920 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:53,920 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:53,920 - PublisherAppln - INFO - light,1600
+2023-02-11 23:40:53,920 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:53,920 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:53,920 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:40:53,920 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:54,922 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:54,922 - PublisherAppln - INFO - sound,56
+2023-02-11 23:40:54,922 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:54,922 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:54,922 - PublisherAppln - INFO - humidity,37.712904901929306
+2023-02-11 23:40:54,922 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:54,922 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:54,922 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:40:54,922 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:54,922 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:54,922 - PublisherAppln - INFO - light,450
+2023-02-11 23:40:54,923 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:54,923 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:54,923 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:40:54,923 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:55,924 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:55,924 - PublisherAppln - INFO - sound,55
+2023-02-11 23:40:55,924 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:55,924 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:55,924 - PublisherAppln - INFO - humidity,27.540971803757287
+2023-02-11 23:40:55,924 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:55,924 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:55,924 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:40:55,924 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:55,924 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:55,924 - PublisherAppln - INFO - light,1600
+2023-02-11 23:40:55,924 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:55,924 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:55,924 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:40:55,924 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:56,926 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:56,926 - PublisherAppln - INFO - sound,34
+2023-02-11 23:40:56,926 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:56,926 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:56,926 - PublisherAppln - INFO - humidity,77.67909763820249
+2023-02-11 23:40:56,926 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:56,926 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:56,926 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:40:56,926 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:56,926 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:56,926 - PublisherAppln - INFO - light,800
+2023-02-11 23:40:56,926 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:56,926 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:56,926 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:40:56,926 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:57,928 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:57,928 - PublisherAppln - INFO - sound,31
+2023-02-11 23:40:57,928 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:57,928 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:57,928 - PublisherAppln - INFO - humidity,70.77723266013443
+2023-02-11 23:40:57,928 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:57,928 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:57,928 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:40:57,928 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:57,928 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:57,928 - PublisherAppln - INFO - light,800
+2023-02-11 23:40:57,928 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:57,928 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:57,928 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:40:57,928 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:58,929 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:58,929 - PublisherAppln - INFO - sound,78
+2023-02-11 23:40:58,929 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:58,929 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:58,929 - PublisherAppln - INFO - humidity,43.212797981332194
+2023-02-11 23:40:58,929 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:58,929 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:58,929 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:40:58,930 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:58,930 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:58,930 - PublisherAppln - INFO - light,450
+2023-02-11 23:40:58,930 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:58,930 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:58,930 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:40:58,930 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:59,931 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:59,931 - PublisherAppln - INFO - sound,48
+2023-02-11 23:40:59,931 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:59,931 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:59,931 - PublisherAppln - INFO - humidity,35.0384046437466
+2023-02-11 23:40:59,931 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:59,931 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:59,931 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:59,931 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:59,931 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:59,931 - PublisherAppln - INFO - light,1100
+2023-02-11 23:40:59,931 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:59,931 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:59,931 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:40:59,931 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:00,932 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:00,933 - PublisherAppln - INFO - sound,55
+2023-02-11 23:41:00,933 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:00,933 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:00,933 - PublisherAppln - INFO - humidity,48.20878516959661
+2023-02-11 23:41:00,933 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:00,933 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:00,933 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:00,933 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:00,933 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:00,933 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:00,933 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:00,933 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:00,933 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:41:00,933 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:01,934 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:01,934 - PublisherAppln - INFO - sound,48
+2023-02-11 23:41:01,934 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:01,934 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:01,934 - PublisherAppln - INFO - humidity,51.176983649554586
+2023-02-11 23:41:01,934 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:01,934 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:01,934 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:01,935 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:01,935 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:01,935 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:01,935 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:01,935 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:01,935 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:41:01,935 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:02,936 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:02,936 - PublisherAppln - INFO - sound,52
+2023-02-11 23:41:02,936 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:02,936 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:02,936 - PublisherAppln - INFO - humidity,54.90623939105616
+2023-02-11 23:41:02,936 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:02,936 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:02,936 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:02,936 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:02,936 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:02,936 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:02,936 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:02,936 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:02,936 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:41:02,936 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:03,937 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:03,937 - PublisherAppln - INFO - sound,40
+2023-02-11 23:41:03,938 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:03,938 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:03,938 - PublisherAppln - INFO - humidity,99.26155291640826
+2023-02-11 23:41:03,938 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:03,938 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:03,938 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:03,938 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:03,938 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:03,938 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:03,938 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:03,938 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:03,938 - PublisherAppln - INFO - location,America
+2023-02-11 23:41:03,938 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:04,938 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:04,938 - PublisherAppln - INFO - sound,61
+2023-02-11 23:41:04,938 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:04,938 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:04,938 - PublisherAppln - INFO - humidity,73.3865621542103
+2023-02-11 23:41:04,938 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:04,938 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:04,938 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:04,939 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:04,939 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:04,939 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:04,939 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:04,939 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:04,939 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:41:04,939 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:05,940 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:05,940 - PublisherAppln - INFO - sound,86
+2023-02-11 23:41:05,940 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:05,940 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:05,940 - PublisherAppln - INFO - humidity,33.72055725169746
+2023-02-11 23:41:05,940 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:05,940 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:05,940 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:05,940 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:05,940 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:05,940 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:05,941 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:05,941 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:05,941 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:41:05,941 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:06,942 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:06,942 - PublisherAppln - INFO - sound,47
+2023-02-11 23:41:06,942 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:06,942 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:06,942 - PublisherAppln - INFO - humidity,96.2164464008641
+2023-02-11 23:41:06,942 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:06,942 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:06,942 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:06,942 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:06,942 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:06,942 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:06,942 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:06,942 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:06,942 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:41:06,942 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:07,944 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:07,944 - PublisherAppln - INFO - sound,60
+2023-02-11 23:41:07,944 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:07,944 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:07,944 - PublisherAppln - INFO - humidity,60.23518110701373
+2023-02-11 23:41:07,944 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:07,944 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:07,944 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:07,944 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:07,944 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:07,944 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:07,944 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:07,944 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:07,944 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:41:07,944 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:08,946 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:08,946 - PublisherAppln - INFO - sound,32
+2023-02-11 23:41:08,946 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:08,946 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:08,946 - PublisherAppln - INFO - humidity,75.12531102966223
+2023-02-11 23:41:08,946 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:08,946 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:08,946 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:08,946 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:08,946 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:08,946 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:08,947 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:08,947 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:08,947 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:41:08,947 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:09,948 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:09,948 - PublisherAppln - INFO - sound,85
+2023-02-11 23:41:09,948 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:09,948 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:09,948 - PublisherAppln - INFO - humidity,28.03708392196331
+2023-02-11 23:41:09,948 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:09,948 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:09,948 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:09,948 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:09,948 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:09,948 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:09,948 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:09,948 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:09,948 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:41:09,948 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:10,949 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:10,949 - PublisherAppln - INFO - sound,53
+2023-02-11 23:41:10,950 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:10,950 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:10,950 - PublisherAppln - INFO - humidity,83.47292986039189
+2023-02-11 23:41:10,950 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:10,950 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:10,950 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:10,950 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:10,950 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:10,950 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:10,950 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:10,950 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:10,950 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:41:10,950 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:11,951 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:11,951 - PublisherAppln - INFO - sound,49
+2023-02-11 23:41:11,951 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:11,951 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:11,951 - PublisherAppln - INFO - humidity,31.408641414953372
+2023-02-11 23:41:11,951 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:11,951 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:11,951 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:11,952 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:11,952 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:11,952 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:11,952 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:11,952 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:11,952 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:41:11,952 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:12,953 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:12,953 - PublisherAppln - INFO - sound,49
+2023-02-11 23:41:12,953 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:12,953 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:12,953 - PublisherAppln - INFO - humidity,90.53771988903709
+2023-02-11 23:41:12,953 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:12,953 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:12,953 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:12,953 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:12,953 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:12,953 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:12,953 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:12,953 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:12,953 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:41:12,953 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:13,955 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:13,955 - PublisherAppln - INFO - sound,30
+2023-02-11 23:41:13,955 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:13,955 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:13,955 - PublisherAppln - INFO - humidity,98.18043205709722
+2023-02-11 23:41:13,955 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:13,955 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:13,955 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:13,955 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:13,955 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:13,955 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:13,955 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:13,955 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:13,955 - PublisherAppln - INFO - location,America
+2023-02-11 23:41:13,955 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:14,956 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:14,957 - PublisherAppln - INFO - sound,34
+2023-02-11 23:41:14,957 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:14,957 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:14,957 - PublisherAppln - INFO - humidity,93.99844646358905
+2023-02-11 23:41:14,957 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:14,957 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:14,957 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:14,957 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:14,957 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:14,957 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:14,957 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:14,957 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:14,957 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:41:14,957 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:15,958 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:15,958 - PublisherAppln - INFO - sound,65
+2023-02-11 23:41:15,958 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:15,958 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:15,958 - PublisherAppln - INFO - humidity,90.59704904579199
+2023-02-11 23:41:15,958 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:15,958 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:15,959 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:15,959 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:15,959 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:15,959 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:15,959 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:15,959 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:15,959 - PublisherAppln - INFO - location,America
+2023-02-11 23:41:15,959 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:16,960 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:16,960 - PublisherAppln - INFO - sound,75
+2023-02-11 23:41:16,960 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:16,960 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:16,960 - PublisherAppln - INFO - humidity,74.11059391886975
+2023-02-11 23:41:16,960 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:16,960 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:16,960 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:16,960 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:16,960 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:16,960 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:16,961 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:16,961 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:16,961 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:41:16,961 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:17,962 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:17,962 - PublisherAppln - INFO - sound,79
+2023-02-11 23:41:17,962 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:17,962 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:17,962 - PublisherAppln - INFO - humidity,69.59895884153153
+2023-02-11 23:41:17,962 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:17,962 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:17,962 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:17,962 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:17,962 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:17,963 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:17,963 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:17,963 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:17,963 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:41:17,963 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:18,964 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:18,964 - PublisherAppln - INFO - sound,94
+2023-02-11 23:41:18,964 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:18,964 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:18,964 - PublisherAppln - INFO - humidity,59.49404769856898
+2023-02-11 23:41:18,964 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:18,964 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:18,964 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:18,964 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:18,964 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:18,964 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:18,964 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:18,964 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:18,964 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:41:18,964 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:19,965 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:19,965 - PublisherAppln - INFO - sound,73
+2023-02-11 23:41:19,965 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:19,965 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:19,965 - PublisherAppln - INFO - humidity,89.57461318848344
+2023-02-11 23:41:19,965 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:19,965 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:19,965 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:19,966 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:19,966 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:19,966 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:19,966 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:19,966 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:19,966 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:41:19,966 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:20,966 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:20,966 - PublisherAppln - INFO - sound,86
+2023-02-11 23:41:20,966 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:20,966 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:20,966 - PublisherAppln - INFO - humidity,62.54083445177469
+2023-02-11 23:41:20,966 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:20,966 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:20,967 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:20,967 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:20,967 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:20,967 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:20,967 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:20,967 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:20,967 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:41:20,967 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:21,968 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:21,968 - PublisherAppln - INFO - sound,85
+2023-02-11 23:41:21,968 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:21,968 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:21,968 - PublisherAppln - INFO - humidity,76.1111476123311
+2023-02-11 23:41:21,968 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:21,968 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:21,968 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:21,968 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:21,968 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:21,968 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:21,969 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:21,969 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:21,969 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:41:21,969 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:22,970 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:22,970 - PublisherAppln - INFO - sound,34
+2023-02-11 23:41:22,970 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:22,970 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:22,970 - PublisherAppln - INFO - humidity,39.907032761054964
+2023-02-11 23:41:22,971 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:22,971 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:22,971 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:22,971 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:22,971 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:22,971 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:22,971 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:22,971 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:22,971 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:41:22,971 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:23,972 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:23,972 - PublisherAppln - INFO - sound,61
+2023-02-11 23:41:23,972 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:23,972 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:23,972 - PublisherAppln - INFO - humidity,51.69296291845288
+2023-02-11 23:41:23,972 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:23,972 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:23,972 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:23,973 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:23,973 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:23,973 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:23,973 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:23,973 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:23,973 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:41:23,973 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:24,973 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:24,974 - PublisherAppln - INFO - sound,38
+2023-02-11 23:41:24,974 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:24,974 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:24,974 - PublisherAppln - INFO - humidity,18.75498804360098
+2023-02-11 23:41:24,974 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:24,974 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:24,974 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:24,974 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:24,974 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:24,974 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:24,974 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:24,974 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:24,974 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:41:24,974 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:25,975 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:25,975 - PublisherAppln - INFO - sound,71
+2023-02-11 23:41:25,976 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:25,976 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:25,976 - PublisherAppln - INFO - humidity,38.30710076016801
+2023-02-11 23:41:25,976 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:25,976 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:25,976 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:25,976 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:25,976 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:25,976 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:25,976 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:25,976 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:25,976 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:41:25,976 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:26,977 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:26,977 - PublisherAppln - INFO - sound,36
+2023-02-11 23:41:26,977 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:26,978 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:26,978 - PublisherAppln - INFO - humidity,22.389411188662976
+2023-02-11 23:41:26,978 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:26,978 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:26,978 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:26,978 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:26,978 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:26,978 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:26,978 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:26,978 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:26,978 - PublisherAppln - INFO - location,America
+2023-02-11 23:41:26,978 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:27,978 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:27,978 - PublisherAppln - INFO - sound,70
+2023-02-11 23:41:27,979 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:27,979 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:27,979 - PublisherAppln - INFO - humidity,88.12017863378502
+2023-02-11 23:41:27,979 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:27,979 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:27,979 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:27,979 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:27,979 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:27,979 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:27,979 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:27,979 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:27,979 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:41:27,979 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:28,980 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:28,980 - PublisherAppln - INFO - sound,71
+2023-02-11 23:41:28,981 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:28,981 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:28,981 - PublisherAppln - INFO - humidity,91.67749508093743
+2023-02-11 23:41:28,981 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:28,981 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:28,981 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:28,981 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:28,981 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:28,981 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:28,981 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:28,981 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:28,981 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:41:28,981 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:29,982 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:29,982 - PublisherAppln - INFO - sound,69
+2023-02-11 23:41:29,982 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:29,982 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:29,982 - PublisherAppln - INFO - humidity,64.92089159653878
+2023-02-11 23:41:29,982 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:29,982 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:29,982 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:29,983 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:29,983 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:29,983 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:29,983 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:29,983 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:29,983 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:41:29,983 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:30,984 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:30,984 - PublisherAppln - INFO - sound,60
+2023-02-11 23:41:30,984 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:30,984 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:30,984 - PublisherAppln - INFO - humidity,58.51222106541101
+2023-02-11 23:41:30,984 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:30,984 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:30,984 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:30,984 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:30,984 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:30,984 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:30,984 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:30,984 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:30,984 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:41:30,984 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:31,985 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:31,986 - PublisherAppln - INFO - sound,84
+2023-02-11 23:41:31,986 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:31,986 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:31,986 - PublisherAppln - INFO - humidity,27.788941277541166
+2023-02-11 23:41:31,986 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:31,986 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:31,986 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:31,986 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:31,986 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:31,986 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:31,986 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:31,986 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:31,986 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:41:31,986 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:32,987 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:32,987 - PublisherAppln - INFO - sound,76
+2023-02-11 23:41:32,987 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:32,987 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:32,987 - PublisherAppln - INFO - humidity,13.167054717059248
+2023-02-11 23:41:32,987 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:32,987 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:32,987 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:32,987 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:32,987 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:32,987 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:32,987 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:32,987 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:32,987 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:41:32,987 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:33,989 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:33,989 - PublisherAppln - INFO - sound,67
+2023-02-11 23:41:33,989 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:33,989 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:33,989 - PublisherAppln - INFO - humidity,78.84298070677559
+2023-02-11 23:41:33,989 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:33,989 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:33,989 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:33,989 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:33,989 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:33,989 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:33,989 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:33,989 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:33,989 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:41:33,989 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:34,990 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:34,990 - PublisherAppln - INFO - sound,43
+2023-02-11 23:41:34,991 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:34,991 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:34,991 - PublisherAppln - INFO - humidity,88.17446293481532
+2023-02-11 23:41:34,991 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:34,991 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:34,991 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:34,991 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:34,991 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:34,991 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:34,991 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:34,991 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:34,991 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:41:34,991 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:35,992 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:35,992 - PublisherAppln - INFO - sound,45
+2023-02-11 23:41:35,992 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:35,993 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:35,993 - PublisherAppln - INFO - humidity,48.96720882828781
+2023-02-11 23:41:35,993 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:35,993 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:35,993 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:35,993 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:35,993 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:35,993 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:35,993 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:35,993 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:35,993 - PublisherAppln - INFO - location,America
+2023-02-11 23:41:35,993 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:36,994 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:36,994 - PublisherAppln - INFO - sound,48
+2023-02-11 23:41:36,994 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:36,994 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:36,994 - PublisherAppln - INFO - humidity,26.93736253830944
+2023-02-11 23:41:36,994 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:36,994 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:36,994 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:36,994 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:36,994 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:36,994 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:36,994 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:36,994 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:36,994 - PublisherAppln - INFO - location,America
+2023-02-11 23:41:36,994 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:37,995 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:37,995 - PublisherAppln - INFO - sound,60
+2023-02-11 23:41:37,996 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:37,996 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:37,996 - PublisherAppln - INFO - humidity,20.49697151892118
+2023-02-11 23:41:37,996 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:37,996 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:37,996 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:37,996 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:37,996 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:37,996 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:37,996 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:37,996 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:37,996 - PublisherAppln - INFO - location,America
+2023-02-11 23:41:37,996 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:38,997 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:38,997 - PublisherAppln - INFO - sound,48
+2023-02-11 23:41:38,998 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:38,998 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:38,998 - PublisherAppln - INFO - humidity,61.14167424115028
+2023-02-11 23:41:38,998 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:38,998 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:38,998 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:38,998 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:38,998 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:38,998 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:38,998 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:38,998 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:38,998 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:41:38,998 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:39,999 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:39,999 - PublisherAppln - INFO - sound,60
+2023-02-11 23:41:39,999 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:39,999 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:39,999 - PublisherAppln - INFO - humidity,47.68548562271528
+2023-02-11 23:41:40,000 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:40,000 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:40,000 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:40,000 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:40,000 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:40,000 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:40,000 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:40,000 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:40,000 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:41:40,000 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:41,001 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:41,001 - PublisherAppln - INFO - sound,61
+2023-02-11 23:41:41,001 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:41,001 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:41,001 - PublisherAppln - INFO - humidity,34.415165334576514
+2023-02-11 23:41:41,001 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:41,001 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:41,001 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:41,002 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:41,002 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:41,002 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:41,002 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:41,002 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:41,002 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:41:41,002 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:42,002 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:42,002 - PublisherAppln - INFO - sound,79
+2023-02-11 23:41:42,002 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:42,003 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:42,003 - PublisherAppln - INFO - humidity,79.07409925810343
+2023-02-11 23:41:42,003 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:42,003 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:42,003 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:42,003 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:42,003 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:42,003 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:42,003 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:42,003 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:42,003 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:41:42,003 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:43,004 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:43,004 - PublisherAppln - INFO - sound,80
+2023-02-11 23:41:43,004 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:43,004 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:43,004 - PublisherAppln - INFO - humidity,52.088613036960204
+2023-02-11 23:41:43,004 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:43,004 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:43,005 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:43,005 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:43,005 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:43,005 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:43,005 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:43,005 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:43,005 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:41:43,005 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:44,006 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:44,006 - PublisherAppln - INFO - sound,74
+2023-02-11 23:41:44,006 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:44,006 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:44,006 - PublisherAppln - INFO - humidity,73.80861253637352
+2023-02-11 23:41:44,006 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:44,006 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:44,006 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:44,006 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:44,006 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:44,006 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:44,006 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:44,007 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:44,007 - PublisherAppln - INFO - location,America
+2023-02-11 23:41:44,007 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:45,008 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:45,008 - PublisherAppln - INFO - sound,63
+2023-02-11 23:41:45,008 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:45,008 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:45,008 - PublisherAppln - INFO - humidity,46.02594948909784
+2023-02-11 23:41:45,008 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:45,008 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:45,008 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:45,008 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:45,008 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:45,008 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:45,008 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:45,008 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:45,008 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:41:45,009 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:46,009 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:46,010 - PublisherAppln - INFO - sound,80
+2023-02-11 23:41:46,010 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:46,010 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:46,010 - PublisherAppln - INFO - humidity,45.099055311002644
+2023-02-11 23:41:46,010 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:46,010 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:46,010 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:46,010 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:46,010 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:46,010 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:46,010 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:46,010 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:46,010 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:41:46,010 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:47,010 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:47,010 - PublisherAppln - INFO - sound,43
+2023-02-11 23:41:47,010 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:47,011 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:47,011 - PublisherAppln - INFO - humidity,16.514391571921525
+2023-02-11 23:41:47,011 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:47,011 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:47,011 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:47,011 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:47,011 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:47,011 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:47,011 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:47,011 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:47,011 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:41:47,011 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:48,012 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:48,012 - PublisherAppln - INFO - sound,65
+2023-02-11 23:41:48,012 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:48,012 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:48,012 - PublisherAppln - INFO - humidity,99.35795091750393
+2023-02-11 23:41:48,012 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:48,012 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:48,012 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:48,012 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:48,012 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:48,012 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:48,012 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:48,013 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:48,013 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:41:48,013 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:49,014 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:49,014 - PublisherAppln - INFO - sound,93
+2023-02-11 23:41:49,014 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:49,014 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:49,014 - PublisherAppln - INFO - humidity,16.449904189039483
+2023-02-11 23:41:49,014 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:49,014 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:49,014 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:49,014 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:49,014 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:49,014 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:49,014 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:49,015 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:49,015 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:41:49,015 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:50,016 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:50,016 - PublisherAppln - INFO - sound,38
+2023-02-11 23:41:50,016 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:50,016 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:50,016 - PublisherAppln - INFO - humidity,99.53522760749841
+2023-02-11 23:41:50,016 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:50,016 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:50,016 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:50,016 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:50,016 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:50,016 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:50,016 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:50,016 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:50,016 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:41:50,017 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:51,018 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:51,018 - PublisherAppln - INFO - sound,67
+2023-02-11 23:41:51,018 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:51,018 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:51,018 - PublisherAppln - INFO - humidity,49.76843970902637
+2023-02-11 23:41:51,018 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:51,018 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:51,018 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:51,018 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:51,018 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:51,018 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:51,019 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:51,019 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:51,019 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:41:51,019 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:52,020 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:52,020 - PublisherAppln - INFO - sound,43
+2023-02-11 23:41:52,020 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:52,020 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:52,020 - PublisherAppln - INFO - humidity,51.59159328040345
+2023-02-11 23:41:52,020 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:52,020 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:52,020 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:52,021 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:52,021 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:52,021 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:52,021 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:52,021 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:52,021 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:41:52,021 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:53,022 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:53,022 - PublisherAppln - INFO - sound,45
+2023-02-11 23:41:53,023 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:53,023 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:53,023 - PublisherAppln - INFO - humidity,43.58330191801834
+2023-02-11 23:41:53,023 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:53,023 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:53,023 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:53,023 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:53,023 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:53,023 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:53,023 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:53,023 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:53,023 - PublisherAppln - INFO - location,America
+2023-02-11 23:41:53,027 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:54,029 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:54,029 - PublisherAppln - INFO - sound,36
+2023-02-11 23:41:54,030 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:54,030 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:54,030 - PublisherAppln - INFO - humidity,39.52581195642125
+2023-02-11 23:41:54,030 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:54,030 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:54,030 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:54,030 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:54,030 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:54,030 - PublisherAppln - INFO - light,800
+2023-02-11 23:41:54,030 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:54,030 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:54,030 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:41:54,030 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:55,031 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:55,031 - PublisherAppln - INFO - sound,75
+2023-02-11 23:41:55,031 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:55,031 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:55,031 - PublisherAppln - INFO - humidity,41.77226732921168
+2023-02-11 23:41:55,031 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:55,031 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:55,031 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:55,031 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:55,031 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:55,031 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:55,031 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:55,031 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:55,031 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:41:55,031 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:56,033 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:56,033 - PublisherAppln - INFO - sound,42
+2023-02-11 23:41:56,033 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:56,033 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:56,033 - PublisherAppln - INFO - humidity,16.603662592222182
+2023-02-11 23:41:56,033 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:56,033 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:56,033 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:56,033 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:56,033 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:56,033 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:56,033 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:56,033 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:56,033 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:41:56,033 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:57,034 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:57,034 - PublisherAppln - INFO - sound,66
+2023-02-11 23:41:57,034 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:57,034 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:57,034 - PublisherAppln - INFO - humidity,98.44204415217663
+2023-02-11 23:41:57,035 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:57,035 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:57,035 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:57,035 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:57,035 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:57,035 - PublisherAppln - INFO - light,450
+2023-02-11 23:41:57,035 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:57,035 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:57,035 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:41:57,035 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:58,036 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:58,037 - PublisherAppln - INFO - sound,71
+2023-02-11 23:41:58,037 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:58,037 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:58,037 - PublisherAppln - INFO - humidity,72.95207917166942
+2023-02-11 23:41:58,037 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:58,037 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:58,037 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:58,037 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:58,037 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:58,037 - PublisherAppln - INFO - light,1600
+2023-02-11 23:41:58,037 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:58,037 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:58,037 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:41:58,037 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:59,038 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:59,039 - PublisherAppln - INFO - sound,73
+2023-02-11 23:41:59,039 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:59,039 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:59,039 - PublisherAppln - INFO - humidity,25.99451393493766
+2023-02-11 23:41:59,039 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:59,039 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:59,039 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:59,039 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:59,039 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:59,039 - PublisherAppln - INFO - light,1100
+2023-02-11 23:41:59,039 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:59,039 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:59,039 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:41:59,039 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:00,041 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:00,041 - PublisherAppln - INFO - sound,66
+2023-02-11 23:42:00,041 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:00,041 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:00,041 - PublisherAppln - INFO - humidity,25.01215464062991
+2023-02-11 23:42:00,041 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:00,041 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:00,041 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:00,041 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:00,041 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:00,041 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:00,041 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:00,041 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:00,041 - PublisherAppln - INFO - location,America
+2023-02-11 23:42:00,041 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:01,043 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:01,043 - PublisherAppln - INFO - sound,82
+2023-02-11 23:42:01,043 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:01,043 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:01,043 - PublisherAppln - INFO - humidity,82.43542554540089
+2023-02-11 23:42:01,043 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:01,043 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:01,043 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:01,043 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:01,043 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:01,043 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:01,043 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:01,043 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:01,043 - PublisherAppln - INFO - location,America
+2023-02-11 23:42:01,043 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:02,044 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:02,044 - PublisherAppln - INFO - sound,52
+2023-02-11 23:42:02,045 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:02,045 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:02,045 - PublisherAppln - INFO - humidity,73.4856018111835
+2023-02-11 23:42:02,045 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:02,045 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:02,045 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:02,045 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:02,045 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:02,045 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:02,045 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:02,045 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:02,045 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:42:02,045 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:03,046 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:03,046 - PublisherAppln - INFO - sound,78
+2023-02-11 23:42:03,047 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:03,047 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:03,047 - PublisherAppln - INFO - humidity,40.119047810802655
+2023-02-11 23:42:03,047 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:03,047 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:03,047 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:03,047 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:03,047 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:03,047 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:03,047 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:03,047 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:03,047 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:42:03,047 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:04,048 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:04,048 - PublisherAppln - INFO - sound,92
+2023-02-11 23:42:04,048 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:04,049 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:04,049 - PublisherAppln - INFO - humidity,37.06537651117793
+2023-02-11 23:42:04,049 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:04,049 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:04,049 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:04,049 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:04,049 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:04,049 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:04,049 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:04,049 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:04,049 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:42:04,049 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:05,050 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:05,050 - PublisherAppln - INFO - sound,40
+2023-02-11 23:42:05,050 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:05,050 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:05,050 - PublisherAppln - INFO - humidity,30.365151471184866
+2023-02-11 23:42:05,050 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:05,050 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:05,050 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:05,050 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:05,050 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:05,050 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:05,050 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:05,050 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:05,050 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:42:05,050 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:06,052 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:06,052 - PublisherAppln - INFO - sound,71
+2023-02-11 23:42:06,052 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:06,052 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:06,052 - PublisherAppln - INFO - humidity,57.466697967574724
+2023-02-11 23:42:06,052 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:06,052 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:06,052 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:06,052 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:06,052 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:06,052 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:06,052 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:06,052 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:06,052 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:42:06,052 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:07,053 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:07,053 - PublisherAppln - INFO - sound,50
+2023-02-11 23:42:07,053 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:07,053 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:07,053 - PublisherAppln - INFO - humidity,74.09567567654693
+2023-02-11 23:42:07,054 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:07,054 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:07,054 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:07,054 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:07,054 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:07,054 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:07,054 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:07,054 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:07,054 - PublisherAppln - INFO - location,America
+2023-02-11 23:42:07,054 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:08,054 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:08,055 - PublisherAppln - INFO - sound,77
+2023-02-11 23:42:08,055 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:08,055 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:08,055 - PublisherAppln - INFO - humidity,93.7344636442674
+2023-02-11 23:42:08,055 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:08,055 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:08,055 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:08,055 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:08,055 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:08,055 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:08,055 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:08,055 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:08,055 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:42:08,055 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:09,056 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:09,057 - PublisherAppln - INFO - sound,79
+2023-02-11 23:42:09,057 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:09,057 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:09,057 - PublisherAppln - INFO - humidity,20.221088205714526
+2023-02-11 23:42:09,057 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:09,057 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:09,057 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:09,057 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:09,057 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:09,057 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:09,057 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:09,057 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:09,057 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:42:09,057 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:10,058 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:10,059 - PublisherAppln - INFO - sound,37
+2023-02-11 23:42:10,059 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:10,059 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:10,059 - PublisherAppln - INFO - humidity,97.53090639160143
+2023-02-11 23:42:10,059 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:10,059 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:10,059 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:10,059 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:10,059 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:10,059 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:10,059 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:10,059 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:10,059 - PublisherAppln - INFO - location,America
+2023-02-11 23:42:10,059 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:11,060 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:11,061 - PublisherAppln - INFO - sound,90
+2023-02-11 23:42:11,061 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:11,061 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:11,061 - PublisherAppln - INFO - humidity,30.008572765128637
+2023-02-11 23:42:11,061 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:11,061 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:11,061 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:11,061 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:11,061 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:11,061 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:11,061 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:11,061 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:11,061 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:42:11,061 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:12,063 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:12,063 - PublisherAppln - INFO - sound,64
+2023-02-11 23:42:12,063 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:12,063 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:12,063 - PublisherAppln - INFO - humidity,53.051296669358884
+2023-02-11 23:42:12,063 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:12,063 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:12,063 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:12,063 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:12,063 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:12,063 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:12,063 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:12,063 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:12,063 - PublisherAppln - INFO - location,America
+2023-02-11 23:42:12,063 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:13,064 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:13,064 - PublisherAppln - INFO - sound,51
+2023-02-11 23:42:13,064 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:13,064 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:13,064 - PublisherAppln - INFO - humidity,60.09420053458685
+2023-02-11 23:42:13,064 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:13,064 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:13,064 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:13,065 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:13,065 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:13,065 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:13,065 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:13,065 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:13,065 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:42:13,065 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:14,066 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:14,066 - PublisherAppln - INFO - sound,91
+2023-02-11 23:42:14,066 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:14,066 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:14,066 - PublisherAppln - INFO - humidity,90.60952975232486
+2023-02-11 23:42:14,066 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:14,066 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:14,066 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:14,066 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:14,066 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:14,066 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:14,066 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:14,066 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:14,067 - PublisherAppln - INFO - location,America
+2023-02-11 23:42:14,067 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:15,068 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:15,068 - PublisherAppln - INFO - sound,76
+2023-02-11 23:42:15,068 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:15,068 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:15,068 - PublisherAppln - INFO - humidity,11.593960635421535
+2023-02-11 23:42:15,068 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:15,068 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:15,068 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:15,068 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:15,068 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:15,068 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:15,068 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:15,069 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:15,069 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:42:15,069 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:16,069 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:16,069 - PublisherAppln - INFO - sound,82
+2023-02-11 23:42:16,069 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:16,069 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:16,069 - PublisherAppln - INFO - humidity,20.541814862665497
+2023-02-11 23:42:16,069 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:16,069 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:16,069 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:16,069 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:16,069 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:16,069 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:16,069 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:16,070 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:16,070 - PublisherAppln - INFO - location,America
+2023-02-11 23:42:16,070 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:17,072 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:17,072 - PublisherAppln - INFO - sound,93
+2023-02-11 23:42:17,072 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:17,072 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:17,072 - PublisherAppln - INFO - humidity,64.19066406750417
+2023-02-11 23:42:17,072 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:17,072 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:17,072 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:17,072 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:17,072 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:17,072 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:17,072 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:17,072 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:17,072 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:42:17,072 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:18,073 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:18,073 - PublisherAppln - INFO - sound,93
+2023-02-11 23:42:18,073 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:18,073 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:18,073 - PublisherAppln - INFO - humidity,30.804283393744452
+2023-02-11 23:42:18,073 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:18,073 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:18,073 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:18,073 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:18,073 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:18,073 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:18,074 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:18,074 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:18,074 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:42:18,074 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:19,075 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:19,075 - PublisherAppln - INFO - sound,85
+2023-02-11 23:42:19,075 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:19,075 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:19,075 - PublisherAppln - INFO - humidity,72.06128700008368
+2023-02-11 23:42:19,075 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:19,075 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:19,075 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:19,075 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:19,075 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:19,075 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:19,075 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:19,075 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:19,075 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:42:19,075 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:20,076 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:20,076 - PublisherAppln - INFO - sound,45
+2023-02-11 23:42:20,076 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:20,076 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:20,076 - PublisherAppln - INFO - humidity,93.58316487065241
+2023-02-11 23:42:20,076 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:20,076 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:20,076 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:20,077 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:20,077 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:20,077 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:20,077 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:20,077 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:20,077 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:42:20,077 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:21,078 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:21,078 - PublisherAppln - INFO - sound,48
+2023-02-11 23:42:21,078 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:21,078 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:21,078 - PublisherAppln - INFO - humidity,31.034334915721196
+2023-02-11 23:42:21,078 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:21,078 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:21,078 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:21,078 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:21,078 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:21,078 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:21,078 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:21,078 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:21,078 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:42:21,078 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:22,080 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:22,080 - PublisherAppln - INFO - sound,70
+2023-02-11 23:42:22,080 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:22,080 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:22,080 - PublisherAppln - INFO - humidity,85.24840089942111
+2023-02-11 23:42:22,080 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:22,080 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:22,080 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:22,080 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:22,080 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:22,080 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:22,080 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:22,080 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:22,080 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:42:22,080 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:23,082 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:23,082 - PublisherAppln - INFO - sound,79
+2023-02-11 23:42:23,082 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:23,082 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:23,082 - PublisherAppln - INFO - humidity,17.677877591403192
+2023-02-11 23:42:23,082 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:23,082 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:23,082 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:23,082 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:23,082 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:23,082 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:23,082 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:23,082 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:23,082 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:42:23,082 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:24,083 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:24,083 - PublisherAppln - INFO - sound,88
+2023-02-11 23:42:24,084 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:24,084 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:24,084 - PublisherAppln - INFO - humidity,12.714579907680381
+2023-02-11 23:42:24,084 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:24,084 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:24,084 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:24,084 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:24,084 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:24,084 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:24,084 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:24,084 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:24,084 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:42:24,084 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:25,085 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:25,085 - PublisherAppln - INFO - sound,94
+2023-02-11 23:42:25,085 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:25,085 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:25,085 - PublisherAppln - INFO - humidity,61.16906440893962
+2023-02-11 23:42:25,085 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:25,085 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:25,085 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:25,085 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:25,085 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:25,085 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:25,085 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:25,085 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:25,085 - PublisherAppln - INFO - location,America
+2023-02-11 23:42:25,085 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:26,087 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:26,087 - PublisherAppln - INFO - sound,77
+2023-02-11 23:42:26,087 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:26,087 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:26,087 - PublisherAppln - INFO - humidity,32.38607712396052
+2023-02-11 23:42:26,087 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:26,087 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:26,088 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:26,088 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:26,088 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:26,088 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:26,088 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:26,088 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:26,088 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:42:26,088 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:27,091 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:27,091 - PublisherAppln - INFO - sound,78
+2023-02-11 23:42:27,091 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:27,091 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:27,091 - PublisherAppln - INFO - humidity,56.64487876696728
+2023-02-11 23:42:27,091 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:27,091 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:27,091 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:27,091 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:27,091 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:27,091 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:27,091 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:27,091 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:27,091 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:42:27,091 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:28,093 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:28,093 - PublisherAppln - INFO - sound,94
+2023-02-11 23:42:28,093 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:28,093 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:28,093 - PublisherAppln - INFO - humidity,64.01046844870035
+2023-02-11 23:42:28,093 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:28,093 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:28,093 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:28,093 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:28,093 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:28,093 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:28,093 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:28,093 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:28,093 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:42:28,093 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:29,096 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:29,096 - PublisherAppln - INFO - sound,51
+2023-02-11 23:42:29,096 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:29,096 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:29,096 - PublisherAppln - INFO - humidity,83.51473189655353
+2023-02-11 23:42:29,096 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:29,096 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:29,096 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:29,096 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:29,096 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:29,096 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:29,096 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:29,096 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:29,096 - PublisherAppln - INFO - location,America
+2023-02-11 23:42:29,096 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:30,099 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:30,099 - PublisherAppln - INFO - sound,91
+2023-02-11 23:42:30,099 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:30,099 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:30,099 - PublisherAppln - INFO - humidity,29.101427180908203
+2023-02-11 23:42:30,099 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:30,099 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:30,099 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:30,099 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:30,099 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:30,099 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:30,099 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:30,099 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:30,099 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:42:30,099 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:31,101 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:31,101 - PublisherAppln - INFO - sound,36
+2023-02-11 23:42:31,101 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:31,101 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:31,101 - PublisherAppln - INFO - humidity,47.04268399226506
+2023-02-11 23:42:31,101 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:31,101 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:31,101 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:31,101 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:31,101 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:31,101 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:31,101 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:31,101 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:31,101 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:42:31,101 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:32,103 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:32,103 - PublisherAppln - INFO - sound,43
+2023-02-11 23:42:32,103 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:32,103 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:32,103 - PublisherAppln - INFO - humidity,26.028586153923666
+2023-02-11 23:42:32,103 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:32,103 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:32,103 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:32,103 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:32,103 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:32,103 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:32,103 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:32,103 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:32,103 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:42:32,103 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:33,104 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:33,104 - PublisherAppln - INFO - sound,73
+2023-02-11 23:42:33,105 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:33,105 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:33,105 - PublisherAppln - INFO - humidity,40.32846037815563
+2023-02-11 23:42:33,105 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:33,105 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:33,105 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:33,105 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:33,105 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:33,105 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:33,105 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:33,105 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:33,105 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:42:33,105 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:34,106 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:34,106 - PublisherAppln - INFO - sound,35
+2023-02-11 23:42:34,106 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:34,106 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:34,106 - PublisherAppln - INFO - humidity,67.98730544837225
+2023-02-11 23:42:34,106 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:34,106 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:34,106 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:34,106 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:34,106 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:34,106 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:34,106 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:34,106 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:34,106 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:42:34,106 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:35,107 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:35,108 - PublisherAppln - INFO - sound,87
+2023-02-11 23:42:35,108 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:35,108 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:35,108 - PublisherAppln - INFO - humidity,55.69582911917623
+2023-02-11 23:42:35,108 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:35,108 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:35,108 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:35,108 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:35,108 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:35,108 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:35,108 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:35,108 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:35,108 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:42:35,108 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:36,109 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:36,109 - PublisherAppln - INFO - sound,94
+2023-02-11 23:42:36,109 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:36,109 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:36,109 - PublisherAppln - INFO - humidity,78.28641498042026
+2023-02-11 23:42:36,109 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:36,109 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:36,110 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:36,110 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:36,110 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:36,110 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:36,110 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:36,110 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:36,110 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:42:36,110 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:37,111 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:37,111 - PublisherAppln - INFO - sound,43
+2023-02-11 23:42:37,111 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:37,111 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:37,111 - PublisherAppln - INFO - humidity,59.143829187587244
+2023-02-11 23:42:37,111 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:37,111 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:37,111 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:37,111 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:37,111 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:37,111 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:37,112 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:37,112 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:37,112 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:42:37,112 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:38,112 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:38,113 - PublisherAppln - INFO - sound,58
+2023-02-11 23:42:38,113 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:38,113 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:38,113 - PublisherAppln - INFO - humidity,32.44444841719245
+2023-02-11 23:42:38,113 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:38,113 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:38,113 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:38,113 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:38,113 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:38,113 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:38,113 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:38,113 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:38,113 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:42:38,113 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:39,114 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:39,115 - PublisherAppln - INFO - sound,43
+2023-02-11 23:42:39,115 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:39,115 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:39,115 - PublisherAppln - INFO - humidity,73.94001359254284
+2023-02-11 23:42:39,115 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:39,115 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:39,115 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:39,115 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:39,115 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:39,115 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:39,115 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:39,115 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:39,115 - PublisherAppln - INFO - location,America
+2023-02-11 23:42:39,115 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:40,116 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:40,117 - PublisherAppln - INFO - sound,82
+2023-02-11 23:42:40,117 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:40,117 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:40,117 - PublisherAppln - INFO - humidity,52.50337869657633
+2023-02-11 23:42:40,117 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:40,117 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:40,117 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:40,117 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:40,117 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:40,117 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:40,117 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:40,117 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:40,117 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:42:40,117 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:41,118 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:41,118 - PublisherAppln - INFO - sound,57
+2023-02-11 23:42:41,119 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:41,119 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:41,119 - PublisherAppln - INFO - humidity,65.84762018999322
+2023-02-11 23:42:41,119 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:41,119 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:41,119 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:41,119 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:41,119 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:41,119 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:41,119 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:41,119 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:41,119 - PublisherAppln - INFO - location,America
+2023-02-11 23:42:41,119 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:42,121 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:42,121 - PublisherAppln - INFO - sound,43
+2023-02-11 23:42:42,121 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:42,121 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:42,121 - PublisherAppln - INFO - humidity,13.254086087266082
+2023-02-11 23:42:42,121 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:42,121 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:42,121 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:42,121 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:42,121 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:42,121 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:42,121 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:42,121 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:42,121 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:42:42,121 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:43,123 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:43,123 - PublisherAppln - INFO - sound,75
+2023-02-11 23:42:43,123 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:43,123 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:43,123 - PublisherAppln - INFO - humidity,36.21598498871214
+2023-02-11 23:42:43,123 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:43,123 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:43,123 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:43,123 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:43,123 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:43,123 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:43,123 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:43,123 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:43,123 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:42:43,123 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:44,124 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:44,124 - PublisherAppln - INFO - sound,57
+2023-02-11 23:42:44,124 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:44,124 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:44,124 - PublisherAppln - INFO - humidity,55.87111632353429
+2023-02-11 23:42:44,124 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:44,124 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:44,124 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:44,124 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:44,124 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:44,124 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:44,124 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:44,124 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:44,124 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:42:44,124 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:45,126 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:45,126 - PublisherAppln - INFO - sound,74
+2023-02-11 23:42:45,126 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:45,126 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:45,126 - PublisherAppln - INFO - humidity,30.842818668407872
+2023-02-11 23:42:45,126 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:45,126 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:45,126 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:45,126 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:45,126 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:45,126 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:45,126 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:45,126 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:45,126 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:42:45,126 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:46,127 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:46,128 - PublisherAppln - INFO - sound,90
+2023-02-11 23:42:46,128 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:46,128 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:46,128 - PublisherAppln - INFO - humidity,13.048377211881245
+2023-02-11 23:42:46,128 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:46,128 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:46,128 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:46,128 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:46,128 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:46,128 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:46,128 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:46,128 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:46,128 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:42:46,128 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:47,128 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:47,128 - PublisherAppln - INFO - sound,87
+2023-02-11 23:42:47,129 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:47,129 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:47,129 - PublisherAppln - INFO - humidity,70.95475331223442
+2023-02-11 23:42:47,129 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:47,129 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:47,129 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:47,129 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:47,129 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:47,129 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:47,129 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:47,129 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:47,129 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:42:47,129 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:48,130 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:48,130 - PublisherAppln - INFO - sound,45
+2023-02-11 23:42:48,130 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:48,130 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:48,130 - PublisherAppln - INFO - humidity,35.8038924366093
+2023-02-11 23:42:48,130 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:48,130 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:48,130 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:48,130 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:48,131 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:48,131 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:48,131 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:48,131 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:48,131 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:42:48,131 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:49,131 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:49,132 - PublisherAppln - INFO - sound,64
+2023-02-11 23:42:49,132 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:49,132 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:49,132 - PublisherAppln - INFO - humidity,97.51190738904553
+2023-02-11 23:42:49,132 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:49,132 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:49,132 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:49,132 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:49,132 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:49,132 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:49,132 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:49,132 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:49,132 - PublisherAppln - INFO - location,America
+2023-02-11 23:42:49,136 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:50,138 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:50,139 - PublisherAppln - INFO - sound,45
+2023-02-11 23:42:50,139 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:50,139 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:50,139 - PublisherAppln - INFO - humidity,84.85399509778185
+2023-02-11 23:42:50,139 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:50,139 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:50,139 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:50,139 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:50,139 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:50,139 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:50,139 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:50,139 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:50,139 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:42:50,139 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:51,140 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:51,141 - PublisherAppln - INFO - sound,60
+2023-02-11 23:42:51,141 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:51,141 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:51,141 - PublisherAppln - INFO - humidity,41.70739584355752
+2023-02-11 23:42:51,141 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:51,141 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:51,141 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:51,141 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:51,141 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:51,141 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:51,141 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:51,141 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:51,141 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:42:51,141 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:52,142 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:52,143 - PublisherAppln - INFO - sound,91
+2023-02-11 23:42:52,143 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:52,143 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:52,143 - PublisherAppln - INFO - humidity,68.96729941698196
+2023-02-11 23:42:52,143 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:52,143 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:52,143 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:52,143 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:52,143 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:52,143 - PublisherAppln - INFO - light,1100
+2023-02-11 23:42:52,143 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:52,143 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:52,143 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:42:52,143 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:53,144 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:53,144 - PublisherAppln - INFO - sound,94
+2023-02-11 23:42:53,144 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:53,144 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:53,144 - PublisherAppln - INFO - humidity,23.553509996829117
+2023-02-11 23:42:53,144 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:53,144 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:53,144 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:53,145 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:53,145 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:53,145 - PublisherAppln - INFO - light,450
+2023-02-11 23:42:53,145 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:53,145 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:53,145 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:42:53,145 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:54,146 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:54,146 - PublisherAppln - INFO - sound,49
+2023-02-11 23:42:54,146 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:54,146 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:54,146 - PublisherAppln - INFO - humidity,46.95741281630131
+2023-02-11 23:42:54,146 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:54,146 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:54,146 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:54,146 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:54,146 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:54,146 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:54,146 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:54,147 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:54,147 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:42:54,147 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:55,148 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:55,148 - PublisherAppln - INFO - sound,92
+2023-02-11 23:42:55,148 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:55,148 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:55,148 - PublisherAppln - INFO - humidity,98.24409891048133
+2023-02-11 23:42:55,148 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:55,148 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:55,148 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:55,148 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:55,148 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:55,148 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:55,148 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:55,148 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:55,148 - PublisherAppln - INFO - location,Africa
+2023-02-11 23:42:55,148 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:56,149 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:56,149 - PublisherAppln - INFO - sound,51
+2023-02-11 23:42:56,149 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:56,149 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:56,149 - PublisherAppln - INFO - humidity,61.220752293675524
+2023-02-11 23:42:56,149 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:56,149 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:56,149 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:56,149 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:56,149 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:56,149 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:56,149 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:56,149 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:56,149 - PublisherAppln - INFO - location,America
+2023-02-11 23:42:56,150 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:57,150 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:57,150 - PublisherAppln - INFO - sound,85
+2023-02-11 23:42:57,150 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:57,150 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:57,150 - PublisherAppln - INFO - humidity,50.95632700905924
+2023-02-11 23:42:57,150 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:57,150 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:57,150 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:57,150 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:57,150 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:57,150 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:57,151 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:57,151 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:57,151 - PublisherAppln - INFO - location,America
+2023-02-11 23:42:57,151 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:58,151 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:58,151 - PublisherAppln - INFO - sound,76
+2023-02-11 23:42:58,151 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:58,151 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:58,151 - PublisherAppln - INFO - humidity,50.3087866481938
+2023-02-11 23:42:58,151 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:58,151 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:58,151 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:58,151 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:58,152 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:58,152 - PublisherAppln - INFO - light,800
+2023-02-11 23:42:58,152 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:58,152 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:58,152 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:42:58,152 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:59,153 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:59,153 - PublisherAppln - INFO - sound,87
+2023-02-11 23:42:59,153 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:59,153 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:59,153 - PublisherAppln - INFO - humidity,99.15175446211843
+2023-02-11 23:42:59,153 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:59,153 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:59,153 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:59,154 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:59,154 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:59,154 - PublisherAppln - INFO - light,1600
+2023-02-11 23:42:59,154 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:59,154 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:59,154 - PublisherAppln - INFO - location,Australia
+2023-02-11 23:42:59,154 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:00,155 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:00,155 - PublisherAppln - INFO - sound,56
+2023-02-11 23:43:00,155 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:00,155 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:00,155 - PublisherAppln - INFO - humidity,86.68420118727016
+2023-02-11 23:43:00,155 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:00,155 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:00,155 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:43:00,155 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:00,155 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:00,155 - PublisherAppln - INFO - light,450
+2023-02-11 23:43:00,155 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:00,155 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:00,155 - PublisherAppln - INFO - location,Europe
+2023-02-11 23:43:00,155 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:01,157 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:01,157 - PublisherAppln - INFO - sound,53
+2023-02-11 23:43:01,157 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:01,157 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:01,157 - PublisherAppln - INFO - humidity,66.95773199191859
+2023-02-11 23:43:01,157 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:01,157 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:01,157 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:43:01,157 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:01,157 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:01,157 - PublisherAppln - INFO - light,1100
+2023-02-11 23:43:01,157 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:01,157 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:01,157 - PublisherAppln - INFO - location,Asia
+2023-02-11 23:43:01,157 - PublisherAppln - DEBUG - PublisherMW::disseminate complete

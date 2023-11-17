@@ -1,0 +1,528 @@
+2023-02-11 23:40:21,800 - root - DEBUG - Main - acquire a child logger and then log messages in the child
+2023-02-11 23:40:21,800 - PublisherAppln - DEBUG - Main: parse command line arguments
+2023-02-11 23:40:21,801 - PublisherAppln - DEBUG - Main: resetting log level to 10
+2023-02-11 23:40:21,801 - PublisherAppln - DEBUG - Main: effective log level is 10
+2023-02-11 23:40:21,801 - PublisherAppln - DEBUG - Main: obtain the publisher appln object
+2023-02-11 23:40:21,801 - PublisherAppln - DEBUG - Main: configure the publisher appln object
+2023-02-11 23:40:21,801 - PublisherAppln - DEBUG - PublisherAppln::configure
+2023-02-11 23:40:21,801 - PublisherAppln - DEBUG - PublisherAppln::configure - parsing config.ini
+2023-02-11 23:40:21,801 - PublisherAppln - DEBUG - PublisherAppln::configure - selecting our topic list
+2023-02-11 23:40:21,801 - PublisherAppln - DEBUG - PublisherAppln::configure - initialize the middleware object
+2023-02-11 23:40:21,801 - PublisherAppln - DEBUG - PublisherMW::configure
+2023-02-11 23:40:21,801 - PublisherAppln - DEBUG - PublisherMW::configure - obtain ZMQ context
+2023-02-11 23:40:21,801 - PublisherAppln - DEBUG - PublisherMW::configure - obtain the poller
+2023-02-11 23:40:21,801 - PublisherAppln - DEBUG - PublisherMW::configure - obtain REQ and PUB sockets
+2023-02-11 23:40:21,802 - PublisherAppln - DEBUG - PublisherMW::configure - register the REQ socket for incoming replies
+2023-02-11 23:40:21,802 - PublisherAppln - DEBUG - PublisherMW::configure - connect to Discovery service
+2023-02-11 23:40:21,802 - PublisherAppln - DEBUG - PublisherMW::configure - bind to the pub socket
+2023-02-11 23:40:21,802 - PublisherAppln - DEBUG - PublisherMW::configure completed
+2023-02-11 23:40:21,802 - PublisherAppln - DEBUG - PublisherAppln::configure - configuration complete
+2023-02-11 23:40:21,802 - PublisherAppln - DEBUG - Main: invoke the publisher appln driver
+2023-02-11 23:40:21,802 - PublisherAppln - DEBUG - PublisherAppln::driver
+2023-02-11 23:40:21,802 - PublisherAppln - DEBUG - **********************************
+2023-02-11 23:40:21,802 - PublisherAppln - DEBUG - PublisherAppln::dump
+2023-02-11 23:40:21,802 - PublisherAppln - DEBUG - ------------------------------
+2023-02-11 23:40:21,802 - PublisherAppln - DEBUG -      Name: pub1
+2023-02-11 23:40:21,802 - PublisherAppln - DEBUG -      Lookup: Centralized
+2023-02-11 23:40:21,802 - PublisherAppln - DEBUG -      Dissemination: Direct
+2023-02-11 23:40:21,802 - PublisherAppln - DEBUG -      Num Topics: 1
+2023-02-11 23:40:21,802 - PublisherAppln - DEBUG -      TopicList: ['airquality']
+2023-02-11 23:40:21,816 - PublisherAppln - DEBUG -      Iterations: 1000
+2023-02-11 23:40:21,816 - PublisherAppln - DEBUG -      Frequency: 1
+2023-02-11 23:40:21,816 - PublisherAppln - DEBUG - **********************************
+2023-02-11 23:40:21,816 - PublisherAppln - DEBUG - PublisherAppln::driver - upcall handle
+2023-02-11 23:40:21,816 - PublisherAppln - DEBUG - PublisherMW::event_loop - run the event loop
+2023-02-11 23:40:21,816 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation
+2023-02-11 23:40:21,816 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation - register with the discovery service
+2023-02-11 23:40:21,816 - PublisherAppln - DEBUG - PublisherMW::register
+2023-02-11 23:40:21,816 - PublisherAppln - DEBUG - PublisherMW::register - populate the Registrant Info
+2023-02-11 23:40:21,816 - PublisherAppln - DEBUG - PublisherMW::register - done populating the Registrant Info
+2023-02-11 23:40:21,816 - PublisherAppln - DEBUG - PublisherMW::register - populate the nested register req
+2023-02-11 23:40:21,816 - PublisherAppln - DEBUG - PublisherMW::register - done populating nested RegisterReq
+2023-02-11 23:40:21,816 - PublisherAppln - DEBUG - PublisherMW::register - build the outer DiscoveryReq message
+2023-02-11 23:40:21,816 - PublisherAppln - DEBUG - PublisherMW::register - done building the outer message
+2023-02-11 23:40:21,816 - PublisherAppln - DEBUG - Stringified serialized buf = b'\x08\x01\x12#\x08\x01\x12\x13\n\x04pub1\x12\x0810.0.0.2\x18\xc9+\x1a\nairquality'
+2023-02-11 23:40:21,816 - PublisherAppln - DEBUG - PublisherMW::register - send stringified buffer to Discovery service
+2023-02-11 23:40:21,816 - PublisherAppln - DEBUG - PublisherMW::register - sent register message and now now wait for reply
+2023-02-11 23:40:21,844 - PublisherAppln - DEBUG - PublisherMW::handle_reply
+2023-02-11 23:40:21,844 - PublisherAppln - DEBUG - PublisherAppln::register_response
+2023-02-11 23:40:21,844 - PublisherAppln - DEBUG - PublisherAppln::register_response - registration is a success
+2023-02-11 23:40:21,844 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation
+2023-02-11 23:40:21,844 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation - check if are ready to go
+2023-02-11 23:40:21,844 - PublisherAppln - DEBUG - PublisherMW::is_ready
+2023-02-11 23:40:21,844 - PublisherAppln - DEBUG - PublisherMW::is_ready - populate the nested IsReady msg
+2023-02-11 23:40:21,844 - PublisherAppln - DEBUG - PublisherMW::is_ready - done populating nested IsReady msg
+2023-02-11 23:40:21,844 - PublisherAppln - DEBUG - PublisherMW::is_ready - build the outer DiscoveryReq message
+2023-02-11 23:40:21,844 - PublisherAppln - DEBUG - PublisherMW::is_ready - done building the outer message
+2023-02-11 23:40:21,844 - PublisherAppln - DEBUG - Stringified serialized buf = b'\x08\x02\x1a\x00'
+2023-02-11 23:40:21,844 - PublisherAppln - DEBUG - PublisherMW::is_ready - send stringified buffer to Discovery service
+2023-02-11 23:40:21,844 - PublisherAppln - DEBUG - PublisherMW::is_ready - request sent and now wait for reply
+2023-02-11 23:40:21,845 - PublisherAppln - DEBUG - PublisherMW::handle_reply
+2023-02-11 23:40:21,845 - PublisherAppln - DEBUG - PublisherAppln::isready_response
+2023-02-11 23:40:21,845 - PublisherAppln - DEBUG - PublisherAppln::driver - Not ready yet; check again
+2023-02-11 23:40:31,854 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation
+2023-02-11 23:40:31,854 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation - check if are ready to go
+2023-02-11 23:40:31,854 - PublisherAppln - DEBUG - PublisherMW::is_ready
+2023-02-11 23:40:31,854 - PublisherAppln - DEBUG - PublisherMW::is_ready - populate the nested IsReady msg
+2023-02-11 23:40:31,854 - PublisherAppln - DEBUG - PublisherMW::is_ready - done populating nested IsReady msg
+2023-02-11 23:40:31,854 - PublisherAppln - DEBUG - PublisherMW::is_ready - build the outer DiscoveryReq message
+2023-02-11 23:40:31,854 - PublisherAppln - DEBUG - PublisherMW::is_ready - done building the outer message
+2023-02-11 23:40:31,854 - PublisherAppln - DEBUG - Stringified serialized buf = b'\x08\x02\x1a\x00'
+2023-02-11 23:40:31,854 - PublisherAppln - DEBUG - PublisherMW::is_ready - send stringified buffer to Discovery service
+2023-02-11 23:40:31,854 - PublisherAppln - DEBUG - PublisherMW::is_ready - request sent and now wait for reply
+2023-02-11 23:40:31,855 - PublisherAppln - DEBUG - PublisherMW::handle_reply
+2023-02-11 23:40:31,855 - PublisherAppln - DEBUG - PublisherAppln::isready_responsestatus: true
+
+2023-02-11 23:40:31,855 - PublisherAppln - DEBUG - PublisherAppln::driver - Status success. Ready to disseminate.
+2023-02-11 23:40:31,855 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation
+2023-02-11 23:40:31,855 - PublisherAppln - DEBUG - PublisherAppln::invoke_operation - start Disseminating
+2023-02-11 23:40:31,855 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:31,855 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:40:31,855 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:32,857 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:32,857 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:32,857 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:33,858 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:33,858 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:33,858 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:34,859 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:34,859 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:34,860 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:35,861 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:35,861 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:40:35,861 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:36,862 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:36,862 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:40:36,863 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:37,864 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:37,864 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:37,864 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:38,866 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:38,866 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:40:38,866 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:39,866 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:39,866 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:40:39,866 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:40,868 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:40,868 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:40:40,868 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:41,869 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:41,869 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:41,870 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:42,870 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:42,870 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:40:42,871 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:43,872 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:43,872 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:43,872 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:44,874 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:44,874 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:40:44,874 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:45,875 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:45,875 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:40:45,875 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:46,876 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:46,877 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:40:46,877 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:47,878 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:47,878 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:47,878 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:48,879 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:48,879 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:48,880 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:49,881 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:49,881 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:40:49,881 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:50,882 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:50,882 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:50,882 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:51,884 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:51,884 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:40:51,884 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:52,885 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:52,885 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:40:52,886 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:53,886 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:53,886 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:53,887 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:54,888 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:54,888 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:40:54,888 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:55,889 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:55,889 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:55,889 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:56,890 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:56,890 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:40:56,890 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:57,892 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:57,892 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:40:57,892 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:58,893 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:58,893 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:40:58,894 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:40:59,894 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:40:59,894 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:40:59,895 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:00,896 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:00,896 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:00,896 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:01,897 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:01,897 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:01,898 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:02,898 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:02,898 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:02,898 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:03,900 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:03,900 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:03,900 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:04,901 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:04,901 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:04,901 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:05,902 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:05,903 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:05,903 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:06,904 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:06,904 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:06,904 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:07,906 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:07,906 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:07,906 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:08,907 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:08,907 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:08,907 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:09,908 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:09,908 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:09,909 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:10,910 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:10,910 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:10,910 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:11,910 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:11,910 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:11,910 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:12,912 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:12,912 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:12,912 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:13,913 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:13,913 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:13,913 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:14,914 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:14,914 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:14,914 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:15,916 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:15,916 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:15,916 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:16,917 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:16,917 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:16,917 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:17,918 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:17,918 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:17,918 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:18,920 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:18,920 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:18,920 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:19,920 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:19,920 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:19,920 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:20,921 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:20,922 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:20,922 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:21,923 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:21,923 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:21,923 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:22,924 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:22,924 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:22,924 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:23,925 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:23,925 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:23,926 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:24,927 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:24,927 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:24,927 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:25,928 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:25,928 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:25,928 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:26,930 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:26,930 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:26,930 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:27,932 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:27,932 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:27,932 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:28,933 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:28,933 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:28,933 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:29,934 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:29,934 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:29,934 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:30,936 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:30,936 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:30,936 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:31,937 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:31,937 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:31,937 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:32,938 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:32,938 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:32,938 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:33,940 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:33,940 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:33,940 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:34,941 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:34,941 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:34,941 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:35,942 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:35,942 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:35,942 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:36,943 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:36,943 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:36,943 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:37,945 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:37,945 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:37,945 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:38,946 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:38,946 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:38,947 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:39,948 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:39,948 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:39,948 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:40,949 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:40,949 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:40,950 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:41,950 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:41,950 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:41,951 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:42,951 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:42,951 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:42,951 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:43,952 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:43,953 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:43,953 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:44,955 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:44,955 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:44,955 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:45,956 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:45,956 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:45,957 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:46,957 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:46,957 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:46,958 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:47,958 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:47,958 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:47,958 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:48,960 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:48,960 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:48,960 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:49,961 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:49,961 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:49,962 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:50,962 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:50,962 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:50,962 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:51,964 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:51,964 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:51,964 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:52,965 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:52,965 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:52,966 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:53,967 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:53,967 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:53,967 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:54,968 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:54,968 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:54,968 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:55,970 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:55,970 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:41:55,970 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:56,972 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:56,972 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:56,972 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:57,973 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:57,974 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:41:57,974 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:58,975 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:58,975 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:58,975 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:41:59,976 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:41:59,976 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:41:59,976 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:00,978 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:00,978 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:00,978 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:01,978 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:01,978 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:01,978 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:02,979 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:02,979 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:02,980 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:03,981 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:03,981 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:03,981 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:04,982 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:04,982 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:04,983 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:05,984 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:05,984 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:05,984 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:06,985 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:06,985 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:06,985 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:07,986 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:07,986 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:07,986 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:08,988 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:08,988 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:08,988 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:09,989 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:09,989 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:09,989 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:10,990 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:10,990 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:10,991 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:11,992 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:11,992 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:11,992 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:12,993 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:12,994 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:12,994 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:13,994 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:13,994 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:13,994 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:14,996 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:14,996 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:14,996 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:15,997 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:15,997 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:15,997 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:16,998 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:16,999 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:16,999 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:18,000 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:18,000 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:18,000 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:19,001 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:19,001 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:19,001 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:20,002 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:20,002 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:20,002 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:21,003 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:21,004 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:21,004 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:22,005 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:22,005 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:22,005 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:23,006 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:23,006 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:23,006 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:24,007 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:24,007 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:24,008 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:25,009 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:25,009 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:25,009 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:26,010 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:26,010 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:26,010 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:27,010 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:27,011 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:27,011 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:28,012 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:28,012 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:28,012 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:29,014 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:29,014 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:29,014 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:30,014 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:30,015 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:30,015 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:31,016 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:31,016 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:31,016 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:32,017 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:32,017 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:32,017 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:33,018 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:33,018 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:33,018 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:34,019 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:34,019 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:34,019 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:35,019 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:35,019 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:35,020 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:36,021 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:36,022 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:36,022 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:37,022 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:37,022 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:37,023 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:38,024 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:38,024 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:38,024 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:39,026 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:39,026 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:39,026 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:40,026 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:40,026 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:40,027 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:41,028 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:41,028 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:41,028 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:42,029 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:42,029 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:42,029 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:43,030 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:43,030 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:43,030 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:44,032 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:44,032 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:44,032 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:45,033 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:45,033 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:45,033 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:46,034 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:46,034 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:46,034 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:47,035 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:47,035 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:47,035 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:48,037 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:48,037 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:48,037 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:49,039 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:49,039 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:49,039 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:50,040 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:50,041 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:50,041 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:51,042 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:51,042 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:51,042 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:52,042 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:52,043 - PublisherAppln - INFO - airquality,smog
+2023-02-11 23:42:52,043 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:53,044 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:53,044 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:53,044 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:54,045 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:54,045 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:54,046 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:55,046 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:55,046 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:55,047 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:56,048 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:56,048 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:56,048 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:57,049 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:57,050 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:42:57,050 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:58,050 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:58,050 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:58,051 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:42:59,052 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:42:59,052 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:42:59,052 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:00,054 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:00,054 - PublisherAppln - INFO - airquality,poor
+2023-02-11 23:43:00,054 - PublisherAppln - DEBUG - PublisherMW::disseminate complete
+2023-02-11 23:43:01,056 - PublisherAppln - DEBUG - PublisherMW::disseminate
+2023-02-11 23:43:01,056 - PublisherAppln - INFO - airquality,good
+2023-02-11 23:43:01,056 - PublisherAppln - DEBUG - PublisherMW::disseminate complete

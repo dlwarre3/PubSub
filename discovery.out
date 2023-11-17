@@ -1,0 +1,686 @@
+2023-02-11 23:40:21,812 - root - INFO - Main - acquire a child logger and then log messages in the child
+2023-02-11 23:40:21,812 - DiscoveryAppln - DEBUG - Main: parse command line arguments
+2023-02-11 23:40:21,813 - DiscoveryAppln - DEBUG - Main: resetting log level to 10
+2023-02-11 23:40:21,813 - DiscoveryAppln - DEBUG - Main: effective log level is 10
+2023-02-11 23:40:21,813 - DiscoveryAppln - DEBUG - Main: obtain the Discovery appln object
+2023-02-11 23:40:21,813 - DiscoveryAppln - DEBUG - Main: configure the Discovery appln object
+2023-02-11 23:40:21,813 - DiscoveryAppln - INFO - DiscoveryAppln::configure
+2023-02-11 23:40:21,813 - DiscoveryAppln - DEBUG - DiscoveryAppln::configure - parsing config.ini
+2023-02-11 23:40:21,813 - DiscoveryAppln - DEBUG - DiscoveryAppln::configure - initialize the middleware object
+2023-02-11 23:40:21,813 - DiscoveryAppln - INFO - DiscoveryMW::configure
+2023-02-11 23:40:21,813 - DiscoveryAppln - DEBUG - DiscoveryMW::configure - obtain ZMQ context
+2023-02-11 23:40:21,813 - DiscoveryAppln - DEBUG - DiscoveryMW::configure - obtain the poller
+2023-02-11 23:40:21,813 - DiscoveryAppln - DEBUG - DiscoveryMW::configure - obtain REQ and PUB sockets
+2023-02-11 23:40:21,813 - DiscoveryAppln - DEBUG - DiscoveryMW::configure - register the REP socket for incoming replies
+2023-02-11 23:40:21,813 - DiscoveryAppln - DEBUG - DiscoveryMW::configure - DONE register the REP socket for incoming replies
+2023-02-11 23:40:21,813 - DiscoveryAppln - DEBUG - DiscoveryMW::configure - DONE BIND STRINGtcp://10.0.0.1:5555
+2023-02-11 23:40:21,814 - DiscoveryAppln - DEBUG - DiscoveryMW::configure - DONE register the REP socket for incoming replies
+2023-02-11 23:40:21,814 - DiscoveryAppln - INFO - DiscoveryMW::configure completed
+2023-02-11 23:40:21,814 - DiscoveryAppln - INFO - DiscoveryAppln::configure - configuration complete
+2023-02-11 23:40:21,814 - DiscoveryAppln - DEBUG - Main: invoke the Discovery appln driver
+2023-02-11 23:40:21,814 - DiscoveryAppln - INFO - DiscoveryAppln::driver
+2023-02-11 23:40:21,814 - DiscoveryAppln - INFO - **********************************
+2023-02-11 23:40:21,814 - DiscoveryAppln - INFO - DiscoveryAppln::dump
+2023-02-11 23:40:21,814 - DiscoveryAppln - INFO - ------------------------------
+2023-02-11 23:40:21,814 - DiscoveryAppln - INFO -      Name: disc
+2023-02-11 23:40:21,814 - DiscoveryAppln - INFO -      Lookup: None
+2023-02-11 23:40:21,814 - DiscoveryAppln - INFO -      Subscriber count: 2
+2023-02-11 23:40:21,814 - DiscoveryAppln - INFO -      Subscribers: {}
+2023-02-11 23:40:21,814 - DiscoveryAppln - INFO -      Publisher count: 3
+2023-02-11 23:40:21,814 - DiscoveryAppln - INFO -      Publishers: {}
+2023-02-11 23:40:21,814 - DiscoveryAppln - INFO -      Broker count: 0
+2023-02-11 23:40:21,814 - DiscoveryAppln - INFO -      Broker: {}
+2023-02-11 23:40:21,814 - DiscoveryAppln - INFO - **********************************
+2023-02-11 23:40:21,814 - DiscoveryAppln - DEBUG - DiscoveryAppln::driver - upcall handle
+2023-02-11 23:40:21,814 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - run the event loop
+2023-02-11 23:40:21,814 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - invoke_operation
+2023-02-11 23:40:21,814 - DiscoveryAppln - INFO - DiscoveryAppln::invoke_operationState.CONFIGURE
+2023-02-11 23:40:21,843 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - handling request
+2023-02-11 23:40:21,844 - DiscoveryAppln - INFO - DiscoveryMW::handle_reply
+2023-02-11 23:40:21,844 - DiscoveryAppln - INFO - DiscoveryMW::handle_replymsg_type: TYPE_REGISTER
+register_req {
+  role: ROLE_PUBLISHER
+  info {
+    id: "pub1"
+    addr: "10.0.0.2"
+    port: 5577
+  }
+  topiclist: "airquality"
+}
+
+2023-02-11 23:40:21,844 - DiscoveryAppln - DEBUG - DiscoveryAppln::register_request - msg_type: TYPE_REGISTER
+register_req {
+  role: ROLE_PUBLISHER
+  info {
+    id: "pub1"
+    addr: "10.0.0.2"
+    port: 5577
+  }
+  topiclist: "airquality"
+}
+
+2023-02-11 23:40:21,844 - DiscoveryAppln - INFO - PublisherMW::register
+2023-02-11 23:40:21,844 - DiscoveryAppln - DEBUG - DiscoveryMW::register_response - populate the nested Register msg
+2023-02-11 23:40:21,844 - DiscoveryAppln - DEBUG - DiscoveryMW::register_response - done populating nested Register msg
+2023-02-11 23:40:21,844 - DiscoveryAppln - DEBUG - PublisherMW::register - build the outer DiscoveryReq message
+2023-02-11 23:40:21,844 - DiscoveryAppln - DEBUG - PublisherMW::register - done building the outer message
+2023-02-11 23:40:21,844 - DiscoveryAppln - DEBUG - Stringified serialized buf = b'\x08\x01\x12\x02\x08\x01'
+2023-02-11 23:40:21,844 - DiscoveryAppln - DEBUG - PublisherMW::register - send stringified buffer to Discovery service
+2023-02-11 23:40:21,844 - DiscoveryAppln - INFO - PublisherMW::register - sent register message and now now wait for reply
+2023-02-11 23:40:21,844 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - invoke_operation
+2023-02-11 23:40:21,844 - DiscoveryAppln - INFO - DiscoveryAppln::invoke_operationState.CONFIGURE
+2023-02-11 23:40:21,844 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - handling request
+2023-02-11 23:40:21,844 - DiscoveryAppln - INFO - DiscoveryMW::handle_reply
+2023-02-11 23:40:21,844 - DiscoveryAppln - INFO - DiscoveryMW::handle_replymsg_type: TYPE_ISREADY
+isready_req {
+}
+
+2023-02-11 23:40:21,845 - DiscoveryAppln - INFO - DiscoveryAppln::handling isready_request
+2023-02-11 23:40:21,845 - DiscoveryAppln - INFO - DiscoveryAppln FALSE::pub ready is 1pub count is 3
+2023-02-11 23:40:21,845 - DiscoveryAppln - INFO - DiscoveryAppln FALSE::sub ready is 0sub count is 2
+2023-02-11 23:40:21,845 - DiscoveryAppln - INFO - DiscoveryAppln FALSE::broker ready is 0sub count is {}
+2023-02-11 23:40:21,845 - DiscoveryAppln - INFO - DiscoveryMW::is_ready_response
+2023-02-11 23:40:21,845 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - populate the nested IsReady msg
+2023-02-11 23:40:21,845 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - done populating nested IsReady msg False
+2023-02-11 23:40:21,845 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - build the outer DiscoveryReq message
+2023-02-11 23:40:21,845 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - done building the outer message
+2023-02-11 23:40:21,845 - DiscoveryAppln - DEBUG - Stringified serialized buf = b'\x08\x02\x1a\x00'
+2023-02-11 23:40:21,845 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - send stringified buffer to Discovery service
+2023-02-11 23:40:21,845 - DiscoveryAppln - INFO - DiscoveryMW::is_ready - response sent msg_type: TYPE_ISREADY
+isready_resp {
+}
+
+2023-02-11 23:40:21,845 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - invoke_operation
+2023-02-11 23:40:21,845 - DiscoveryAppln - INFO - DiscoveryAppln::invoke_operationState.ISREADY
+2023-02-11 23:40:21,845 - DiscoveryAppln - DEBUG - DiscoveryAppln::invoke_operation - check if are ready to go
+2023-02-11 23:40:21,864 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - handling request
+2023-02-11 23:40:21,864 - DiscoveryAppln - INFO - DiscoveryMW::handle_reply
+2023-02-11 23:40:21,865 - DiscoveryAppln - INFO - DiscoveryMW::handle_replymsg_type: TYPE_REGISTER
+register_req {
+  role: ROLE_PUBLISHER
+  info {
+    id: "pub3"
+    addr: "10.0.0.4"
+    port: 5577
+  }
+  topiclist: "weather"
+  topiclist: "light"
+  topiclist: "temperature"
+  topiclist: "humidity"
+  topiclist: "altitude"
+}
+
+2023-02-11 23:40:21,865 - DiscoveryAppln - DEBUG - DiscoveryAppln::register_request - msg_type: TYPE_REGISTER
+register_req {
+  role: ROLE_PUBLISHER
+  info {
+    id: "pub3"
+    addr: "10.0.0.4"
+    port: 5577
+  }
+  topiclist: "weather"
+  topiclist: "light"
+  topiclist: "temperature"
+  topiclist: "humidity"
+  topiclist: "altitude"
+}
+
+2023-02-11 23:40:21,865 - DiscoveryAppln - INFO - PublisherMW::register
+2023-02-11 23:40:21,865 - DiscoveryAppln - DEBUG - DiscoveryMW::register_response - populate the nested Register msg
+2023-02-11 23:40:21,865 - DiscoveryAppln - DEBUG - DiscoveryMW::register_response - done populating nested Register msg
+2023-02-11 23:40:21,865 - DiscoveryAppln - DEBUG - PublisherMW::register - build the outer DiscoveryReq message
+2023-02-11 23:40:21,865 - DiscoveryAppln - DEBUG - PublisherMW::register - done building the outer message
+2023-02-11 23:40:21,865 - DiscoveryAppln - DEBUG - Stringified serialized buf = b'\x08\x01\x12\x02\x08\x01'
+2023-02-11 23:40:21,865 - DiscoveryAppln - DEBUG - PublisherMW::register - send stringified buffer to Discovery service
+2023-02-11 23:40:21,865 - DiscoveryAppln - INFO - PublisherMW::register - sent register message and now now wait for reply
+2023-02-11 23:40:21,865 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - invoke_operation
+2023-02-11 23:40:21,865 - DiscoveryAppln - INFO - DiscoveryAppln::invoke_operationState.ISREADY
+2023-02-11 23:40:21,865 - DiscoveryAppln - DEBUG - DiscoveryAppln::invoke_operation - check if are ready to go
+2023-02-11 23:40:21,868 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - handling request
+2023-02-11 23:40:21,868 - DiscoveryAppln - INFO - DiscoveryMW::handle_reply
+2023-02-11 23:40:21,868 - DiscoveryAppln - INFO - DiscoveryMW::handle_replymsg_type: TYPE_ISREADY
+isready_req {
+}
+
+2023-02-11 23:40:21,868 - DiscoveryAppln - INFO - DiscoveryAppln::handling isready_request
+2023-02-11 23:40:21,868 - DiscoveryAppln - INFO - DiscoveryAppln FALSE::pub ready is 2pub count is 3
+2023-02-11 23:40:21,868 - DiscoveryAppln - INFO - DiscoveryAppln FALSE::sub ready is 0sub count is 2
+2023-02-11 23:40:21,868 - DiscoveryAppln - INFO - DiscoveryAppln FALSE::broker ready is 0sub count is {}
+2023-02-11 23:40:21,868 - DiscoveryAppln - INFO - DiscoveryMW::is_ready_response
+2023-02-11 23:40:21,868 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - populate the nested IsReady msg
+2023-02-11 23:40:21,868 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - done populating nested IsReady msg False
+2023-02-11 23:40:21,868 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - build the outer DiscoveryReq message
+2023-02-11 23:40:21,868 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - done building the outer message
+2023-02-11 23:40:21,868 - DiscoveryAppln - DEBUG - Stringified serialized buf = b'\x08\x02\x1a\x00'
+2023-02-11 23:40:21,868 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - send stringified buffer to Discovery service
+2023-02-11 23:40:21,868 - DiscoveryAppln - INFO - DiscoveryMW::is_ready - response sent msg_type: TYPE_ISREADY
+isready_resp {
+}
+
+2023-02-11 23:40:21,868 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - invoke_operation
+2023-02-11 23:40:21,868 - DiscoveryAppln - INFO - DiscoveryAppln::invoke_operationState.ISREADY
+2023-02-11 23:40:21,868 - DiscoveryAppln - DEBUG - DiscoveryAppln::invoke_operation - check if are ready to go
+2023-02-11 23:40:21,871 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - handling request
+2023-02-11 23:40:21,871 - DiscoveryAppln - INFO - DiscoveryMW::handle_reply
+2023-02-11 23:40:21,871 - DiscoveryAppln - INFO - DiscoveryMW::handle_replymsg_type: TYPE_REGISTER
+register_req {
+  role: ROLE_PUBLISHER
+  info {
+    id: "pub2"
+    addr: "10.0.0.3"
+    port: 5577
+  }
+  topiclist: "sound"
+  topiclist: "humidity"
+  topiclist: "airquality"
+  topiclist: "light"
+  topiclist: "location"
+}
+
+2023-02-11 23:40:21,871 - DiscoveryAppln - DEBUG - DiscoveryAppln::register_request - msg_type: TYPE_REGISTER
+register_req {
+  role: ROLE_PUBLISHER
+  info {
+    id: "pub2"
+    addr: "10.0.0.3"
+    port: 5577
+  }
+  topiclist: "sound"
+  topiclist: "humidity"
+  topiclist: "airquality"
+  topiclist: "light"
+  topiclist: "location"
+}
+
+2023-02-11 23:40:21,871 - DiscoveryAppln - INFO - PublisherMW::register
+2023-02-11 23:40:21,871 - DiscoveryAppln - DEBUG - DiscoveryMW::register_response - populate the nested Register msg
+2023-02-11 23:40:21,871 - DiscoveryAppln - DEBUG - DiscoveryMW::register_response - done populating nested Register msg
+2023-02-11 23:40:21,871 - DiscoveryAppln - DEBUG - PublisherMW::register - build the outer DiscoveryReq message
+2023-02-11 23:40:21,871 - DiscoveryAppln - DEBUG - PublisherMW::register - done building the outer message
+2023-02-11 23:40:21,871 - DiscoveryAppln - DEBUG - Stringified serialized buf = b'\x08\x01\x12\x02\x08\x01'
+2023-02-11 23:40:21,871 - DiscoveryAppln - DEBUG - PublisherMW::register - send stringified buffer to Discovery service
+2023-02-11 23:40:21,872 - DiscoveryAppln - INFO - PublisherMW::register - sent register message and now now wait for reply
+2023-02-11 23:40:21,872 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - handling request
+2023-02-11 23:40:21,872 - DiscoveryAppln - INFO - DiscoveryMW::handle_reply
+2023-02-11 23:40:21,872 - DiscoveryAppln - INFO - DiscoveryMW::handle_replymsg_type: TYPE_ISREADY
+isready_req {
+}
+
+2023-02-11 23:40:21,872 - DiscoveryAppln - INFO - DiscoveryAppln::handling isready_request
+2023-02-11 23:40:21,872 - DiscoveryAppln - INFO - DiscoveryAppln TRUE::pub ready is 3pub count is 3
+2023-02-11 23:40:21,872 - DiscoveryAppln - INFO - DiscoveryAppln FALSE::sub ready is 0sub count is 2
+2023-02-11 23:40:21,872 - DiscoveryAppln - INFO - DiscoveryMW::is_ready_response
+2023-02-11 23:40:21,872 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - populate the nested IsReady msg
+2023-02-11 23:40:21,872 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - done populating nested IsReady msg False
+2023-02-11 23:40:21,872 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - build the outer DiscoveryReq message
+2023-02-11 23:40:21,872 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - done building the outer message
+2023-02-11 23:40:21,872 - DiscoveryAppln - DEBUG - Stringified serialized buf = b'\x08\x02\x1a\x00'
+2023-02-11 23:40:21,872 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - send stringified buffer to Discovery service
+2023-02-11 23:40:21,872 - DiscoveryAppln - INFO - DiscoveryMW::is_ready - response sent msg_type: TYPE_ISREADY
+isready_resp {
+}
+
+2023-02-11 23:40:21,872 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - invoke_operation
+2023-02-11 23:40:21,872 - DiscoveryAppln - INFO - DiscoveryAppln::invoke_operationState.ISREADY
+2023-02-11 23:40:21,872 - DiscoveryAppln - DEBUG - DiscoveryAppln::invoke_operation - check if are ready to go
+2023-02-11 23:40:21,872 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - handling request
+2023-02-11 23:40:21,872 - DiscoveryAppln - INFO - DiscoveryMW::handle_reply
+2023-02-11 23:40:21,873 - DiscoveryAppln - INFO - DiscoveryMW::handle_replymsg_type: TYPE_REGISTER
+register_req {
+  role: ROLE_SUBSCRIBER
+  info {
+    id: "sub1"
+    addr: "127.0.0.1"
+    port: 5577
+  }
+  topiclist: "sound"
+  topiclist: "location"
+  topiclist: "light"
+  topiclist: "airquality"
+}
+
+2023-02-11 23:40:21,873 - DiscoveryAppln - DEBUG - DiscoveryAppln::register_request - msg_type: TYPE_REGISTER
+register_req {
+  role: ROLE_SUBSCRIBER
+  info {
+    id: "sub1"
+    addr: "127.0.0.1"
+    port: 5577
+  }
+  topiclist: "sound"
+  topiclist: "location"
+  topiclist: "light"
+  topiclist: "airquality"
+}
+
+2023-02-11 23:40:21,873 - DiscoveryAppln - INFO - PublisherMW::register
+2023-02-11 23:40:21,873 - DiscoveryAppln - DEBUG - DiscoveryMW::register_response - populate the nested Register msg
+2023-02-11 23:40:21,873 - DiscoveryAppln - DEBUG - DiscoveryMW::register_response - done populating nested Register msg
+2023-02-11 23:40:21,873 - DiscoveryAppln - DEBUG - PublisherMW::register - build the outer DiscoveryReq message
+2023-02-11 23:40:21,873 - DiscoveryAppln - DEBUG - PublisherMW::register - done building the outer message
+2023-02-11 23:40:21,873 - DiscoveryAppln - DEBUG - Stringified serialized buf = b'\x08\x01\x12\x02\x08\x01'
+2023-02-11 23:40:21,873 - DiscoveryAppln - DEBUG - PublisherMW::register - send stringified buffer to Discovery service
+2023-02-11 23:40:21,873 - DiscoveryAppln - INFO - PublisherMW::register - sent register message and now now wait for reply
+2023-02-11 23:40:21,873 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - handling request
+2023-02-11 23:40:21,873 - DiscoveryAppln - INFO - DiscoveryMW::handle_reply
+2023-02-11 23:40:21,873 - DiscoveryAppln - INFO - DiscoveryMW::handle_replymsg_type: TYPE_ISREADY
+isready_req {
+}
+
+2023-02-11 23:40:21,873 - DiscoveryAppln - INFO - DiscoveryAppln::handling isready_request
+2023-02-11 23:40:21,873 - DiscoveryAppln - INFO - DiscoveryAppln TRUE::pub ready is 3pub count is 3
+2023-02-11 23:40:21,873 - DiscoveryAppln - INFO - DiscoveryAppln FALSE::sub ready is 1sub count is 2
+2023-02-11 23:40:21,873 - DiscoveryAppln - INFO - DiscoveryMW::is_ready_response
+2023-02-11 23:40:21,873 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - populate the nested IsReady msg
+2023-02-11 23:40:21,873 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - done populating nested IsReady msg False
+2023-02-11 23:40:21,873 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - build the outer DiscoveryReq message
+2023-02-11 23:40:21,873 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - done building the outer message
+2023-02-11 23:40:21,873 - DiscoveryAppln - DEBUG - Stringified serialized buf = b'\x08\x02\x1a\x00'
+2023-02-11 23:40:21,874 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - send stringified buffer to Discovery service
+2023-02-11 23:40:21,874 - DiscoveryAppln - INFO - DiscoveryMW::is_ready - response sent msg_type: TYPE_ISREADY
+isready_resp {
+}
+
+2023-02-11 23:40:21,874 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - invoke_operation
+2023-02-11 23:40:21,874 - DiscoveryAppln - INFO - DiscoveryAppln::invoke_operationState.ISREADY
+2023-02-11 23:40:21,874 - DiscoveryAppln - DEBUG - DiscoveryAppln::invoke_operation - check if are ready to go
+2023-02-11 23:40:21,878 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - handling request
+2023-02-11 23:40:21,878 - DiscoveryAppln - INFO - DiscoveryMW::handle_reply
+2023-02-11 23:40:21,878 - DiscoveryAppln - INFO - DiscoveryMW::handle_replymsg_type: TYPE_REGISTER
+register_req {
+  role: ROLE_SUBSCRIBER
+  info {
+    id: "sub2"
+    addr: "127.0.0.1"
+    port: 5577
+  }
+  topiclist: "airquality"
+  topiclist: "weather"
+  topiclist: "temperature"
+  topiclist: "pressure"
+  topiclist: "light"
+}
+
+2023-02-11 23:40:21,878 - DiscoveryAppln - DEBUG - DiscoveryAppln::register_request - msg_type: TYPE_REGISTER
+register_req {
+  role: ROLE_SUBSCRIBER
+  info {
+    id: "sub2"
+    addr: "127.0.0.1"
+    port: 5577
+  }
+  topiclist: "airquality"
+  topiclist: "weather"
+  topiclist: "temperature"
+  topiclist: "pressure"
+  topiclist: "light"
+}
+
+2023-02-11 23:40:21,878 - DiscoveryAppln - INFO - PublisherMW::register
+2023-02-11 23:40:21,878 - DiscoveryAppln - DEBUG - DiscoveryMW::register_response - populate the nested Register msg
+2023-02-11 23:40:21,879 - DiscoveryAppln - DEBUG - DiscoveryMW::register_response - done populating nested Register msg
+2023-02-11 23:40:21,879 - DiscoveryAppln - DEBUG - PublisherMW::register - build the outer DiscoveryReq message
+2023-02-11 23:40:21,879 - DiscoveryAppln - DEBUG - PublisherMW::register - done building the outer message
+2023-02-11 23:40:21,879 - DiscoveryAppln - DEBUG - Stringified serialized buf = b'\x08\x01\x12\x02\x08\x01'
+2023-02-11 23:40:21,879 - DiscoveryAppln - DEBUG - PublisherMW::register - send stringified buffer to Discovery service
+2023-02-11 23:40:21,879 - DiscoveryAppln - INFO - PublisherMW::register - sent register message and now now wait for reply
+2023-02-11 23:40:21,879 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - handling request
+2023-02-11 23:40:21,879 - DiscoveryAppln - INFO - DiscoveryMW::handle_reply
+2023-02-11 23:40:21,879 - DiscoveryAppln - INFO - DiscoveryMW::handle_replymsg_type: TYPE_ISREADY
+isready_req {
+}
+
+2023-02-11 23:40:21,879 - DiscoveryAppln - INFO - DiscoveryAppln::handling isready_request
+2023-02-11 23:40:21,879 - DiscoveryAppln - INFO - DiscoveryAppln TRUE::pub ready is 3pub count is 3
+2023-02-11 23:40:21,879 - DiscoveryAppln - INFO - DiscoveryAppln TRUE::sub ready is 2sub count is 2
+2023-02-11 23:40:21,879 - DiscoveryAppln - INFO - DiscoveryAppln TRUE::broker ready is 0sub count is 0
+2023-02-11 23:40:21,879 - DiscoveryAppln - INFO - DiscoveryMW::is_ready_response
+2023-02-11 23:40:21,879 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - populate the nested IsReady msg
+2023-02-11 23:40:21,879 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - done populating nested IsReady msg True
+2023-02-11 23:40:21,879 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - build the outer DiscoveryReq message
+2023-02-11 23:40:21,879 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - done building the outer message
+2023-02-11 23:40:21,879 - DiscoveryAppln - DEBUG - Stringified serialized buf = b'\x08\x02\x1a\x02\x08\x01'
+2023-02-11 23:40:21,879 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - send stringified buffer to Discovery service
+2023-02-11 23:40:21,880 - DiscoveryAppln - INFO - DiscoveryMW::is_ready - response sent msg_type: TYPE_ISREADY
+isready_resp {
+  status: true
+}
+
+2023-02-11 23:40:21,880 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - handling request
+2023-02-11 23:40:21,880 - DiscoveryAppln - INFO - DiscoveryMW::handle_reply
+2023-02-11 23:40:21,880 - DiscoveryAppln - INFO - DiscoveryMW::handle_replymsg_type: TYPE_LOOKUP_PUB_BY_TOPIC
+lookup_req {
+  topiclist: "airquality"
+  topiclist: "weather"
+  topiclist: "temperature"
+  topiclist: "pressure"
+  topiclist: "light"
+}
+
+2023-02-11 23:40:21,880 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - msg_type: TYPE_LOOKUP_PUB_BY_TOPIC
+lookup_req {
+  topiclist: "airquality"
+  topiclist: "weather"
+  topiclist: "temperature"
+  topiclist: "pressure"
+  topiclist: "light"
+}
+
+2023-02-11 23:40:21,880 - DiscoveryAppln - DEBUG - DiscoveryAppln::publishers - {'pub1': role: ROLE_PUBLISHER
+info {
+  id: "pub1"
+  addr: "10.0.0.2"
+  port: 5577
+}
+topiclist: "airquality"
+, 'pub3': role: ROLE_PUBLISHER
+info {
+  id: "pub3"
+  addr: "10.0.0.4"
+  port: 5577
+}
+topiclist: "weather"
+topiclist: "light"
+topiclist: "temperature"
+topiclist: "humidity"
+topiclist: "altitude"
+, 'pub2': role: ROLE_PUBLISHER
+info {
+  id: "pub2"
+  addr: "10.0.0.3"
+  port: 5577
+}
+topiclist: "sound"
+topiclist: "humidity"
+topiclist: "airquality"
+topiclist: "light"
+topiclist: "location"
+}
+2023-02-11 23:40:21,880 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topicairquality in list ['airquality']
+2023-02-11 23:40:21,880 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topicweather in list ['airquality']
+2023-02-11 23:40:21,880 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topictemperature in list ['airquality']
+2023-02-11 23:40:21,880 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topicpressure in list ['airquality']
+2023-02-11 23:40:21,880 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topiclight in list ['airquality']
+2023-02-11 23:40:21,880 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topicairquality in list ['weather', 'light', 'temperature', 'humidity', 'altitude']
+2023-02-11 23:40:21,880 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topicweather in list ['weather', 'light', 'temperature', 'humidity', 'altitude']
+2023-02-11 23:40:21,880 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topictemperature in list ['weather', 'light', 'temperature', 'humidity', 'altitude']
+2023-02-11 23:40:21,880 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topicpressure in list ['weather', 'light', 'temperature', 'humidity', 'altitude']
+2023-02-11 23:40:21,880 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topiclight in list ['weather', 'light', 'temperature', 'humidity', 'altitude']
+2023-02-11 23:40:21,880 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topicairquality in list ['sound', 'humidity', 'airquality', 'light', 'location']
+2023-02-11 23:40:21,880 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topicweather in list ['sound', 'humidity', 'airquality', 'light', 'location']
+2023-02-11 23:40:21,880 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topictemperature in list ['sound', 'humidity', 'airquality', 'light', 'location']
+2023-02-11 23:40:21,880 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topicpressure in list ['sound', 'humidity', 'airquality', 'light', 'location']
+2023-02-11 23:40:21,880 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topiclight in list ['sound', 'humidity', 'airquality', 'light', 'location']
+2023-02-11 23:40:21,880 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - sending lookupResult - [id: "pub1"
+addr: "10.0.0.2"
+port: 5577
+, id: "pub3"
+addr: "10.0.0.4"
+port: 5577
+, id: "pub3"
+addr: "10.0.0.4"
+port: 5577
+, id: "pub3"
+addr: "10.0.0.4"
+port: 5577
+, id: "pub2"
+addr: "10.0.0.3"
+port: 5577
+, id: "pub2"
+addr: "10.0.0.3"
+port: 5577
+]
+2023-02-11 23:40:21,880 - DiscoveryAppln - INFO - DiscoveryMW::lookup_pub_bytopic_response
+2023-02-11 23:40:21,880 - DiscoveryAppln - DEBUG - DiscoveryMW::lookup_pub_bytopic_response - populate the nested LookupPubByTopicResp msg
+2023-02-11 23:40:21,881 - DiscoveryAppln - DEBUG - DiscoveryMW::lookup_pub_bytopic_response - info {
+  id: "pub1"
+  addr: "10.0.0.2"
+  port: 5577
+}
+info {
+  id: "pub3"
+  addr: "10.0.0.4"
+  port: 5577
+}
+info {
+  id: "pub3"
+  addr: "10.0.0.4"
+  port: 5577
+}
+info {
+  id: "pub3"
+  addr: "10.0.0.4"
+  port: 5577
+}
+info {
+  id: "pub2"
+  addr: "10.0.0.3"
+  port: 5577
+}
+info {
+  id: "pub2"
+  addr: "10.0.0.3"
+  port: 5577
+}
+
+2023-02-11 23:40:21,881 - DiscoveryAppln - DEBUG - DiscoveryMW::lookup_pub_bytopic_response - done populating nested LookupPubByTopicResp msg
+2023-02-11 23:40:21,881 - DiscoveryAppln - DEBUG - DiscoveryMW::lookup_pub_bytopic_response - build the outer DiscoveryReq message
+2023-02-11 23:40:21,881 - DiscoveryAppln - DEBUG - DiscoveryMW::lookup_pub_bytopic_response - done building the outer message
+2023-02-11 23:40:21,881 - DiscoveryAppln - DEBUG - Stringified serialized buf = b'\x08\x03"~\n\x13\n\x04pub1\x12\x0810.0.0.2\x18\xc9+\n\x13\n\x04pub3\x12\x0810.0.0.4\x18\xc9+\n\x13\n\x04pub3\x12\x0810.0.0.4\x18\xc9+\n\x13\n\x04pub3\x12\x0810.0.0.4\x18\xc9+\n\x13\n\x04pub2\x12\x0810.0.0.3\x18\xc9+\n\x13\n\x04pub2\x12\x0810.0.0.3\x18\xc9+'
+2023-02-11 23:40:21,881 - DiscoveryAppln - DEBUG - DiscoveryMW::lookup_pub_bytopic_response - send stringified buffer to REP socket
+2023-02-11 23:40:21,881 - DiscoveryAppln - INFO - DiscoveryMW::lookup_pub_bytopic_response - sent publisher info
+2023-02-11 23:40:31,855 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - handling request
+2023-02-11 23:40:31,855 - DiscoveryAppln - INFO - DiscoveryMW::handle_reply
+2023-02-11 23:40:31,855 - DiscoveryAppln - INFO - DiscoveryMW::handle_replymsg_type: TYPE_ISREADY
+isready_req {
+}
+
+2023-02-11 23:40:31,855 - DiscoveryAppln - INFO - DiscoveryAppln::handling isready_request
+2023-02-11 23:40:31,855 - DiscoveryAppln - INFO - DiscoveryAppln TRUE::pub ready is 3pub count is 3
+2023-02-11 23:40:31,855 - DiscoveryAppln - INFO - DiscoveryAppln TRUE::sub ready is 2sub count is 2
+2023-02-11 23:40:31,855 - DiscoveryAppln - INFO - DiscoveryAppln TRUE::broker ready is 0sub count is 0
+2023-02-11 23:40:31,855 - DiscoveryAppln - INFO - DiscoveryMW::is_ready_response
+2023-02-11 23:40:31,855 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - populate the nested IsReady msg
+2023-02-11 23:40:31,855 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - done populating nested IsReady msg True
+2023-02-11 23:40:31,855 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - build the outer DiscoveryReq message
+2023-02-11 23:40:31,855 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - done building the outer message
+2023-02-11 23:40:31,855 - DiscoveryAppln - DEBUG - Stringified serialized buf = b'\x08\x02\x1a\x02\x08\x01'
+2023-02-11 23:40:31,855 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - send stringified buffer to Discovery service
+2023-02-11 23:40:31,855 - DiscoveryAppln - INFO - DiscoveryMW::is_ready - response sent msg_type: TYPE_ISREADY
+isready_resp {
+  status: true
+}
+
+2023-02-11 23:40:31,855 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - invoke_operation
+2023-02-11 23:40:31,855 - DiscoveryAppln - INFO - DiscoveryAppln::invoke_operationState.ISREADY
+2023-02-11 23:40:31,855 - DiscoveryAppln - DEBUG - DiscoveryAppln::invoke_operation - check if are ready to go
+2023-02-11 23:40:31,879 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - handling request
+2023-02-11 23:40:31,879 - DiscoveryAppln - INFO - DiscoveryMW::handle_reply
+2023-02-11 23:40:31,879 - DiscoveryAppln - INFO - DiscoveryMW::handle_replymsg_type: TYPE_ISREADY
+isready_req {
+}
+
+2023-02-11 23:40:31,879 - DiscoveryAppln - INFO - DiscoveryAppln::handling isready_request
+2023-02-11 23:40:31,879 - DiscoveryAppln - INFO - DiscoveryAppln TRUE::pub ready is 3pub count is 3
+2023-02-11 23:40:31,879 - DiscoveryAppln - INFO - DiscoveryAppln TRUE::sub ready is 2sub count is 2
+2023-02-11 23:40:31,879 - DiscoveryAppln - INFO - DiscoveryAppln TRUE::broker ready is 0sub count is 0
+2023-02-11 23:40:31,879 - DiscoveryAppln - INFO - DiscoveryMW::is_ready_response
+2023-02-11 23:40:31,879 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - populate the nested IsReady msg
+2023-02-11 23:40:31,879 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - done populating nested IsReady msg True
+2023-02-11 23:40:31,879 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - build the outer DiscoveryReq message
+2023-02-11 23:40:31,879 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - done building the outer message
+2023-02-11 23:40:31,879 - DiscoveryAppln - DEBUG - Stringified serialized buf = b'\x08\x02\x1a\x02\x08\x01'
+2023-02-11 23:40:31,879 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - send stringified buffer to Discovery service
+2023-02-11 23:40:31,879 - DiscoveryAppln - INFO - DiscoveryMW::is_ready - response sent msg_type: TYPE_ISREADY
+isready_resp {
+  status: true
+}
+
+2023-02-11 23:40:31,879 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - invoke_operation
+2023-02-11 23:40:31,879 - DiscoveryAppln - INFO - DiscoveryAppln::invoke_operationState.ISREADY
+2023-02-11 23:40:31,879 - DiscoveryAppln - DEBUG - DiscoveryAppln::invoke_operation - check if are ready to go
+2023-02-11 23:40:31,883 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - handling request
+2023-02-11 23:40:31,883 - DiscoveryAppln - INFO - DiscoveryMW::handle_reply
+2023-02-11 23:40:31,883 - DiscoveryAppln - INFO - DiscoveryMW::handle_replymsg_type: TYPE_ISREADY
+isready_req {
+}
+
+2023-02-11 23:40:31,883 - DiscoveryAppln - INFO - DiscoveryAppln::handling isready_request
+2023-02-11 23:40:31,883 - DiscoveryAppln - INFO - DiscoveryAppln TRUE::pub ready is 3pub count is 3
+2023-02-11 23:40:31,883 - DiscoveryAppln - INFO - DiscoveryAppln TRUE::sub ready is 2sub count is 2
+2023-02-11 23:40:31,883 - DiscoveryAppln - INFO - DiscoveryAppln TRUE::broker ready is 0sub count is 0
+2023-02-11 23:40:31,883 - DiscoveryAppln - INFO - DiscoveryMW::is_ready_response
+2023-02-11 23:40:31,883 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - populate the nested IsReady msg
+2023-02-11 23:40:31,883 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - done populating nested IsReady msg True
+2023-02-11 23:40:31,883 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - build the outer DiscoveryReq message
+2023-02-11 23:40:31,883 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - done building the outer message
+2023-02-11 23:40:31,883 - DiscoveryAppln - DEBUG - Stringified serialized buf = b'\x08\x02\x1a\x02\x08\x01'
+2023-02-11 23:40:31,883 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - send stringified buffer to Discovery service
+2023-02-11 23:40:31,883 - DiscoveryAppln - INFO - DiscoveryMW::is_ready - response sent msg_type: TYPE_ISREADY
+isready_resp {
+  status: true
+}
+
+2023-02-11 23:40:31,883 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - handling request
+2023-02-11 23:40:31,883 - DiscoveryAppln - INFO - DiscoveryMW::handle_reply
+2023-02-11 23:40:31,883 - DiscoveryAppln - INFO - DiscoveryMW::handle_replymsg_type: TYPE_ISREADY
+isready_req {
+}
+
+2023-02-11 23:40:31,883 - DiscoveryAppln - INFO - DiscoveryAppln::handling isready_request
+2023-02-11 23:40:31,883 - DiscoveryAppln - INFO - DiscoveryAppln TRUE::pub ready is 3pub count is 3
+2023-02-11 23:40:31,883 - DiscoveryAppln - INFO - DiscoveryAppln TRUE::sub ready is 2sub count is 2
+2023-02-11 23:40:31,883 - DiscoveryAppln - INFO - DiscoveryAppln TRUE::broker ready is 0sub count is 0
+2023-02-11 23:40:31,883 - DiscoveryAppln - INFO - DiscoveryMW::is_ready_response
+2023-02-11 23:40:31,883 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - populate the nested IsReady msg
+2023-02-11 23:40:31,883 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - done populating nested IsReady msg True
+2023-02-11 23:40:31,883 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - build the outer DiscoveryReq message
+2023-02-11 23:40:31,883 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - done building the outer message
+2023-02-11 23:40:31,883 - DiscoveryAppln - DEBUG - Stringified serialized buf = b'\x08\x02\x1a\x02\x08\x01'
+2023-02-11 23:40:31,883 - DiscoveryAppln - DEBUG - DiscoveryMW::is_ready - send stringified buffer to Discovery service
+2023-02-11 23:40:31,884 - DiscoveryAppln - INFO - DiscoveryMW::is_ready - response sent msg_type: TYPE_ISREADY
+isready_resp {
+  status: true
+}
+
+2023-02-11 23:40:31,884 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - invoke_operation
+2023-02-11 23:40:31,884 - DiscoveryAppln - INFO - DiscoveryAppln::invoke_operationState.ISREADY
+2023-02-11 23:40:31,884 - DiscoveryAppln - DEBUG - DiscoveryAppln::invoke_operation - check if are ready to go
+2023-02-11 23:40:31,888 - DiscoveryAppln - INFO - DiscoveryMW::event_loop - handling request
+2023-02-11 23:40:31,888 - DiscoveryAppln - INFO - DiscoveryMW::handle_reply
+2023-02-11 23:40:31,888 - DiscoveryAppln - INFO - DiscoveryMW::handle_replymsg_type: TYPE_LOOKUP_PUB_BY_TOPIC
+lookup_req {
+  topiclist: "sound"
+  topiclist: "location"
+  topiclist: "light"
+  topiclist: "airquality"
+}
+
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - msg_type: TYPE_LOOKUP_PUB_BY_TOPIC
+lookup_req {
+  topiclist: "sound"
+  topiclist: "location"
+  topiclist: "light"
+  topiclist: "airquality"
+}
+
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - DiscoveryAppln::publishers - {'pub1': role: ROLE_PUBLISHER
+info {
+  id: "pub1"
+  addr: "10.0.0.2"
+  port: 5577
+}
+topiclist: "airquality"
+, 'pub3': role: ROLE_PUBLISHER
+info {
+  id: "pub3"
+  addr: "10.0.0.4"
+  port: 5577
+}
+topiclist: "weather"
+topiclist: "light"
+topiclist: "temperature"
+topiclist: "humidity"
+topiclist: "altitude"
+, 'pub2': role: ROLE_PUBLISHER
+info {
+  id: "pub2"
+  addr: "10.0.0.3"
+  port: 5577
+}
+topiclist: "sound"
+topiclist: "humidity"
+topiclist: "airquality"
+topiclist: "light"
+topiclist: "location"
+}
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topicsound in list ['airquality']
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topiclocation in list ['airquality']
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topiclight in list ['airquality']
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topicairquality in list ['airquality']
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topicsound in list ['weather', 'light', 'temperature', 'humidity', 'altitude']
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topiclocation in list ['weather', 'light', 'temperature', 'humidity', 'altitude']
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topiclight in list ['weather', 'light', 'temperature', 'humidity', 'altitude']
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topicairquality in list ['weather', 'light', 'temperature', 'humidity', 'altitude']
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topicsound in list ['sound', 'humidity', 'airquality', 'light', 'location']
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topiclocation in list ['sound', 'humidity', 'airquality', 'light', 'location']
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topiclight in list ['sound', 'humidity', 'airquality', 'light', 'location']
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - looking for publisher with topicairquality in list ['sound', 'humidity', 'airquality', 'light', 'location']
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - DiscoveryAppln::lookup_pub_bytopic_req - sending lookupResult - [id: "pub1"
+addr: "10.0.0.2"
+port: 5577
+, id: "pub3"
+addr: "10.0.0.4"
+port: 5577
+, id: "pub2"
+addr: "10.0.0.3"
+port: 5577
+, id: "pub2"
+addr: "10.0.0.3"
+port: 5577
+, id: "pub2"
+addr: "10.0.0.3"
+port: 5577
+, id: "pub2"
+addr: "10.0.0.3"
+port: 5577
+]
+2023-02-11 23:40:31,888 - DiscoveryAppln - INFO - DiscoveryMW::lookup_pub_bytopic_response
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - DiscoveryMW::lookup_pub_bytopic_response - populate the nested LookupPubByTopicResp msg
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - DiscoveryMW::lookup_pub_bytopic_response - info {
+  id: "pub1"
+  addr: "10.0.0.2"
+  port: 5577
+}
+info {
+  id: "pub3"
+  addr: "10.0.0.4"
+  port: 5577
+}
+info {
+  id: "pub2"
+  addr: "10.0.0.3"
+  port: 5577
+}
+info {
+  id: "pub2"
+  addr: "10.0.0.3"
+  port: 5577
+}
+info {
+  id: "pub2"
+  addr: "10.0.0.3"
+  port: 5577
+}
+info {
+  id: "pub2"
+  addr: "10.0.0.3"
+  port: 5577
+}
+
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - DiscoveryMW::lookup_pub_bytopic_response - done populating nested LookupPubByTopicResp msg
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - DiscoveryMW::lookup_pub_bytopic_response - build the outer DiscoveryReq message
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - DiscoveryMW::lookup_pub_bytopic_response - done building the outer message
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - Stringified serialized buf = b'\x08\x03"~\n\x13\n\x04pub1\x12\x0810.0.0.2\x18\xc9+\n\x13\n\x04pub3\x12\x0810.0.0.4\x18\xc9+\n\x13\n\x04pub2\x12\x0810.0.0.3\x18\xc9+\n\x13\n\x04pub2\x12\x0810.0.0.3\x18\xc9+\n\x13\n\x04pub2\x12\x0810.0.0.3\x18\xc9+\n\x13\n\x04pub2\x12\x0810.0.0.3\x18\xc9+'
+2023-02-11 23:40:31,888 - DiscoveryAppln - DEBUG - DiscoveryMW::lookup_pub_bytopic_response - send stringified buffer to REP socket
+2023-02-11 23:40:31,889 - DiscoveryAppln - INFO - DiscoveryMW::lookup_pub_bytopic_response - sent publisher info
